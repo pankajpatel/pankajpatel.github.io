@@ -1,0 +1,9 @@
+= Hello World!
+:published_at: 2015-02-09
+:hp-tags: GitHub,Hubpress,JavaScript
+
+*_Hello World!_*
+
+It's my new blog hosted on github.
+
+And it is powered by Hubpress.
