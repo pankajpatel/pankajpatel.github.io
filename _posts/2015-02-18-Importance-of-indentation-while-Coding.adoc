@@ -1,0 +1,11 @@
+= Importance of indentation while Coding
+:published_at: 2015-02-18
+:hp-tags: Coding, Web Development, JavaScript, CSS, HTML
+
+Indentation, a very important thing to save yourself from readability problems!
+
+.link:http://en.wikipedia.org/wiki/Indentation_(typesetting)[Wikipedia: Indentation (typesetting)]
+[TIP]
+An indentation is an empty space at the beginning of a line to signal the start of a new paragraph. Many computer languages have adopted this technique to designate "paragraphs" or other logical blocks in the program.
+
+Taking indentation into consideration, we are making our code more readable for ourself and others. 
