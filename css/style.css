@@ -224,42 +224,6 @@ body > nav {
 
 /* General END */
 
-/**/
-
-/* Powered by branded.me */
-
-.watermark {
-	width: 170px;
-	height: 31px;
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	background: url(../../img/watermark.png) no-repeat center #1E1E1E;
-	background-size: 150px 17px;
-	z-index: 4;
-	border-radius: 3px 0 0 0;
-	-webkit-border-radius: 3px 0 0 0;
-	-moz-border-radius: 3px 0 0 0;
-	box-shadow: 0 0 3px rgba(0,0,0,0.3);
-	-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.3);
-	-moz-box-shadow: 0 0 3px rgba(0,0,0,0.3);
-	-webkit-transition: all 0.15s;
-    transition: all 0.15s;
-}
-
-.watermark:hover {
-	width: 180px;
-	height: 41px;
-	border-radius: 5px 0 0 0;
-	-webkit-border-radius: 5px 0 0 0;
-	-moz-border-radius: 5px 0 0 0;
-	background-color: #5A5A5A;
-}
-
-/* Powered by branded.me END */
-
-/**/
-
 /* Sections */
 
 section {
