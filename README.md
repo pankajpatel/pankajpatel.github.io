@@ -1,3 +1,3 @@
 # pankajpatel.github.io
 
-Personal Site at http://pankaj.pro
+Personal Site at https://pankaj.pro
