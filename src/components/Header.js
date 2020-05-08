@@ -1,61 +1,52 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-
-const Header = props => (
-  <header id="header" style={props.timeout ? { display: 'none' } : {}}>
+import PropTypes from 'prop-types';
+import React from 'react';
+import picture from '../images/pankaj.jpg'
+const menuItems = [
+  {
+    label: 'Intro',
+    article: 'intro',
+  },
+  {
+    label: 'Work',
+    article: 'work',
+  },
+  {
+    label: 'Education',
+    article: 'education',
+  },
+  {
+    label: 'Skills',
+    article: 'skills',
+  },
+  {
+    label: 'Contact',
+    article: 'contact',
+  },
+]
+const Header = ({ timeout, onOpenArticle }) => (
+  <header id="header" style={timeout ? { display: 'none' } : {}}>
     <div className="logo">
-      <span className="icon fa-diamond"></span>
+      <img src={picture} alt="Pankaj" />
     </div>
     <div className="content">
       <div className="inner">
-        <h1>Dimension</h1>
-        <p>
-          A fully responsive site template designed by{' '}
-          <a href="https://html5up.net">HTML5 UP</a> and released
-          <br />
-          for free under the{' '}
-          <a href="https://html5up.net/license">Creative Commons</a> license.
-        </p>
+        <h1>Pankaj Patel</h1>
+        <p>Frontend Engineer</p>
       </div>
     </div>
     <nav>
       <ul>
-        <li>
-          <button
-            onClick={() => {
-              props.onOpenArticle('intro')
-            }}
-          >
-            Intro
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => {
-              props.onOpenArticle('work')
-            }}
-          >
-            Work
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => {
-              props.onOpenArticle('about')
-            }}
-          >
-            About
-          </button>
-        </li>
-        <li>
-          <button
-            onClick={() => {
-              props.onOpenArticle('contact')
-            }}
-          >
-            Contact
-          </button>
-        </li>
+        {
+          menuItems.map(item => (
+            <li key={item.article}>
+              <button
+                onClick={() => onOpenArticle(item.article)}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))
+        }
       </ul>
     </nav>
   </header>

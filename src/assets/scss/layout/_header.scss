@@ -68,11 +68,14 @@
     line-height: 5.5rem;
     border: solid _size(border-width) _palette(border);
     border-radius: 100%;
+    overflow: hidden;
+    padding: 4px;
+    box-sizing: border-box;
 
-    .icon {
-      &:before {
-        font-size: 2rem;
-      }
+    img {
+      border-radius: 100%;
+      width: 100%;
+      height: 100%;
     }
   }
 
