@@ -1,22 +1,17 @@
 import React from 'react';
+import Article from './Article'
 import hp from '../images/hp.png'
 import olx from '../images/olx.png'
 import codeware from '../images/codeware.png'
 import tcs from '../images/tcs.png'
-import pic02 from '../images/pic02.jpg'
 
-export default ({ article, articleTimeout, style, children }) => (
-  <article
-    id="work"
-    className={`${article === 'work' ? 'active' : ''} ${
-      articleTimeout ? 'timeout' : ''
-    }`}
-    style={style}
+export default ({ active, timeout, children }) => (
+  <Article
+    name="work"
+    active={active}
+    timeout={timeout}
   >
     <h2 className="major">Work</h2>
-    <span className="image main">
-      <img src={pic02} alt="" />
-    </span>
     <div className="wrapper">
       <div className="clearfix content expandable">
         <div className="clearfix item collapsed">
@@ -62,9 +57,10 @@ export default ({ article, articleTimeout, style, children }) => (
             </div>
           </div>
           <span className="item-description">
-            I have worked as a Front End Developer across different projects for
-            various Clients. Working closely with UX and Design team and
-            provisioning the Front End Activities are majority of my tasks.
+            I have worked as a Front End Developer across different
+            projects for various Clients. Working closely with UX and
+            Design team and provisioning the Front End Activities are
+            majority of my tasks.
           </span>
         </div>
         <div className="clearfix item collapsed">
@@ -79,14 +75,14 @@ export default ({ article, articleTimeout, style, children }) => (
             </div>
           </div>
           <span className="item-description">
-            I had worked as a Full Stack Developer at Codeware Technologies.
-            Working on PHP, MySQL, HTML/HTML5, CSS/CSS3, JavaScript, jQuery etc
-            to build inventory and finance management application for various
-            clients.
+            I had worked as a Full Stack Developer at Codeware
+            Technologies. Working on PHP, MySQL, HTML/HTML5, CSS/CSS3,
+            JavaScript, jQuery etc to build inventory and finance
+            management application for various clients.
           </span>
         </div>
       </div>
     </div>
     {children}
-  </article>
-)
+  </Article>
+);

@@ -1,4 +1,5 @@
 import React from 'react';
+import Article from './Article';
 
 const skills = [
   'HTML/HTML5',
@@ -26,15 +27,13 @@ const skills = [
   'WordPress',
   'Blogging',
   'Linux'
-]
+];
 
-export default ({ article, articleTimeout, style, children }) => (
-  <article
-    id="skills"
-    className={`${article === 'skills' ? 'active' : ''} ${
-      articleTimeout ? 'timeout' : ''
-    }`}
-    style={style}
+export default ({ active, timeout, children }) => (
+  <Article
+    name="skills"
+    active={active}
+    timeout={timeout}
   >
     <h2 className="major">Skills</h2>
     <div className="wrapper">
@@ -47,5 +46,5 @@ export default ({ article, articleTimeout, style, children }) => (
       </div>
     </div>
     {children}
-  </article>
-)
+  </Article>
+);

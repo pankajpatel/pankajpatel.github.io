@@ -2,12 +2,13 @@ module.exports = {
   siteMetadata: {
     title: 'Pankaj Patel',
     author: 'Pankaj Patel',
-    description: 'Pankaj Patel is Front End Developer. View Pankaj&#39;s Resume and more. Get in touch today.',
+    description:
+      'Pankaj Patel is Front End Developer. View Pankaj&#39;s Resume and more. Get in touch today.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'pankaj-patel',
         short_name: 'starter',
@@ -19,5 +20,13 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'markdown-pages',
+        path: `${__dirname}/src/data`,
+      },
+    },
+    'gatsby-transformer-remark',
   ],
 }
