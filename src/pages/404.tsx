@@ -1,9 +1,9 @@
-import React from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
+import React from "react";
+import { Link } from "gatsby";
+import styled from "styled-components";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 
 const Container = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ const Container = styled.div`
   justify-content: center;
   min-height: 100%;
   text-align: center;
-`
+`;
 
 const NotFoundPage = () => (
   <Layout>
@@ -27,6 +27,6 @@ const NotFoundPage = () => (
       </div>
     </Container>
   </Layout>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;

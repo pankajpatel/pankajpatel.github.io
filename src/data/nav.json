@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Intro",
+    "article": "intro"
+  },
+  {
+    "label": "Work",
+    "article": "work"
+  },
+  {
+    "label": "Education",
+    "article": "education"
+  },
+  {
+    "label": "Skills",
+    "article": "skills"
+  },
+  {
+    "label": "Contact",
+    "article": "contact"
+  }
+]

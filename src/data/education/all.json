@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Acropolis Institute of Technology and Research",
+    "course": "Computer Science",
+    "location": "Indore, India",
+    "year": {
+      "from": "2008",
+      "to": "2012"
+    }
+  },
+  {
+    "title": "School For Excellence, No. 2",
+    "course": "High School and Higher Secondary",
+    "location": "Dewas, India",
+    "year": {
+      "from": "2003",
+      "to": "2007"
+    }
+  },
+  {
+    "title": "Madhya Pradesh Bhoj (Open) University",
+    "course": "Computer/Information Technology Administration and Management",
+    "location": "Dewas, India",
+    "year": {
+      "from": "2005",
+      "to": "2006"
+    },
+    "description": "This certificates deals with applications and uses of Computers and related technologies in various fields"
+  }
+]

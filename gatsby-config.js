@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Typescript Minimal`,
-    description: `A minimal, bare bones Typescript starter for Gatsby`,
-    author: `@benbarber`,
-    siteUrl: `https://github.com/benbarber/gatsby-typescript-minimal`
+    title: `Pankaj Patel`,
+    description: `Pankaj Patel is Front End Developer. View Pankaj&#39;s Resume, Biography and more. Get in touch today.`,
+    author: `@patel_pankaj_`,
+    siteUrl: `https://pankaj.pro`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -21,8 +21,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-typescript-minimal`,
-        short_name: `starter`,
+        name: `pankaj-patel's-homepage`,
+        short_name: `pankaj`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -40,7 +40,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "XXXXXXXX",
+        trackingId: "UA-37089202-1",
         head: false,
         respectDNT: true,
       },
@@ -55,4 +55,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
