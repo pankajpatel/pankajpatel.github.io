@@ -8,7 +8,7 @@ export type Position = {
   position: string;
 };
 
-export type Positions = (Position | string)[];
+export type Positions = Position[];
 
 export type Work = {
   company: string;

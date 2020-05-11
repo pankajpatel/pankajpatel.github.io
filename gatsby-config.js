@@ -48,7 +48,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Roboto`],
+        fonts: [`Source Sans Pro`],
+      },
+    },
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data/`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

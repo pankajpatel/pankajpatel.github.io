@@ -1,6 +1,6 @@
-import React from "react"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import Helmet from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 const SEO = ({ description, lang, meta, title }: SEOProps) => {
   const { site } = useStaticQuery(
@@ -15,9 +15,9 @@ const SEO = ({ description, lang, meta, title }: SEOProps) => {
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
 
   return (
     <Helmet
@@ -59,21 +59,25 @@ const SEO = ({ description, lang, meta, title }: SEOProps) => {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `p:domain_verify`,
+          content: "95a26872f3e0d41d50578baf4aaa8835",
+        },
       ].concat(meta || [])}
     />
-  )
-}
+  );
+};
 
 interface SEOProps {
-  description?: string
-  lang?: string
+  description?: string;
+  lang?: string;
   meta?: [
     {
-      name: string
-      content: string
+      name: string;
+      content: string;
     }
-  ]
-  title: string
+  ];
+  title: string;
 }
 
-export default SEO
+export default SEO;

@@ -1,9 +1,9 @@
 import React from "react";
+import Img from "gatsby-image";
 import styled from "styled-components";
+import { useStaticQuery, graphql } from "gatsby";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import educationImg from "../images/education-image.png";
-import educations from "../data/education/all.json";
 import { Education } from "../types";
 
 const ImageContainer = styled.div`
@@ -32,31 +32,60 @@ const FlexContainer = styled.article`
   }
 `;
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Education" />
-    <section>
-      <h2 className="major">Education</h2>
-      {educations.map((edu: Education, index: number) => (
-        <FlexContainer key={index}>
-          <ImageContainer>
-            <img src={educationImg} alt="Education" />
-          </ImageContainer>
-          <div className="info">
-            <header>
-              <h3>{edu.title}</h3>
-              <h4>{edu.course}</h4>
-              <h5>{edu.location}</h5>
-              <strong>
-                {edu.year.from} - {edu.year.to}
-              </strong>
-            </header>
-            {edu.description && <Description>{edu.description}</Description>}
-          </div>
-        </FlexContainer>
-      ))}
-    </section>
-  </Layout>
-);
-
-export default IndexPage;
+const EducationPage = () => {
+  const {
+    allEducationJson: { nodes: educations },
+    educationImage,
+  } = useStaticQuery(
+    graphql`
+      query {
+        allEducationJson {
+          nodes {
+            year {
+              from(formatString: "MMM, Y")
+              to(formatString: "MMM, Y")
+            }
+            title
+            location
+            description
+            course
+          }
+        }
+        educationImage: file(relativePath: { eq: "education-image.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 120) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `
+  );
+  return (
+    <Layout>
+      <SEO title="Education" />
+      <section>
+        <h2 className="major">Education</h2>
+        {educations.map((edu: Education, index: number) => (
+          <FlexContainer key={index}>
+            <ImageContainer>
+              <Img fluid={educationImage.childImageSharp.fluid} />
+            </ImageContainer>
+            <div className="info">
+              <header>
+                <h3>{edu.title}</h3>
+                <h4>{edu.course}</h4>
+                <h5>{edu.location}</h5>
+                <strong>
+                  {edu.year.from} - {edu.year.to}
+                </strong>
+              </header>
+              {edu.description && <Description>{edu.description}</Description>}
+            </div>
+          </FlexContainer>
+        ))}
+      </section>
+    </Layout>
+  );
+};
+export default EducationPage;

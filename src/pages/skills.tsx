@@ -1,22 +1,52 @@
 import React from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import skills from "../data/skills.json";
+import { useStaticQuery, graphql } from "gatsby";
+import styled from "styled-components";
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Skills" />
-    <section>
-      <h2 className="major">Skills</h2>
-      <div>
-        {skills.map((skill: string) => (
-          <div key={skill}>
-            <h4>{skill}</h4>
-          </div>
-        ))}
-      </div>
-    </section>
-  </Layout>
-);
+const SkillContainer = styled.div`
+  max-width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+`;
+const Skill = styled.div`
+  flex: 1 auto;
+  display: inline-block;
+  padding: 0.8rem; 1rem;
+  border: 1px solid rgba(200, 200, 200, 0.8);
+  border-radius: 5px;
+  margin: 0.75rem;
+  text-align: center;
+`;
 
-export default IndexPage;
+const SkillsPage = () => {
+  const {
+    allSkillsJson: { nodes: skills },
+  } = useStaticQuery(
+    graphql`
+      query {
+        allSkillsJson {
+          nodes {
+            label
+          }
+        }
+      }
+    `
+  );
+
+  return (
+    <Layout>
+      <SEO title="Skills" />
+      <section>
+        <h2 className="major">Skills</h2>
+        <SkillContainer>
+          {skills.map((skill: { label: string }) => (
+            <Skill key={skill.label}>{skill.label}</Skill>
+          ))}
+        </SkillContainer>
+      </section>
+    </Layout>
+  );
+};
+
+export default SkillsPage;

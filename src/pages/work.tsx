@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import { Work, Position } from "../types";
-import workData from "../data/work/all.json";
+import { Work } from "../types";
+import { useStaticQuery, graphql } from "gatsby";
 
 const ImageContainer = styled.div`
   & img {
@@ -31,56 +31,61 @@ const WorkContainer = styled.article`
   }
 `;
 
-const Months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
+const WorkPage = () => {
+  const {
+    allWorkJson: { nodes: workData },
+  } = useStaticQuery(
+    graphql`
+      query {
+        allWorkJson {
+          nodes {
+            img
+            location
+            company
+            positions {
+              from
+              position
+            }
+            duration {
+              from(formatString: "MMM, Y")
+              to(formatString: "MMM, Y")
+            }
+            description
+          }
+        }
+      }
+    `
+  );
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Work" />
-    <section>
-      <h2 className="major">Work</h2>
-      {workData.map((work: Work) => {
-        const img = require(`../images/${work.img}`);
-        const _from = work.duration.from.split("-");
-        const _to = work.duration.to.split("-");
-        return (
-          <WorkContainer key={work.company}>
-            <ImageContainer>
-              <img src={img} alt={work.company} />
-            </ImageContainer>
-            <div className="info">
-              <header>
-                <h2>
-                  {(work.positions[0].position as Position)
-                    ? work.positions[0].position
-                    : work.positions[0]}
-                </h2>
-                <h3>{work.company}</h3>
-                <strong>
-                  {Months[Number(_from[1]) - 1]}, {_from[0]}
-                  {" - "}
-                  {Months[Number(_to[1]) - 1]}, {_to[0]}
-                </strong>
-              </header>
-              <Description>{work.description}</Description>
-            </div>
-          </WorkContainer>
-        );
-      })}
-    </section>
-  </Layout>
-);
-
-export default IndexPage;
+  return (
+    <Layout>
+      <SEO title="Work" />
+      <section>
+        <h2 className="major">Work</h2>
+        {workData.map((work: Work) => {
+          const img = require(`../images/${work.img}`);
+          return (
+            <WorkContainer key={work.company}>
+              <ImageContainer>
+                <img src={img} alt={work.company} />
+              </ImageContainer>
+              <div className="info">
+                <header>
+                  <h2>{work.positions[0].position}</h2>
+                  <h3>{work.company}</h3>
+                  <strong>
+                    {work.duration.from}
+                    {" - "}
+                    {work.duration.to}
+                  </strong>
+                </header>
+                <Description>{work.description}</Description>
+              </div>
+            </WorkContainer>
+          );
+        })}
+      </section>
+    </Layout>
+  );
+};
+export default WorkPage;

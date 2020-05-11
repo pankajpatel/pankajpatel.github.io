@@ -7,7 +7,10 @@
       "to": "2020-05-05"
     },
     "positions": [
-      "FrontEnd Engineer"
+      {
+        "from": "2019-11-01",
+        "position": "FrontEnd Engineer"
+      }
     ],
     "description": "Working as a Frontend Engineer in Seller Reputation Team.",
     "img": "olx.png"
@@ -40,7 +43,10 @@
       "to": "2016-11-30"
     },
     "positions": [
-      "Systems Engineer"
+      {
+        "from": "2013-02-28",
+        "position": "Systems Engineer"
+      }
     ],
     "description": "I have worked as a Front End Developer across different projects for various Clients. Working closely with UX and Design team and provisioning the Front End Activities are majority of my tasks.",
     "img": "tcs.png"
@@ -53,7 +59,10 @@
       "to": "2013-02-15"
     },
     "positions": [
-      "Full Stack Developer"
+      {
+        "from": "2012-04-02",
+        "position": "Full Stack Developer"
+      }
     ],
     "description": "I had worked as a Full Stack Developer at Codeware Technologies. Working on PHP, MySQL, HTML/HTML5, CSS/CSS3, JavaScript, jQuery etc to build inventory and finance management application for various clients.",
     "img": "codeware.png"
