@@ -1,9 +1,14 @@
+const config = require("./data/config");
+
 module.exports = {
   siteMetadata: {
-    title: `Pankaj Patel`,
-    description: `Pankaj Patel is Front End Developer. View Pankaj&#39;s Resume, Biography and more. Get in touch today.`,
-    author: `@patel_pankaj_`,
-    siteUrl: `https://pankaj.pro`,
+    title: config.title,
+    description: config.description,
+    author: config.author,
+    subTitle: config.subTitle,
+    siteUrl: config.url,
+    social: config.social,
+    socialLinks: config.socialLinks,
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -20,14 +25,15 @@ module.exports = {
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
+
       options: {
-        name: `pankaj-patel's-homepage`,
-        short_name: `pankaj`,
+        name: config.title,
+        short_name: config.name,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
         display: `minimal-ui`,
-        icon: `src/images/logo.png`,
+        icon: config.logo, // This path is relative to the root of the site.
       },
     },
     {
@@ -40,7 +46,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-37089202-1",
+        trackingId: config.googleAnalyticsId,
         head: false,
         respectDNT: true,
       },
@@ -55,11 +61,29 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/data/`,
+        path: `${__dirname}/data/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        // type: `user-profile`,
+        username: config.social.instagram,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          components: `${__dirname}/src/components`,
+          static: `${__dirname}/static/`,
+          styled: `${__dirname}/src/styled`,
+          data: `${__dirname}/data/`,
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 };

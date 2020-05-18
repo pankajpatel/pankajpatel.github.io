@@ -1,6 +1,4 @@
 import React from "react";
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 
@@ -35,8 +33,7 @@ const SkillsPage = () => {
   );
 
   return (
-    <Layout>
-      <SEO title="Skills" />
+    <>
       <section>
         <h2>Skills</h2>
         <SkillContainer>
@@ -45,7 +42,7 @@ const SkillsPage = () => {
           ))}
         </SkillContainer>
       </section>
-    </Layout>
+    </>
   );
 };
 

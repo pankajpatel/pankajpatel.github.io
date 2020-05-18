@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import { HCenteredSection } from "../styled/HCenteredSection";
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+
 import { Work } from "../types";
 
 const ImageContainer = styled.div`
@@ -26,26 +25,34 @@ const Description = styled.div`
   background: rgba(50, 50, 50, 0.95);
   transition: all ease 200ms;
   opacity: 0;
+
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  text-align: center;
 }
 `;
 const WorkContainer = styled.article`
-  padding: 0 0.5rem;
-  margin: 1rem -0.5rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
   border: 1px solid rgba(100, 100, 100, 0.7);
+  background: rgba(40, 40, 40);
   border-radius: 0.25rem;
-  display: flex;
   position: relative;
   overflow: hidden;
-
+  text-align: center;
   & > * {
     flex: 1 auto;
-    margin-top: 0.5rem;
+    margin: 0.5rem auto;
     margin-bottom: 0.5rem;
   }
 
   ${ImageContainer} {
-    min-width: 80px;
-    max-width: 80px;
+    min-width: 60px;
+    max-width: 60px;
   }
 
   &:hover {
@@ -53,6 +60,20 @@ const WorkContainer = styled.article`
       top: 0%;
       opacity: 1;
     }
+  }
+`;
+
+const WorksContainer = styled.div`
+  position: relative;
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    border-left: 1px dashed #ccc;
+    content: "";
+    height: 100%;
+    z-index: -1;
   }
 `;
 
@@ -83,10 +104,9 @@ const WorkPage = () => {
   );
 
   return (
-    <Layout>
-      <SEO title="Work" />
-      <HCenteredSection>
-        <h2>Work</h2>
+    <HCenteredSection>
+      <h2>Work</h2>
+      <WorksContainer>
         {workData.map((work: Work) => {
           const img = require(`../images/${work.img}`);
           return (
@@ -103,12 +123,14 @@ const WorkPage = () => {
                   {work.duration.to}
                 </strong>
               </header>
-              <Description>{work.description}</Description>
+              <Description>
+                <span>{work.description}</span>
+              </Description>
             </WorkContainer>
           );
         })}
-      </HCenteredSection>
-    </Layout>
+      </WorksContainer>
+    </HCenteredSection>
   );
 };
 export default WorkPage;

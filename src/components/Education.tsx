@@ -2,8 +2,7 @@ import React from "react";
 import Img from "gatsby-image";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+
 import { Education } from "../types";
 
 const ImageContainer = styled.div`
@@ -62,8 +61,7 @@ const EducationPage = () => {
     `
   );
   return (
-    <Layout>
-      <SEO title="Education" />
+    <>
       <section>
         <h2>Education</h2>
         {educations.map((edu: Education, index: number) => (
@@ -85,7 +83,7 @@ const EducationPage = () => {
           </FlexContainer>
         ))}
       </section>
-    </Layout>
+    </>
   );
 };
 export default EducationPage;

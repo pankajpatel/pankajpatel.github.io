@@ -1,13 +1,16 @@
 {
-  "name": "gatsby-typescript-minimal",
+  "name": "@pankajpatel/homepage",
   "private": true,
   "description": "A minimal, bare bones Typescript starter for Gatsby",
   "version": "0.1.0",
-  "author": "@benbarber",
+  "author": "@pankajpatel",
   "dependencies": {
     "gatsby": "^2.13.64",
     "gatsby-image": "^2.2.8",
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-source-instagram": "^0.7.0",
     "gatsby-transformer-json": "^2.4.1",
+    "rc-scroll-anim": "^2.7.4",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
@@ -32,7 +35,9 @@
     "gatsby-plugin-typescript": "^2.0.11",
     "gatsby-source-filesystem": "^2.1.9",
     "gatsby-transformer-sharp": "^2.2.6",
+    "husky": "^4.2.5",
     "prettier": "^1.18.2",
+    "pretty-quick": "^2.0.1",
     "tslint": "^5.14.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
@@ -61,5 +66,10 @@
   },
   "bugs": {
     "url": "https://github.com/benbarber/gatsby-typescript-minimal/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }

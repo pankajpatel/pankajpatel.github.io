@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import menuItems from "../data/nav.json";
+import { useStaticQuery, graphql } from "gatsby";
 
 const Nav = styled.nav`
   ul {
@@ -63,16 +63,31 @@ const NavLink = styled(Link)`
   }
 `;
 
-const Navigation = () => (
-  <Nav>
-    <ul>
-      {menuItems.map((item: Record<string, string>) => (
-        <li key={item.article}>
-          <NavLink to={`/${item.article}`}>{item.label}</NavLink>
-        </li>
-      ))}
-    </ul>
-  </Nav>
-);
-
+const Navigation = () => {
+  const {
+    allNavJson: { nodes: menuItems },
+  } = useStaticQuery(
+    graphql`
+      query {
+        allNavJson {
+          nodes {
+            article
+            label
+          }
+        }
+      }
+    `
+  );
+  return (
+    <Nav>
+      <ul>
+        {menuItems.map((item: Record<string, string>) => (
+          <li key={item.article}>
+            <NavLink to={`/${item.article}`}>{item.label}</NavLink>
+          </li>
+        ))}
+      </ul>
+    </Nav>
+  );
+};
 export default Navigation;
