@@ -49,7 +49,7 @@ const IndexPage = () => {
   return (
     <div className={`body ${loading ? "is-loading" : ""}`}>
       <Layout>
-        <SEO title="Home" />
+        <SEO title="Portfolio" />
         <Header loading={loading}>
           <Nav link={Link} />
         </Header>

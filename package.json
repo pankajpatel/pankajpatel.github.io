@@ -5,19 +5,13 @@
   "version": "0.1.0",
   "author": "@pankajpatel",
   "dependencies": {
-    "@types/react-loadable": "^5.5.3",
     "gatsby": "^2.13.64",
     "gatsby-image": "^2.2.8",
-    "gatsby-plugin-alias-imports": "^1.0.5",
-    "gatsby-plugin-react-svg": "^3.0.0",
-    "gatsby-source-instagram": "^0.7.0",
-    "gatsby-transformer-json": "^2.4.1",
     "rc-scroll-anim": "^2.7.4",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "react-loadable": "^5.5.0",
-    "react-visibility-sensor": "^5.1.1",
     "styled-components": "^4.1.3",
     "styled-normalize": "^8.0.6"
   },
@@ -26,18 +20,23 @@
     "@types/react": "^16.8.8",
     "@types/react-dom": "^16.8.2",
     "@types/react-helmet": "^5.0.8",
+    "@types/react-loadable": "^5.5.3",
     "@types/styled-components": "^4.1.12",
     "babel-plugin-styled-components": "^1.10.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-google-analytics": "^2.0.20",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.5",
     "gatsby-plugin-offline": "^3.0.6",
     "gatsby-plugin-react-helmet": "^3.1.3",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.2.11",
     "gatsby-plugin-sitemap": "^2.2.1",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-plugin-typescript": "^2.0.11",
     "gatsby-source-filesystem": "^2.1.9",
+    "gatsby-source-instagram": "^0.7.0",
+    "gatsby-transformer-json": "^2.4.1",
     "gatsby-transformer-sharp": "^2.2.6",
     "husky": "^4.2.5",
     "prettier": "^1.18.2",
@@ -66,10 +65,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/benbarber/gatsby-typescript-minimal"
+    "url": "https://github.com/pankajpatel/pankajpatel.github.io"
   },
   "bugs": {
-    "url": "https://github.com/benbarber/gatsby-typescript-minimal/issues"
+    "url": "https://github.com/pankajpatel/pankajpatel.github.io/issues"
   },
   "husky": {
     "hooks": {
