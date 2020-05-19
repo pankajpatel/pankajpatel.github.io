@@ -3,6 +3,26 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 
+const NavLink = styled(Link)`
+  display: block;
+  min-width: 7.5rem;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  padding: 0 1.25rem 0 1.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+  border: none;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.075);
+  }
+  &:active {
+    background-color: rgba(255, 255, 255, 0.175);
+  }
+`;
+
 const Nav = styled.nav`
   ul {
     display: flex;
@@ -33,7 +53,7 @@ const Nav = styled.nav`
     & ul li:first-child {
       border-top: 0;
     }
-    & ul li a {
+    & ul li ${NavLink} {
       height: 3rem;
       line-height: 3rem;
       min-width: 0;
@@ -42,28 +62,7 @@ const Nav = styled.nav`
   }
 `;
 
-const NavLink = styled(Link)`
-  display: block;
-  min-width: 7.5rem;
-  height: 2.75rem;
-  line-height: 2.75rem;
-  padding: 0 1.25rem 0 1.45rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  font-size: 0.8rem;
-  font-family: "Source Sans Pro", sans-serif;
-  border: none;
-  box-shadow: none;
-  &:hover,
-  &:focus {
-    background-color: rgba(255, 255, 255, 0.075);
-  }
-  &:active {
-    background-color: rgba(255, 255, 255, 0.175);
-  }
-`;
-
-const Navigation = () => {
+const Navigation = ({ link }: { link?: React.Component }) => {
   const {
     allNavJson: { nodes: menuItems },
   } = useStaticQuery(
@@ -83,7 +82,9 @@ const Navigation = () => {
       <ul>
         {menuItems.map((item: Record<string, string>) => (
           <li key={item.article}>
-            <NavLink to={`/${item.article}`}>{item.label}</NavLink>
+            <NavLink as={link || Link} to={`/${item.article}`}>
+              {item.label}
+            </NavLink>
           </li>
         ))}
       </ul>

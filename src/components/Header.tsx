@@ -72,7 +72,7 @@ const Inner = styled.div<LoadingProp>`
         ? `
       opacity: 0;
       padding: 1rem;
-      ${Name} { letter-spacing: -15px; }
+      ${Name} { letter-spacing: -5px; }
       ${Role} { letter-spacing: 0; }
       `
         : `
@@ -91,59 +91,83 @@ const Content = styled.div`
   border-bottom: 1px solid #fff;
   max-width: 100%;
 `;
-const Header = styled.header<LoadingProp>`
-  justify-content: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 100%;
-  text-align: center;
-  transition: all 0.325s ease-in-out;
-  opacity: ${({ loading }) => (loading ? 0 : 1)};
-  background-image: radial-gradient(
-    rgba(0, 0, 0, 0.25) 25%,
-    rgba(0, 0, 0, 0) 55%
-  );
 
-  & > * {
-    transition: opacity 0.325s ease-in-out;
+const Header = styled.header<LoadingProp & { bg?: string }>`
+  ${({ loading, bg }) => `
+    justify-content: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    text-align: center;
+    transition: all 0.325s ease-in-out;
+    opacity: ${loading ? 0 : 1};
     position: relative;
-    margin-top: 3.5rem;
-  }
-  & > *:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: calc(-3.5rem - 1px);
-    left: calc(50% - 1px);
-    width: 1px;
-    height: calc(3.5rem + 1px);
-    background: #ffffff;
-  }
-  & > :first-child {
-    margin-top: 0;
-  }
-  & > :first-child:before {
-    display: none;
-  }
+    &:after,
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      width: 100%;
+      transform: translateX(-50%);
+      background-image:
+        radial-gradient(rgba(0,0,0,0), rgba(34, 34, 34, 0.15)),
+        radial-gradient(rgba(0,0,0,0.65) 26%, rgba(0,0,0,0) 100% ),
+        radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 75%,rgba(0,0,0,0.7) 100%);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      }
+    ${bg &&
+      `&:after {
+        z-index: -1;
+        width: 100%;
+        transform: translateX(-50%);
+        background-image: url(${bg});
+    }`}
 
-  @media screen and (max-width: 736px) {
     & > * {
-      margin-top: 2rem;
+      transition: opacity 0.325s ease-in-out;
+      position: relative;
+      margin-top: 3.5rem;
     }
     & > *:before {
-      top: calc(-2rem - 1px);
-      height: calc(2rem + 1px);
+      content: "";
+      display: block;
+      position: absolute;
+      top: calc(-3.5rem - 1px);
+      left: calc(50% - 1px);
+      width: 1px;
+      height: calc(3.5rem + 1px);
+      background: #ffffff;
     }
-  }
-  @media screen and (max-width: 480px) {
-    padding: 1.5rem 0;
-  }
+    & > :first-child {
+      margin-top: 0;
+    }
+    & > :first-child:before {
+      display: none;
+    }
+
+    @media screen and (max-width: 736px) {
+      & > * {
+        margin-top: 2rem;
+      }
+      & > *:before {
+        top: calc(-2rem - 1px);
+        height: calc(2rem + 1px);
+      }
+    }
+    @media screen and (max-width: 480px) {
+      padding: 1.5rem 0;
+    }
+  `}
 `;
 
 const SiteHeader = ({ loading, children }: PropsWithChildren<LoadingProp>) => {
-  const { profileImg, site } = useStaticQuery(graphql`
+  const { profileImg, bgImg, site } = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -160,7 +184,7 @@ const SiteHeader = ({ loading, children }: PropsWithChildren<LoadingProp>) => {
       }
       bgImg: file(relativePath: { eq: "homepage-bg.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1200) {
+          fluid(maxWidth: 1920) {
             src
           }
         }
@@ -168,7 +192,7 @@ const SiteHeader = ({ loading, children }: PropsWithChildren<LoadingProp>) => {
     }
   `);
   return (
-    <Header id="header" loading={loading}>
+    <Header id="header" loading={loading} bg={bgImg.childImageSharp.fluid.src}>
       <Logo loading={loading}>
         <img
           src={profileImg.childImageSharp.fluid.src}
