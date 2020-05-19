@@ -49,6 +49,9 @@ export const Article = styled.article`
   & header > * {
     padding-bottom: 0.5em;
     line-height: 1.2;
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 
   ${ImageContainer} {

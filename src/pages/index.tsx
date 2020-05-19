@@ -1,15 +1,40 @@
 import React, { useState, useEffect } from "react";
+import Loadable from "react-loadable";
 import ScrollAnim from "rc-scroll-anim";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Intro from "../components/Intro";
-import Work from "../components/Work";
-import Education from "../components/Education";
-import Skills from "../components/Skills";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
+
+const Loading = ({ error }) => {
+  if (error) {
+    return "Oh nooess!";
+  } else {
+    return <h3>Loading...</h3>;
+  }
+};
+
+const Work = Loadable({
+  loading: Loading,
+  loader: () => import("../components/Work"),
+});
+const Education = Loadable({
+  loading: Loading,
+  loader: () => import("../components/Education"),
+});
+const Skills = Loadable({
+  loading: Loading,
+  loader: () => import("../components/Skills"),
+});
+const Contact = Loadable({
+  loading: Loading,
+  loader: () => import("../components/Contact"),
+});
+const Footer = Loadable({
+  loading: Loading,
+  loader: () => import("../components/Footer"),
+});
 
 const Link = ScrollAnim.Link;
 const Element = ScrollAnim.Element;
@@ -22,7 +47,7 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <div className={loading ? "is-loading" : "body"}>
+    <div className={`body ${loading ? "is-loading" : ""}`}>
       <Layout>
         <SEO title="Home" />
         <Header loading={loading}>

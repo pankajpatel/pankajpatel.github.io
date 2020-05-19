@@ -10,12 +10,12 @@ const transitionDelay = "transition-delay: 250ms;";
 
 const Logo = styled.div<LoadingProp>`
   ${({ loading }) => `
-    --size: ${loading ? "0rem" : "5.5rem"}
+    --logoSize: ${loading ? "0rem" : "5.5rem"};
     transition: all 525ms ease !important;
     ${transitionDelay}
-    width: var(--size);
-    height: var(--size);
-    line-height: var(--size);
+    width: var(--logoSize);
+    height: var(--logoSize);
+    line-height: var(--logoSize);
     border: solid 1px #ffffff;
     border-radius: 100%;
     overflow: hidden;
@@ -92,8 +92,9 @@ const Content = styled.div`
   max-width: 100%;
 `;
 
-const Header = styled.header<LoadingProp & { bg?: string }>`
+const Header = styled.header<{ bg?: string; loading?: boolean }>`
   ${({ loading, bg }) => `
+    --logoSize: ${loading ? "0rem" : "5.5rem"};
     justify-content: center;
     min-height: 100vh;
     display: flex;
@@ -166,7 +167,10 @@ const Header = styled.header<LoadingProp & { bg?: string }>`
   `}
 `;
 
-const SiteHeader = ({ loading, children }: PropsWithChildren<LoadingProp>) => {
+const SiteHeader = ({
+  loading = true,
+  children,
+}: PropsWithChildren<LoadingProp>) => {
   const { profileImg, bgImg, site } = useStaticQuery(graphql`
     query {
       site {
