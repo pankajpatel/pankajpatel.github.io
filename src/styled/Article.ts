@@ -34,7 +34,7 @@ export const Article = styled.article`
   margin-top: 1.5rem;
   margin-bottom: 2.5rem;
   border: 1px solid rgba(100, 100, 100, 0.7);
-  background: rgba(40, 40, 40);
+  background: rgba(40, 40, 40, 1);
   border-radius: 0.25rem;
   position: relative;
   overflow: hidden;
@@ -44,6 +44,11 @@ export const Article = styled.article`
     flex: 1 auto;
     margin: 0.5rem auto;
     margin-bottom: 0.5rem;
+  }
+
+  & header > * {
+    padding-bottom: 0.5em;
+    line-height: 1.2;
   }
 
   ${ImageContainer} {

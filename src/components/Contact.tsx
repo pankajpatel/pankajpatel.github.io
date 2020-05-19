@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { Articles, PageTitle, PageSection } from "../styled";
 
-const ContactForm = styled.section`
+const ContactForm = styled(Articles)`
   form {
     margin: 0 0 2.5rem 0;
   }
@@ -255,17 +256,12 @@ const ContactForm = styled.section`
     color: rgba(255, 255, 255, 0.5) !important;
     opacity: 1;
   }
-
-  .formerize-placeholder {
-    color: rgba(255, 255, 255, 0.5) !important;
-    opacity: 1;
-  }
 `;
 
 const ContactPage = () => (
-  <>
-    <ContactForm>
-      <h2>Contact</h2>
+  <PageSection>
+    <PageTitle>Contact</PageTitle>
+    <ContactForm empty={true}>
       <form method="get" action="mailto:pankaj@time2hack.com">
         <div className="field">
           <label htmlFor="name">Subject</label>
@@ -291,7 +287,7 @@ const ContactPage = () => (
         </ul>
       </form>
     </ContactForm>
-  </>
+  </PageSection>
 );
 
 export default ContactPage;
