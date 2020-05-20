@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<header
+  className="sc-AxgMl egDMBB"
+  id="header"
+  loading={false}
+>
+  <div
+    className="sc-AxjAm dzRaiz"
+    loading={false}
+  >
+    <img
+      alt="Hello World"
+      src="https://example.com/pankaj.jpg"
+    />
+  </div>
+  <div
+    className="sc-AxhUy fXzqAK content"
+  >
+    <div
+      className="sc-AxhCb kcyvCc"
+      loading={false}
+    >
+      <h1
+        className="sc-AxirZ bJPMqW"
+      >
+        Hello World
+      </h1>
+      <p
+        className="sc-AxiKw dsHeBO"
+      >
+        Welcome to the Homepage
+      </p>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`Header renders correctly with children 1`] = `
+<header
+  className="sc-AxgMl egDMBB"
+  id="header"
+  loading={false}
+>
+  <div
+    className="sc-AxjAm dzRaiz"
+    loading={false}
+  >
+    <img
+      alt="Hello World"
+      src="https://example.com/pankaj.jpg"
+    />
+  </div>
+  <div
+    className="sc-AxhUy fXzqAK content"
+  >
+    <div
+      className="sc-AxhCb kcyvCc"
+      loading={false}
+    >
+      <h1
+        className="sc-AxirZ bJPMqW"
+      >
+        Hello World
+      </h1>
+      <p
+        className="sc-AxiKw dsHeBO"
+      >
+        Welcome to the Homepage
+      </p>
+    </div>
+  </div>
+  Children Tag
+</header>
+`;

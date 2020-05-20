@@ -58,8 +58,6 @@ const Footer = () => {
     query SiteTitleQuery {
       site {
         siteMetadata {
-          title
-          siteUrl
           socialLinks {
             twitter
             instagram
