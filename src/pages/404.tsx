@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import Layout from "../components/_Layout";
+import SEO from "../components/_SEO";
 
 const Container = styled.div`
   display: flex;

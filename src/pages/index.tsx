@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Loadable from "react-loadable";
 import ScrollAnim from "rc-scroll-anim";
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import Layout from "../components/_Layout";
+import SEO from "../components/_SEO";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Intro from "../components/Intro";
@@ -33,7 +33,7 @@ const Contact = Loadable({
 });
 const Footer = Loadable({
   loading: Loading,
-  loader: () => import("../components/Footer"),
+  loader: () => import("../components/_Footer"),
 });
 
 const Link = ScrollAnim.Link;
