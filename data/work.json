@@ -1,0 +1,70 @@
+[
+  {
+    "company": "OLX Group",
+    "location": "Berlin, Germany",
+    "duration": {
+      "from": "2019-11-01",
+      "to": "2020-05-05"
+    },
+    "positions": [
+      {
+        "from": "2019-11-01",
+        "position": "FrontEnd Engineer"
+      }
+    ],
+    "description": "Worked as Frontend Engineer in Seller Reputation Team with React, TypeScript, StyledComponents, Jest, Cypress etc",
+    "img": "olx.png"
+  },
+  {
+    "company": "HolidayPirates GmbH",
+    "location": "Berlin, Germany",
+    "duration": {
+      "from": "2016-12-01",
+      "to": "2019-10-31"
+    },
+    "positions": [
+      {
+        "from": "2019-01-01",
+        "position": "Senior Frontend Developer"
+      },
+      {
+        "from": "2016-12-01",
+        "position": "Frontend Developer"
+      }
+    ],
+    "description": "Worked as Front End Developer for Booking Engine in German Market and Main Blog. Primary technologies we WebComponents, React, Webpact, StyledComponents",
+    "img": "hp.png"
+  },
+  {
+    "company": "Tata Consultancy Pvt. Ltd",
+    "location": "New Delhi, India",
+    "duration": {
+      "from": "2013-02-28",
+      "to": "2016-11-30"
+    },
+    "positions": [
+      {
+        "from": "2013-02-28",
+        "position": "Systems Engineer"
+      }
+    ],
+    "description": "Worked as a Front End Developer across different projects for various Clients. Working closely with UX and Design team and provisioning the Front End Activities are majority of my tasks.",
+    "img": "tcs.png"
+  },
+  {
+    "company": "Codeware Technologies Pvt. Ltd",
+    "location": "Indore, India",
+    "duration": {
+      "from": "2012-04-02",
+      "to": "2013-02-15"
+    },
+    "positions": [
+      {
+        "from": "2012-04-02",
+        "position": "Full Stack Developer"
+      }
+    ],
+    "description": "Worked as a Full Stack Developer with PHP, MySQL, HTML/HTML5, CSS/CSS3, JavaScript, jQuery etc to build inventory and finance management application for various clients.",
+    "img": "codeware.png"
+  }
+]
