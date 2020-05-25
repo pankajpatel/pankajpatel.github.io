@@ -27,6 +27,10 @@ const Skills = Loadable({
   loading: Loading,
   loader: () => import("../components/Skills"),
 });
+const InstagramPosts = Loadable({
+  loading: Loading,
+  loader: () => import("../components/InstagramPosts"),
+});
 const Contact = Loadable({
   loading: Loading,
   loader: () => import("../components/Contact"),
@@ -65,6 +69,9 @@ const IndexPage = () => {
         <Element id={"/skills"}>
           <Skills />
         </Element>
+        <div>
+          <InstagramPosts />
+        </div>
         <Element id={"/contact"}>
           <Contact />
         </Element>
