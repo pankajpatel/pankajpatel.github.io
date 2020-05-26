@@ -61,7 +61,7 @@ const ContactForm = styled(Articles)`
     font-size: 0.8rem;
     font-weight: 300;
     line-height: 1.5;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.75rem 0;
   }
 
   input[type="text"],
@@ -273,7 +273,7 @@ const ContactPage = () => (
         </div>
         <div className="field">
           <label htmlFor="message">Message</label>
-          <textarea name="message" id="message" rows="4" />
+          <textarea name="message" id="message" rows={4} />
         </div>
         <ul className="actions">
           <li>

@@ -1,3 +1,5 @@
+import { FluidObject } from "gatsby-image";
+
 export type Duration = {
   to: string;
   from: string;
@@ -26,3 +28,12 @@ export type Education = {
   description?: string;
   course: string;
 };
+
+export interface IInstagramCard {
+  id: string;
+  likes: number;
+  comments: number;
+  localFile: {
+    childImageSharp: { fluid: FluidObject };
+  };
+}

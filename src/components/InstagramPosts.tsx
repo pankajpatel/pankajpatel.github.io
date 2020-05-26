@@ -1,8 +1,9 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import InstaCard from "./InstaCard";
+import InstagramCard from "./InstagramCard";
 import styled from "styled-components";
 import { PageSection } from "../styled";
+import { IInstagramCard } from "../types";
 
 const query = graphql`
   {
@@ -34,7 +35,7 @@ const Grid = styled(PageSection)`
   max-width: 768px;
   margin: 0 auto;
   & > * {
-    min-width: 33%;
+    min-width: 33.3333%;
   }
 `;
 
@@ -42,9 +43,8 @@ const InstagramPosts = () => {
   const data = useStaticQuery(query);
   return (
     <Grid>
-      {/* @todo: fix type */}
-      {data.posts.nodes.map((post: any) => (
-        <InstaCard {...post} key={post.id} />
+      {data.posts.nodes.map((post: IInstagramCard) => (
+        <InstagramCard {...post} key={post.id} />
       ))}
     </Grid>
   );
