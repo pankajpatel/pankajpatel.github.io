@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Loadable from "react-loadable";
 import ScrollAnim from "rc-scroll-anim";
-import Layout from "../components/_Layout";
-import SEO from "../components/_SEO";
+import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Intro from "../components/Intro";
@@ -27,13 +27,17 @@ const Skills = Loadable({
   loading: Loading,
   loader: () => import("../components/Skills"),
 });
+const InstagramPosts = Loadable({
+  loading: Loading,
+  loader: () => import("../components/InstagramPosts"),
+});
 const Contact = Loadable({
   loading: Loading,
   loader: () => import("../components/Contact"),
 });
 const Footer = Loadable({
   loading: Loading,
-  loader: () => import("../components/_Footer"),
+  loader: () => import("../components/Footer"),
 });
 
 const Link = ScrollAnim.Link;
@@ -65,6 +69,9 @@ const IndexPage = () => {
         <Element id={"/skills"}>
           <Skills />
         </Element>
+        <div>
+          <InstagramPosts />
+        </div>
         <Element id={"/contact"}>
           <Contact />
         </Element>
