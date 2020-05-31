@@ -262,7 +262,7 @@ const ContactPage = () => (
   <PageSection>
     <PageTitle>Contact</PageTitle>
     <ContactForm empty={true}>
-      <form method="get" action="mailto:pankaj@time2hack.com">
+      <form method="POST" netlify name="contact-form">
         <div className="field">
           <label htmlFor="name">Subject</label>
           <input type="text" name="subject" id="subject" />
