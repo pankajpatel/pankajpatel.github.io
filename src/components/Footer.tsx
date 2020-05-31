@@ -5,7 +5,13 @@ import GithubSvg from "../svg/github.svg";
 import LinkedinSvg from "../svg/linkedin.svg";
 import TwitterSvg from "../svg/twitter.svg";
 import InstagramSvg from "../svg/instagram.svg";
+import NetlifySvg from "../svg/netlify-for-dark.svg";
 
+const NetlifyLogo = styled.a`
+  display: block;
+  margin: 1rem 0;
+  text-align: center;
+`;
 const FooterContainer = styled.footer`
   text-align: center;
   font-size: 0.8rem;
@@ -93,6 +99,9 @@ const Footer = () => {
           </a>
         </li>
       </Icons>
+      <NetlifyLogo href="https://netlify.com">
+        <NetlifySvg />
+      </NetlifyLogo>
     </FooterContainer>
   );
 };
