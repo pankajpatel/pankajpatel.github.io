@@ -1,0 +1,75 @@
+name: test-coverage
+
+on: pull_request
+
+jobs:
+  install-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: true
+      matrix:
+        node-version: [10]
+
+    steps:
+      - name: Add Running Label
+        # https://github.com/actions/github-script#apply-a-label-to-an-issue
+        uses: actions/github-script@v2
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.setLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: [':arrows_counterclockwise:']
+            })
+
+
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # https://github.com/actions/cache/blob/main/examples.md#node---yarn
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install Yarn and Project Dependencies
+        run: |
+          npm i -g yarn
+          yarn install
+
+      - name: Test and Generate Coverage
+        run: yarn run test:coverage
+
+      - name: Print the Total Coverage
+        id: coverage-percent
+        shell: bash
+        run: |
+          value=`sed -n 47p coverage/lcov-report/index.html | awk -F '>' '{print $2}' | awk -F '%' '{print $1}'`
+          echo "::set-output name=coverage::$value"
+          echo $value
+
+      # https://github.com/actions/github-script#apply-a-label-to-an-issue
+      - name: Add Coverage Label
+        uses: actions/github-script@v2
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.setLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['COV: ${{steps.coverage-percent.outputs.coverage}}']
+            })
