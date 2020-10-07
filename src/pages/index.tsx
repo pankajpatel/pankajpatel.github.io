@@ -1,19 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Loadable from "react-loadable";
 import ScrollAnim from "rc-scroll-anim";
+
+import Loading from "../components/Loading";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Intro from "../components/Intro";
-
-const Loading = ({ error }) => {
-  if (error) {
-    return "Oh nooess!";
-  } else {
-    return <h3>Loading...</h3>;
-  }
-};
 
 const Work = Loadable({
   loading: Loading,
