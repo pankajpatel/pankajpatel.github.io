@@ -75,8 +75,8 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram`,
       options: {
-        access_token: process.env.GATSBY_FB_ACCESS_TOKEN,
-        instagram_id: process.env.GATSBY_INSTAGRAM_ID,
+        // access_token: process.env.GATSBY_FB_ACCESS_TOKEN,
+        // instagram_id: process.env.GATSBY_INSTAGRAM_ID,
         username: config.social.instagram,
         maxPosts: 18,
       },

@@ -2,10 +2,10 @@
 
 exports[`Footer renders correctly 1`] = `
 <footer
-  className="sc-AxirZ eFVDSg"
+  className="sc-gtssRu JMAfz"
 >
   <ul
-    className="sc-AxiKw hlqtSb"
+    className="sc-dlnjPT jqSsCc"
   >
     <li>
       <a
@@ -41,7 +41,7 @@ exports[`Footer renders correctly 1`] = `
     </li>
   </ul>
   <a
-    className="sc-AxjAm dTHUQo"
+    className="sc-bdnylx eVDkSl"
     href="https://netlify.com"
   >
     <div />

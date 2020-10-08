@@ -2,12 +2,12 @@
 
 exports[`Header renders correctly 1`] = `
 <header
-  className="sc-AxgMl egDMBB"
+  className="sc-jSFkmK fHXQzz"
   id="header"
   loading={false}
 >
   <div
-    className="sc-AxjAm dzRaiz"
+    className="sc-bdnylx eSgtuu"
     loading={false}
   >
     <img
@@ -16,19 +16,19 @@ exports[`Header renders correctly 1`] = `
     />
   </div>
   <div
-    className="sc-AxhUy fXzqAK content"
+    className="sc-eCApGN bFSBXu content"
   >
     <div
-      className="sc-AxhCb kcyvCc"
+      className="sc-hKFyIo bssFZl"
       loading={false}
     >
       <h1
-        className="sc-AxirZ bJPMqW"
+        className="sc-gtssRu EDmEt"
       >
         Hello World
       </h1>
       <p
-        className="sc-AxiKw dsHeBO"
+        className="sc-dlnjPT hbbtex"
       >
         Welcome to the Homepage
       </p>
@@ -39,12 +39,12 @@ exports[`Header renders correctly 1`] = `
 
 exports[`Header renders correctly with children 1`] = `
 <header
-  className="sc-AxgMl egDMBB"
+  className="sc-jSFkmK fHXQzz"
   id="header"
   loading={false}
 >
   <div
-    className="sc-AxjAm dzRaiz"
+    className="sc-bdnylx eSgtuu"
     loading={false}
   >
     <img
@@ -53,19 +53,19 @@ exports[`Header renders correctly with children 1`] = `
     />
   </div>
   <div
-    className="sc-AxhUy fXzqAK content"
+    className="sc-eCApGN bFSBXu content"
   >
     <div
-      className="sc-AxhCb kcyvCc"
+      className="sc-hKFyIo bssFZl"
       loading={false}
     >
       <h1
-        className="sc-AxirZ bJPMqW"
+        className="sc-gtssRu EDmEt"
       >
         Hello World
       </h1>
       <p
-        className="sc-AxiKw dsHeBO"
+        className="sc-dlnjPT hbbtex"
       >
         Welcome to the Homepage
       </p>
