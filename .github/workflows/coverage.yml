@@ -6,31 +6,12 @@ jobs:
   install-and-test:
     runs-on: ubuntu-latest
 
-    strategy:
-      fail-fast: true
-      matrix:
-        node-version: [10]
-
     steps:
-      - name: Add Running Label
-        # https://github.com/actions/github-script#apply-a-label-to-an-issue
-        uses: actions/github-script@v2
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            github.issues.setLabels({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: [':arrows_counterclockwise:']
-            })
-
-
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 10
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 10
 
       # https://github.com/actions/cache/blob/main/examples.md#node---yarn
       - name: Get yarn cache directory path
@@ -67,9 +48,37 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            github.issues.setLabels({
+            let newLabel = 'COV: ${{steps.coverage-percent.outputs.coverage}}'
+            const labels = await github.issues.listLabelsOnIssue({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            })
+            console.log(labels.data)
+            let covLabel = null
+            labels.data.forEach(label => {
+              if (label.name.match(/COV:/)) {
+                covLabel = label
+              }
+            })
+            if (covLabel && covLabel.name === newLabel) {
+              covLabel = null
+            }
+            covLabel && github.issues.removeLabel({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              labels: ['COV: ${{steps.coverage-percent.outputs.coverage}}']
+              name: covLabel.name,
             })
+            newLabel && github.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: [newLabel]
+            })
+
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v1
+        with:
+          name: code-coverage-report
+          path: coverage

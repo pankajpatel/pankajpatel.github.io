@@ -72,15 +72,15 @@ module.exports = {
         path: `${__dirname}/data/`,
       },
     },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        access_token: process.env.GATSBY_FB_ACCESS_TOKEN,
-        instagram_id: process.env.GATSBY_INSTAGRAM_ID,
-        username: config.social.instagram,
-        maxPosts: 18,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-instagram`,
+    //   options: {
+    //     // access_token: process.env.GATSBY_FB_ACCESS_TOKEN,
+    //     // instagram_id: process.env.GATSBY_INSTAGRAM_ID,
+    //     username: config.social.instagram,
+    //     maxPosts: 18,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
