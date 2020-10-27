@@ -1,6 +1,35 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
+import Recaptcha from "react-recaptcha";
 import { Articles, PageTitle, PageSection } from "../styled";
+
+const objectFromFormData = (formData) => {
+  const values = {};
+  for (let [key, value] of formData.entries()) {
+    if (values[key]) {
+      if (!(values[key] instanceof Array)) {
+        values[key] = new Array(values[key]);
+      }
+      values[key].push(value);
+    } else {
+      values[key] = value;
+    }
+  }
+  return values;
+};
+
+const ReCaptchaStyledContainer = styled.div`
+  margin: 5px;
+  & > div > div {
+    margin: 0 auto;
+  }
+`;
+
+const Error = styled.div`
+  color: #ff0000;
+  margin: 5px;
+  text-align: center;
+`;
 
 const ContactForm = styled(Articles)`
   form {
@@ -258,36 +287,99 @@ const ContactForm = styled(Articles)`
   }
 `;
 
-const ContactPage = () => (
-  <PageSection>
-    <PageTitle>Contact</PageTitle>
-    <ContactForm empty={true}>
-      <form method="POST" netlify name="contact-form">
-        <div className="field">
-          <label htmlFor="name">Subject</label>
-          <input type="text" name="subject" id="subject" />
-        </div>
-        <div className="field">
-          <label htmlFor="email">Email</label>
-          <input type="text" name="bcc" id="bcc" />
-        </div>
-        <div className="field">
-          <label htmlFor="message">Message</label>
-          <textarea name="message" id="message" rows={4} />
-        </div>
-        <ul className="actions">
-          <li>
-            <button type="submit" className="special">
-              Send Message
-            </button>
-          </li>
-          <li>
-            <button type="reset">Reset</button>
-          </li>
-        </ul>
-      </form>
-    </ContactForm>
-  </PageSection>
-);
+const ContactPage = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const captchaRef = useRef<HTMLElement>(null);
+  const [captchaResponse, setCaptchaResponse] = useState(null);
+  const [state, setState] = useState<Record<string, any>>({
+    submitted: false,
+    error: false,
+  });
+  const onSubmit = (e) => {
+    e?.preventDefault();
+    if (!captchaResponse) {
+      setState((prev) => ({ ...prev, error: "Please Verify Captcha!" }));
+      return null;
+    }
+
+    const headers = new Headers();
+    headers.append("Content-Type", "application/json");
+    const request = new Request("/.netlify/functions/send-email", {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(objectFromFormData(new FormData(formRef.current))),
+    });
+
+    fetch(request)
+      .then((r) => r.json())
+      .then((data) => {
+        const error = !Boolean(data.id);
+        setState({ submitted: true, error });
+        if (!error) {
+          formRef.current.reset();
+          captchaRef.current?.reset();
+        }
+      });
+  };
+  // specifying your onload callback function
+  const callback = () => {
+    console.log("Done!!!!");
+    console.log(captchaRef.current);
+  };
+
+  return (
+    <PageSection>
+      <PageTitle>Contact</PageTitle>
+      <ContactForm empty={true}>
+        <form
+          method="POST"
+          ref={formRef}
+          name="contact-form"
+          onSubmit={onSubmit}
+        >
+          <div className="field">
+            <label htmlFor="name">Subject</label>
+            <input type="text" name="subject" id="subject" />
+          </div>
+          <div className="field">
+            <label htmlFor="email">Email</label>
+            <input type="text" name="bcc" id="bcc" />
+          </div>
+          <div className="field">
+            <label htmlFor="message">Message</label>
+            <textarea name="message" id="message" rows={4} />
+          </div>
+          <ReCaptchaStyledContainer>
+            <Recaptcha
+              theme="dark"
+              render="explicit"
+              onloadCallback={callback}
+              verifyCallback={(res) => {
+                setCaptchaResponse(res);
+                if (state.error === "Please Verify Captcha!") {
+                  setState((prev) => ({ ...prev, error: false }));
+                }
+              }}
+              expiredCallback={() => setCaptchaResponse(null)}
+              ref={(ref) => (captchaRef.current = ref)}
+              sitekey={process.env.GATSBY_RECAPTCHA_SITEKEY}
+            />
+          </ReCaptchaStyledContainer>
+          <ul className="actions">
+            <li>
+              <button type="submit" className="special">
+                Send Message
+              </button>
+            </li>
+            <li>
+              <button type="reset">Reset</button>
+            </li>
+          </ul>
+          <Error>{state.error}</Error>
+        </form>
+      </ContactForm>
+    </PageSection>
+  );
+};
 
 export default ContactPage;
