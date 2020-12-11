@@ -1,5 +1,21 @@
 [
   {
+    "company": "Billie GmbH",
+    "location": "Berlin, Germany",
+    "duration": {
+      "from": "2020-06-01",
+      "to": "2020-06-01"
+    },
+    "positions": [
+      {
+        "from": "2020-06-01",
+        "position": "Sr. FrontEnd Engineer"
+      }
+    ],
+    "description": "Working on Dashboard application with React, React Redux, Router, SCSS, Jest etc",
+    "img": "billie.png"
+  },
+  {
     "company": "OLX Group",
     "location": "Berlin, Germany",
     "duration": {

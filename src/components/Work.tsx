@@ -53,7 +53,9 @@ const WorkPage = () => {
                 <strong>
                   {work.duration.from}
                   {" - "}
-                  {work.duration.to}
+                  {work.duration.from === work.duration.to
+                    ? "Current"
+                    : work.duration.to}
                 </strong>
               </header>
               <Description>
