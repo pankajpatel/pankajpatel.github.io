@@ -1,6 +1,6 @@
 const social = {
   instagram: "pankaj_patel",
-  twitter: "@patel_pankaj_",
+  twitter: "@heypankaj_",
   github: "pankajpatel",
   linkedin: "pankajpatel1",
 };
