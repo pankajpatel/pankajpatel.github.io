@@ -60,11 +60,10 @@ module.exports = {
       },
     },
     {
-      resolve: `@devular/gatsby-plugin-plausible`,
+      resolve: `gatsby-plugin-plausible`,
       options: {
         domain: `pankaj.pro`,
         customDomain: `analytics.t2h.app`,
-        proxyScript: `/js/plausible.js`,
       },
     },
     {
