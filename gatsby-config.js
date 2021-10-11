@@ -60,10 +60,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-splitbee`,
+      resolve: `gatsby-plugin-plausible`,
       options: {
-        includeInDevelopment: false,
-        delayTimeout: 0,
+        domain: `pankaj.pro`,
+        customDomain: `analytics.t2h.app`,
       },
     },
     {
