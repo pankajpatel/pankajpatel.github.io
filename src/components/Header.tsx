@@ -122,13 +122,15 @@ const Header = styled.header<{ bg?: string; loading?: boolean }>`
       background-position: center;
       background-size: cover;
       }
-    ${bg &&
+    ${
+      bg &&
       `&:after {
         z-index: -1;
         width: 100%;
         transform: translateX(-50%);
         background-image: url(${bg});
-    }`}
+    }`
+    }
 
     & > * {
       transition: opacity 0.325s ease-in-out;
@@ -179,7 +181,7 @@ const SiteHeader = ({
           subTitle
         }
       }
-      profileImg: file(relativePath: { eq: "pankaj.jpg" }) {
+      profileImg: file(relativePath: { eq: "pankaj.png" }) {
         childImageSharp {
           fluid(maxWidth: 100) {
             src

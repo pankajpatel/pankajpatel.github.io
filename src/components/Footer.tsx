@@ -8,9 +8,16 @@ import InstagramSvg from "../svg/instagram.svg";
 import NetlifySvg from "../svg/netlify-for-dark.svg";
 
 const NetlifyLogo = styled.a`
-  display: block;
+  display: inline-block;
   margin: 1rem 0;
   text-align: center;
+  text-decoration: none;
+  border-bottom: none;
+  transition: all ease 500ms;
+
+  &:hover {
+    transform: rotateY(360deg);
+  }
 `;
 const FooterContainer = styled.footer`
   text-align: center;
