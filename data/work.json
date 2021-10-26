@@ -1,10 +1,26 @@
 [
   {
+    "company": "Hotjar",
+    "location": "Remote, France",
+    "duration": {
+      "from": "2020-10-18",
+      "to": "2020-10-18"
+    },
+    "positions": [
+      {
+        "from": "2021-10-18",
+        "position": "FrontEnd Engineer"
+      }
+    ],
+    "description": "Working with Analytics tool to provide the best UX while navigating the Heatmaps",
+    "img": "hotjar.png"
+  },
+  {
     "company": "Billie GmbH",
     "location": "Berlin, Germany",
     "duration": {
       "from": "2020-06-01",
-      "to": "2020-06-01"
+      "to": "2021-09-30"
     },
     "positions": [
       {
