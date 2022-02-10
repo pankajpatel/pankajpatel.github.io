@@ -14,7 +14,6 @@ import Skills from "../components/Skills";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
-const Link = ScrollAnim.Link;
 const Element = ScrollAnim.Element;
 
 const IndexPage = () => {
@@ -29,7 +28,7 @@ const IndexPage = () => {
       <Layout>
         <SEO title="Portfolio" />
         <Header isLoading={isLoading}>
-          <Nav link={Link} />
+          <Nav />
         </Header>
         <Element id={"/intro"}>
           <Intro />

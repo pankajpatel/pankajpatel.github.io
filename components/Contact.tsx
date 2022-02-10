@@ -1,16 +1,21 @@
-import React, { useRef, useState } from "react";
+import React, { FormEventHandler, useRef, useState } from "react";
 import styled from "styled-components";
 import Recaptcha from "react-recaptcha";
 import { Articles, PageTitle, PageSection } from "./styled";
 
-const objectFromFormData = (formData) => {
-  const values = {};
+type Value = string | number | boolean;
+
+const objectFromFormData = (formData: FormData) => {
+  const values: Record<string, Value | Array<Value>> = {};
+  // @ts-ignore
   for (let [key, value] of formData.entries()) {
     if (values[key]) {
       if (!(values[key] instanceof Array)) {
-        values[key] = new Array(values[key]);
+        const v = values[key];
+        values[key] = [];
+        (values[key] as Array<Value>).push(v as Value);
       }
-      values[key].push(value);
+      (values[key] as Array<Value>).push(value);
     } else {
       values[key] = value;
     }
@@ -289,14 +294,17 @@ const ContactForm = styled(Articles)`
 
 const ContactPage = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const captchaRef = useRef<HTMLElement>(null);
-  const [captchaResponse, setCaptchaResponse] = useState(null);
+  const captchaRef = useRef<Recaptcha>(null);
+  const [captchaResponse, setCaptchaResponse] = useState<string | null>(null);
   const [state, setState] = useState<Record<string, any>>({
     submitted: false,
     error: false,
   });
-  const onSubmit = (e) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e?.preventDefault();
+    if (!formRef.current) {
+      return null;
+    }
     if (!captchaResponse) {
       setState((prev) => ({ ...prev, error: "Please Verify Captcha!" }));
       return null;
@@ -316,8 +324,8 @@ const ContactPage = () => {
         const error = !Boolean(data.id);
         setState({ submitted: true, error });
         if (!error) {
-          formRef.current.reset();
-          captchaRef.current?.reset();
+          formRef.current?.reset?.();
+          captchaRef.current?.reset?.();
         }
       });
   };
@@ -354,14 +362,14 @@ const ContactPage = () => {
               theme="dark"
               render="explicit"
               onloadCallback={callback}
-              verifyCallback={(res) => {
+              verifyCallback={(res: string) => {
                 setCaptchaResponse(res);
                 if (state.error === "Please Verify Captcha!") {
                   setState((prev) => ({ ...prev, error: false }));
                 }
               }}
               expiredCallback={() => setCaptchaResponse(null)}
-              ref={(ref) => (captchaRef.current = ref)}
+              ref={captchaRef}
               sitekey={process.env.GATSBY_RECAPTCHA_SITEKEY}
             />
           </ReCaptchaStyledContainer>

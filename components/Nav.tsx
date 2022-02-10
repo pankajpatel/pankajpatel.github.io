@@ -1,11 +1,11 @@
 import React from "react";
-import Link from "next/link";
+import ScrollAnim from "rc-scroll-anim";
 import styled from "styled-components";
 import menuItems from "../data/nav.json";
 
 const NavLinks = styled.ul``;
 
-const NavLink = styled(Link)`
+const NavLink = styled(ScrollAnim.Link)`
   display: block;
   min-width: 7.5rem;
   height: 2.75rem;
@@ -67,14 +67,12 @@ const Nav = styled.nav`
   }
 `;
 
-const Navigation = ({ link }: { link?: React.Component }) => (
+const Navigation = () => (
   <Nav>
     <NavLinks>
       {menuItems.map((item: Record<string, string>) => (
         <li key={item.article}>
-          <NavLink as={link || Link} to={`/${item.article}`}>
-            {item.label}
-          </NavLink>
+          <NavLink to={`/${item.article}`}>{item.label}</NavLink>
         </li>
       ))}
     </NavLinks>
