@@ -16,7 +16,7 @@ module.exports = {
   // URL to this website. If you bought `www.domain.com`, then it will be `www.domain.com`.
   url: "https://pankaj.pro",
   // Favicon that will display on browsers.
-  logo: "src/images/logo.png",
+  logo: "images/logo.png",
   // Who made this website?
   author: "Pankaj patel",
   // What's the website of the author?
@@ -28,15 +28,13 @@ module.exports = {
     github: `https://github.com/${social.github}`,
     linkedin: `https://linkedin.com/in/${social.linkedin}`,
   },
-  googleAnalyticsId: "UA-37089202-1",
   themeColor: "#fff",
   backgroundColor: "#333",
   address: {
-    city: "Berlin",
-    country: "Germany",
+    city: "Lyon",
+    country: "France",
   },
   contact: {
     email: "hello@pankaj.pro",
   },
-  foundingDate: "2020",
 };
