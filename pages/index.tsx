@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ScrollAnim from "rc-scroll-anim";
+import { Element } from "rc-scroll-anim";
 
 import Loading from "../components/Loading";
 import Layout from "../components/Layout";
@@ -13,8 +13,6 @@ import Education from "../components/Education";
 import Skills from "../components/Skills";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-
-const Element = ScrollAnim.Element;
 
 const IndexPage = () => {
   const [isLoading, setLoading] = useState<boolean>(true);

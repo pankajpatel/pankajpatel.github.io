@@ -12,7 +12,7 @@
         "position": "FrontEnd Engineer"
       }
     ],
-    "description": "Working with Analytics tool to provide the best UX while navigating the Heatmaps",
+    "description": "Working with Heatmaps teams to provide the best UX while navigating the Heatmaps",
     "img": "hotjar.png"
   },
   {
@@ -28,7 +28,7 @@
         "position": "Sr. FrontEnd Engineer"
       }
     ],
-    "description": "Working on Dashboard application with React, React Redux, Router, SCSS, Jest etc",
+    "description": "Worked on Invoice Financing Dashboard for B2B clients built with React, Redux, Router, SCSS, Jest etc",
     "img": "billie.png"
   },
   {
@@ -64,11 +64,11 @@
         "position": "Frontend Developer"
       }
     ],
-    "description": "Worked as Front End Developer for Booking Engine in German Market and Main Blog. Primary technologies we WebComponents, React, Webpact, StyledComponents",
+    "description": "Worked as FrontEnd Dev for Booking Engine in German Market and Main Blog. Primary technologies were WebComponents, React, Webpack, StyledComponents",
     "img": "hp.png"
   },
   {
-    "company": "Tata Consultancy Pvt. Ltd",
+    "company": "Tata Consultancy Pvt. Ltd.",
     "location": "New Delhi, India",
     "duration": {
       "from": "2013-02-28",
@@ -80,11 +80,11 @@
         "position": "Systems Engineer"
       }
     ],
-    "description": "Worked as a Front End Developer across different projects for various Clients. Working closely with UX and Design team and provisioning the Front End Activities are majority of my tasks.",
+    "description": "Worked as a FrontEnd Dev across different projects for various Clients. Worked closely with UX and Design team and provisioning the Front End Activities for UX/UI onboarding & training of Client Teams",
     "img": "tcs.png"
   },
   {
-    "company": "Codeware Technologies Pvt. Ltd",
+    "company": "Codeware Technologies Pvt. Ltd.",
     "location": "Indore, India",
     "duration": {
       "from": "2012-04-02",
@@ -96,7 +96,7 @@
         "position": "Full Stack Developer"
       }
     ],
-    "description": "Worked as a Full Stack Developer with PHP, MySQL, HTML/HTML5, CSS/CSS3, JavaScript, jQuery etc to build inventory and finance management application for various clients.",
+    "description": "Worked as a FullStack Dev with PHP, MySQL, HTML/HTML5, CSS/CSS3, JavaScript, jQuery etc. to build inventory and finance management application for various clients.",
     "img": "codeware.png"
   }
 ]

@@ -1,11 +1,11 @@
 import React from "react";
-import ScrollAnim from "rc-scroll-anim";
+import { Link } from "rc-scroll-anim";
 import styled from "styled-components";
 import menuItems from "../data/nav.json";
 
 const NavLinks = styled.ul``;
 
-const NavLink = styled(ScrollAnim.Link)`
+const NavLink = styled(Link)`
   display: block;
   min-width: 7.5rem;
   height: 2.75rem;
