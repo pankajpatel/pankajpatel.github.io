@@ -90,9 +90,8 @@ const ContactForm = styled(Articles)`
   }
 
   label {
-    color: #ffffff;
+    color: var(--color-white, #fff);
     display: block;
-    font-size: 0.8rem;
     font-weight: 300;
     line-height: 1.5;
     margin: 0 0 0.75rem 0;
@@ -112,7 +111,7 @@ const ContactForm = styled(Articles)`
       background-color 0.2s ease-in-out;
     background: transparent;
     border-radius: 4px;
-    border: solid 1px #ffffff;
+    border: solid 1px var(--color-white, #fff);
     color: inherit;
     display: block;
     outline: 0;
@@ -137,13 +136,13 @@ const ContactForm = styled(Articles)`
   select:focus,
   textarea:focus {
     background: rgba(255, 255, 255, 0.075);
-    border-color: #ffffff;
-    box-shadow: 0 0 0 1px #ffffff;
+    border-color: var(--color-white, #fff);
+    box-shadow: 0 0 0 1px var(--color-white, #fff);
   }
 
   select option {
     background: #1b1f22;
-    color: #ffffff;
+    color: var(--color-white, #fff);
   }
 
   .select-wrapper {
@@ -162,7 +161,7 @@ const ContactForm = styled(Articles)`
   }
 
   .select-wrapper:before {
-    color: #ffffff;
+    color: var(--color-white, #fff);
     content: "\F107";
     display: block;
     height: 2.75rem;
@@ -210,7 +209,7 @@ const ContactForm = styled(Articles)`
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color: #ffffff;
+    color: var(--color-white, #fff);
     cursor: pointer;
     display: inline-block;
     font-size: 0.8rem;
@@ -236,7 +235,7 @@ const ContactForm = styled(Articles)`
     transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
       background-color 0.2s ease-in-out;
     border-radius: 4px;
-    border: solid 1px #ffffff;
+    border: solid 1px var(--color-white, #fff);
     content: "";
     display: inline-block;
     height: 1.65rem;
@@ -250,8 +249,8 @@ const ContactForm = styled(Articles)`
 
   input[type="checkbox"]:checked + label:before,
   input[type="radio"]:checked + label:before {
-    background: #ffffff !important;
-    border-color: #ffffff !important;
+    background: var(--color-white, #fff) !important;
+    border-color: var(--color-white, #fff) !important;
     color: #1b1f22;
     content: "\F00C";
   }
@@ -259,8 +258,8 @@ const ContactForm = styled(Articles)`
   input[type="checkbox"]:focus + label:before,
   input[type="radio"]:focus + label:before {
     background: rgba(255, 255, 255, 0.075);
-    border-color: #ffffff;
-    box-shadow: 0 0 0 1px #ffffff;
+    border-color: var(--color-white, #fff);
+    box-shadow: 0 0 0 1px var(--color-white, #fff);
   }
 
   input[type="checkbox"] + label:before {

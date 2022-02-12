@@ -34,12 +34,12 @@ const Nav = styled.nav`
     margin-bottom: 0;
     list-style: none;
     padding-left: 0;
-    border: solid 1px #ffffff;
+    border: solid 1px var(--color-white, #fff);
     border-radius: 4px;
   }
   ${NavLinks} li {
     padding-left: 0;
-    border-left: solid 1px #ffffff;
+    border-left: solid 1px var(--color-white, #fff);
   }
   ${NavLinks} li:first-child {
     border-left: 0;
@@ -53,7 +53,7 @@ const Nav = styled.nav`
     }
     & ${NavLinks} li {
       border-left: 0;
-      border-top: solid 1px #ffffff;
+      border-top: solid 1px var(--color-white, #fff);
     }
     & ${NavLinks} li:first-child {
       border-top: 0;

@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 const Section = styled.section`
   text-align: center;
-  padding: 2.5rem 1rem;
+  padding: 2.5rem 0.5rem;
 `;
 
 const InfoContainer = styled.div`
   max-width: 768px;
   margin: 0 auto;
-  font-size: 1.2rem;
+  font-size: 2rem;
 `;
 
 const Intro = () => (

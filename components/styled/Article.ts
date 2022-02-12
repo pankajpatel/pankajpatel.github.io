@@ -65,4 +65,18 @@ export const Article = styled.article`
       opacity: 1;
     }
   }
+
+  @media (pointer: coarse) {
+    padding-bottom: 0;
+
+    ${Description} {
+      position: static;
+      height: auto;
+      opacity: 1;
+      width: auto;
+      max-width: none;
+      margin-left: -1rem !important;
+      margin-right: -1rem !important;
+    }
+  }
 `;

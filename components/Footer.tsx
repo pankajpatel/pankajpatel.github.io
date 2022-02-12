@@ -47,6 +47,7 @@ const Icons = styled.ul`
     text-align: center;
     width: var(--dimension);
     transition: all ease 200ms;
+    border-bottom: none;
   }
 
   & li a:hover {

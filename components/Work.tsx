@@ -10,6 +10,7 @@ import {
   Article,
 } from "./styled";
 import workData from "../data/work.json";
+import { Duration } from "./Duration";
 
 const WorkPage = () => (
   <PageSection>
@@ -25,13 +26,9 @@ const WorkPage = () => (
             <header>
               <h2>{work.positions[0].position}</h2>
               <h3>{work.company}</h3>
-              <strong>
-                {work.duration.from}
-                {" - "}
-                {work.duration.from === work.duration.to
-                  ? "Current"
-                  : work.duration.to}
-              </strong>
+              <em>
+                <Duration {...work.duration} />
+              </em>
             </header>
             <Description>
               <span>{work.description}</span>

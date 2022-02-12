@@ -9,6 +9,7 @@ import {
 } from "./styled";
 
 import educations from "../data/education";
+import { Duration } from "./Duration";
 
 const EducationPage = () => (
   <PageSection>
@@ -20,9 +21,9 @@ const EducationPage = () => (
             <h3>{edu.course}</h3>
             <h4>{edu.title}</h4>
             <h5>{edu.location}</h5>
-            <strong>
-              {edu.year.from} - {edu.year.to}
-            </strong>
+            <em>
+              <Duration {...edu.year} />
+            </em>
           </header>
           {edu.description && <Description>{edu.description}</Description>}
         </Article>

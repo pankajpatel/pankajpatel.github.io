@@ -19,7 +19,7 @@ const Logo = styled.div<LoadingProp>`
     width: var(--logoSize);
     height: var(--logoSize);
     line-height: var(--logoSize);
-    border: solid 1px #ffffff;
+    border: solid 1px var(--color-white, #fff);
     border-radius: 100%;
     overflow: hidden;
     padding: 4px;
@@ -148,7 +148,7 @@ const Header = styled.header<{ bg?: string; isLoading?: boolean }>`
       left: calc(50% - 1px);
       width: 1px;
       height: calc(3.5rem + 1px);
-      background: #ffffff;
+      background: var(--color-white, #fff);
     }
     & > :first-child {
       margin-top: 0;
