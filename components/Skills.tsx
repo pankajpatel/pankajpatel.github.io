@@ -9,6 +9,8 @@ import {
 } from "./styled";
 import skills from "../data/skills.json";
 
+type SkillCategory = [string, Array<string>];
+
 const SkillsBox = styled(Articles)`
   max-width: 700px;
   display: flex;
@@ -26,14 +28,16 @@ const SkillsPage = () => (
   <PageSection>
     <PageTitle>Skills</PageTitle>
     <SkillsBox empty>
-      {skills.map((skill: string) => (
-        <SkillsCategory key={skill[0]} category={skill} />
-      ))}
+      {(skills as Array<SkillCategory>).map<JSX.Element>(
+        (skill: SkillCategory, index: number) => (
+          <SkillsCategory key={index} category={skill} />
+        )
+      )}
     </SkillsBox>
   </PageSection>
 );
 
-const SkillsCategory = ({ category }) => (
+const SkillsCategory = ({ category }: { category: SkillCategory }) => (
   <Details>
     <Summary>{category[0]}</Summary>
     {category[1].map((skill: string) => (
