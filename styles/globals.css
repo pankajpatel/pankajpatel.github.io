@@ -1,6 +1,7 @@
 :root {
   --color-black: #1b1f22;
   --color-white: #fff;
+  --color-faded-white: rgba(200, 200, 200, 0.6);
   --page-bg: var(--color-bloack, #1b1f22);
 }
 body {
