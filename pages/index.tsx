@@ -24,7 +24,7 @@ const IndexPage = () => {
   return (
     <div className={`body ${isLoading ? "is-loading" : ""}`}>
       <Layout>
-        <SEO title="Portfolio" />
+        <SEO title="Pankaj Patel: Portfolio" />
         <Header isLoading={isLoading}>
           <Nav />
         </Header>
