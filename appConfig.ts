@@ -45,7 +45,7 @@ export const maxDepth: number = 2
 // Custom site navigation (default: [], label is case sensitive)
 // Override: [{ label: 'Home', url: '/' }]
 // Add new: [{ label: 'Contact', url: '/contact' }]
-import { NavItem } from '@lib/ghost'
+import { NavItem } from "./lib/ghost";
 export const customNavigation: NavItem[] = [{ label: 'Contact', url: '/contact' }]
 
 // Incremental Static Regenerations (ISR)
