@@ -1,6 +1,6 @@
-import Rehype from "rehype";
+import { rehype as Rehype } from "rehype";
 import { Node, Parent } from "unist";
-import visit from "unist-util-visit";
+import { visit } from "unist-util-visit";
 import { cloneDeep } from "lodash";
 import refractor from "refractor";
 import nodeToString from "hast-util-to-string";
@@ -30,19 +30,12 @@ export const normalizePost = async (
   if (!cmsUrl) throw Error("ghost-normalize.ts: cmsUrl expected.");
   const rewriteGhostLinks = withRewriteGhostLinks(cmsUrl, basePath);
 
-  const processors = [
-    // rewriteGhostLinks,
-    // rewriteRelativeLinks,
-    // syntaxHighlightWithPrismJS,
-    rewriteInlineImages,
-  ];
-
   let htmlAst = rehype.parse(post.html || "");
-  for (const process of processors) {
-    htmlAst = await process(htmlAst);
-  }
+  // for (const process of processors) {
+  //   htmlAst = await process(htmlAst);
+  // }
 
-  const toc = tableOfContents(htmlAst);
+  // const toc = tableOfContents(htmlAst);
 
   // image meta
   const url = post.feature_image;
@@ -56,9 +49,9 @@ export const normalizePost = async (
     authors,
     htmlAst,
     featureImage: (url && dimensions && { url, dimensions }) || null,
-    toc,
+    toc: null,
   };
-};
+};;
 
 /**
  * Rewrite absolute Ghost CMS links to relative

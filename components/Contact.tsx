@@ -1,6 +1,6 @@
 import React, { useEffect, FormEventHandler, useRef, useState } from "react";
 import styled from "styled-components";
-import ReCAPTCHA from "react-google-recaptcha";
+import { ReCAPTCHA } from "react-google-recaptcha";
 import { Articles, PageTitle, PageSection, Summary } from "./styled";
 
 type Value = string | number | boolean;
@@ -128,7 +128,7 @@ declare global {
 
 const ContactPage = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const captchaRef = useRef<Recaptcha>(null);
+  const captchaRef = useRef<ReCAPTCHA>(null);
   const [captchaResponse, setCaptchaResponse] = useState<string | null>(null);
   const [state, setState] = useState<Record<string, any>>({
     submitted: false,
@@ -199,18 +199,18 @@ const ContactPage = () => {
         <ReCaptchaStyledContainer>
           <ReCAPTCHA
             theme="dark"
-            sitekey={process.env.GATSBY_RECAPTCHA_SITEKEY}
+            sitekey={String(process.env.GATSBY_RECAPTCHA_SITEKEY)}
             onError={() => {
               setState((prev) => ({ ...prev, error: true }));
             }}
-            onChange={(res: string) => {
-              setCaptchaResponse(res);
-              if (state.error === "Please Verify Captcha!") {
+            onChange={(token: string | null) => {
+              setCaptchaResponse(token);
+              if (state.error) {
                 setState((prev) => ({ ...prev, error: false }));
               }
             }}
             onExpired={() => setCaptchaResponse(null)}
-            ref={(ref) => (captchaRef.current = ref)}
+            ref={captchaRef}
           />
         </ReCaptchaStyledContainer>
         <Actions>
