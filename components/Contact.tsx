@@ -1,6 +1,6 @@
-import React, { FormEventHandler, useRef, useState } from "react";
+import React, { useEffect, FormEventHandler, useRef, useState } from "react";
 import styled from "styled-components";
-import Recaptcha from "react-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 import { Articles, PageTitle, PageSection, Summary } from "./styled";
 
 type Value = string | number | boolean;
@@ -25,7 +25,7 @@ const objectFromFormData = (formData: FormData) => {
 
 const ReCaptchaStyledContainer = styled.div`
   margin: 5px;
-  & > div > div {
+  & > div > div > div {
     margin: 0 auto;
   }
 `;
@@ -122,6 +122,10 @@ const ContactForm = styled(Articles)`
   }
 `;
 
+declare global {
+  interface Window {}
+}
+
 const ContactPage = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const captchaRef = useRef<Recaptcha>(null);
@@ -130,6 +134,7 @@ const ContactPage = () => {
     submitted: false,
     error: false,
   });
+
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e?.preventDefault();
     if (!formRef.current) {
@@ -159,11 +164,8 @@ const ContactPage = () => {
         }
       });
   };
-  // specifying your onload callback function
-  const callback = () => {
-    console.log("Done!!!!");
-    console.log(captchaRef.current);
-  };
+
+  console.log(process.env.GATSBY_RECAPTCHA_SITEKEY);
 
   return (
     <PageSection>
@@ -195,19 +197,20 @@ const ContactPage = () => {
           <textarea name="message" id="message" rows={4} />
         </Field>
         <ReCaptchaStyledContainer>
-          <Recaptcha
+          <ReCAPTCHA
             theme="dark"
-            render="explicit"
-            onloadCallback={callback}
-            verifyCallback={(res: string) => {
+            sitekey={process.env.GATSBY_RECAPTCHA_SITEKEY}
+            onError={() => {
+              setState((prev) => ({ ...prev, error: true }));
+            }}
+            onChange={(res: string) => {
               setCaptchaResponse(res);
               if (state.error === "Please Verify Captcha!") {
                 setState((prev) => ({ ...prev, error: false }));
               }
             }}
-            expiredCallback={() => setCaptchaResponse(null)}
-            ref={captchaRef}
-            sitekey={process.env.GATSBY_RECAPTCHA_SITEKEY}
+            onExpired={() => setCaptchaResponse(null)}
+            ref={(ref) => (captchaRef.current = ref)}
           />
         </ReCaptchaStyledContainer>
         <Actions>

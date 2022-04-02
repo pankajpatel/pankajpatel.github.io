@@ -1,5 +1,8 @@
+import clsx from 'clsx';
 import React, { useState, useEffect } from "react";
 import { Element } from "rc-scroll-anim";
+
+import { getAllPosts } from "../lib/ghost";
 
 import Loading from "../components/Loading";
 import Layout from "../components/Layout";
@@ -14,7 +17,8 @@ import Skills from "../components/Skills";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
-const IndexPage = () => {
+const IndexPage = (props) => {
+  console.log(props);
   const [isLoading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -22,7 +26,7 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <div className={`body ${isLoading ? "is-loading" : ""}`}>
+    <div className={clsx('body', {'is-loading': isLoading })}>
       <Layout>
         <SEO title="Pankaj Patel: Portfolio" />
         <Header isLoading={isLoading}>
@@ -48,4 +52,24 @@ const IndexPage = () => {
     </div>
   );
 };
+
 export default IndexPage;
+
+export const getStaticProps: GetStaticProps = async () => {
+  let posts: GhostPostsOrPages | [];
+
+  try {
+    posts = await getAllPosts({ limit: 20 });
+  } catch (error) {
+    console.error(error);
+    throw new Error("Index creation failed.");
+  }
+
+  const cmsData = { posts };
+
+  return {
+    props: {
+      cmsData,
+    },
+  };
+};
