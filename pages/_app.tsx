@@ -9,6 +9,12 @@ const App = ({ Component, pageProps }: AppProps) => (
     trackOutboundLinks={true}
     selfHosted={true}
     enabled={true} // TODO: Add NODE_ENV
+    scriptProps={{
+      src: "https://analytics.t2h.app/js/plausible.js",
+      async: true,
+      defer: true,
+      dataDomain: "pankaj.pro",
+    }}
   >
     <Component {...pageProps} />
   </PlausibleProvider>
