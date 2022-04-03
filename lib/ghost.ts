@@ -19,16 +19,9 @@ import {
   processEnv,
   ProcessEnvProps,
 } from "./processEnv";
-import { imageDimensions, normalizedImageUrl, Dimensions } from "./images";
 import { IToC } from "./toc";
 
 import { locale } from "dayjs";
-
-export interface NextImage {
-  url: string;
-  dimensions: Dimensions;
-}
-
 export interface NavItem {
   url: string;
   label: string;
@@ -46,30 +39,17 @@ interface BrowseResults<T> extends Array<T> {
 export interface GhostSettings extends SettingsResponse {
   processEnv: ProcessEnvProps;
   secondary_navigation?: NavItem[];
-  iconImage?: NextImage;
-  logoImage?: NextImage;
-  coverImage?: NextImage;
 }
-
-export interface GhostTag extends Tag {
-  featureImage?: NextImage;
-}
-
-export interface GhostAuthor extends Author {
-  profileImage?: NextImage;
-}
-
 export interface GhostPostOrPage extends PostOrPage {
-  featureImage?: NextImage | null;
   htmlAst?: Node | null;
   toc?: IToC[] | null;
 }
 
 export interface GhostPostsOrPages extends BrowseResults<GhostPostOrPage> {}
 
-export interface GhostTags extends BrowseResults<GhostTag> {}
+export interface GhostTags extends BrowseResults<Tag> {}
 
-export interface GhostAuthors extends BrowseResults<GhostAuthor> {}
+export interface GhostAuthors extends BrowseResults<Author> {}
 
 const api = new GhostContentAPI({
   url: ghostAPIUrl,
@@ -94,86 +74,15 @@ const postAndPageSlugOptions: Params = {
 };
 
 // helpers
-export const createNextImage = async (
-  url?: string | null
-): Promise<NextImage | undefined> => {
-  if (!url) return undefined;
-  const normalizedUrl = await normalizedImageUrl(url);
-  const dimensions = await imageDimensions(normalizedUrl);
-  return (dimensions && { url: normalizedUrl, dimensions }) || undefined;
-};
-
-async function createNextFeatureImages(
-  nodes: BrowseResults<Tag | PostOrPage>
-): Promise<GhostTags | PostsOrPages> {
-  const { meta } = nodes;
-  const images = await Promise.all(
-    nodes.map((node) => createNextImage(node.feature_image))
-  );
-  const results = nodes.map((node, i) => ({
-    ...node,
-    ...(images[i] && { featureImage: images[i] }),
-  }));
-  return Object.assign(results, { meta });
-}
-
-async function createNextProfileImages(
-  nodes: BrowseResults<Author>
-): Promise<GhostAuthors> {
-  const { meta } = nodes;
-  const images = await Promise.all(
-    nodes.map((node) => createNextImage(node.profile_image))
-  );
-  const results = nodes.map((node, i) => ({
-    ...node,
-    ...(images[i] && { profileImage: images[i] }),
-  }));
-  return Object.assign(results, { meta });
-}
-
-export async function createNextProfileImagesFromAuthors(
-  nodes: Author[] | undefined
-): Promise<Author[] | undefined> {
-  if (!nodes) return undefined;
-  const images = await Promise.all(
-    nodes.map((node) => createNextImage(node.profile_image))
-  );
-  return nodes.map((node, i) => ({
-    ...node,
-    ...(images[i] && { profileImage: images[i] }),
-  }));
-}
-
-async function createNextProfileImagesFromPosts(
-  nodes: BrowseResults<PostOrPage>
-): Promise<PostsOrPages> {
-  const { meta } = nodes;
-  const authors = await Promise.all(
-    nodes.map((node) => createNextProfileImagesFromAuthors(node.authors))
-  );
-  const results = nodes.map((node, i) => ({
-    ...node,
-    ...(authors[i] && { authors: authors[i] }),
-  }));
-  return Object.assign(results, { meta });
-}
-
 export async function getAllSettings(): Promise<GhostSettings> {
   //const cached = getCache<SettingsResponse>('settings')
   //if (cached) return cached
   const settings = await api.settings.browse();
   settings.url = settings?.url?.replace(/\/$/, ``);
 
-  const iconImage = await createNextImage(settings.icon);
-  const logoImage = await createNextImage(settings.logo);
-  const coverImage = await createNextImage(settings.cover_image);
-
   const result = {
     processEnv,
     ...settings,
-    ...(iconImage && { iconImage }),
-    ...(logoImage && { logoImage }),
-    ...(coverImage && { coverImage }),
   };
   //setCache('settings', result)
   console.log(result);
@@ -182,39 +91,37 @@ export async function getAllSettings(): Promise<GhostSettings> {
 
 export async function getAllTags(): Promise<GhostTags> {
   const tags = await api.tags.browse(tagAndAuthorFetchOptions);
-  return await createNextFeatureImages(tags);
+  return tags;
 }
 
 export async function getAllAuthors() {
-  const authors = await api.authors.browse(tagAndAuthorFetchOptions);
-  return await createNextProfileImages(authors);
+  return await api.authors.browse(tagAndAuthorFetchOptions);
 }
 
-export async function getAllPosts(props): Promise<GhostPostsOrPages> {
-  const posts = await api.posts.browse({
+export async function getAllPosts(
+  props: Record<string, unknown>
+): Promise<GhostPostsOrPages> {
+  return await api.posts.browse({
     ...postAndPageFetchOptions,
     ...(props && { ...props }),
   });
-  const results = await createNextProfileImagesFromPosts(posts);
-  return await createNextFeatureImages(results);
 }
 
 export async function getAllPostSlugs(): Promise<string[]> {
   const posts = await api.posts.browse({
-    ...postAndPageSlugOptions
+    ...postAndPageSlugOptions,
   });
   return posts.map((p) => p.slug);
 }
 
-export async function getAllPages(): Promise<GhostPostsOrPages> {
+export async function getAllPages(
+  props: Record<string, unknown>
+): Promise<GhostPostsOrPages> {
   const pages = await api.pages.browse({
     ...postAndPageFetchOptions,
-    filter: []
-      .filter(Boolean)
-      .join("+"),
     ...(props && { ...props }),
   });
-  return await createNextFeatureImages(pages);
+  return pages;
 }
 
 // specific data by slug
@@ -224,17 +131,11 @@ export async function getTagBySlug(slug: string): Promise<Tag> {
     slug,
   });
 }
-export async function getAuthorBySlug(slug: string): Promise<GhostAuthor> {
-  const author = await api.authors.read({
+export async function getAuthorBySlug(slug: string): Promise<Author> {
+  return await api.authors.read({
     ...tagAndAuthorFetchOptions,
     slug,
   });
-  const profileImage = await createNextImage(author.profile_image);
-  const result = {
-    ...author,
-    ...(profileImage && { profileImage }),
-  };
-  return result;
 }
 
 export async function getPostBySlug(
@@ -244,20 +145,15 @@ export async function getPostBySlug(
   if (!slug) {
     return Promise.resolve(null);
   }
-  try {
-    const post = await api.posts.read({
-      ...postAndPageFetchOptions,
-      slug,
-    });
-    // older Ghost versions do not throw error on 404
-    if (!post) return null;
+  const post = await api.posts.read({
+    ...postAndPageFetchOptions,
+    slug,
+  });
+  // older Ghost versions do not throw error on 404
+  if (!post) return null;
 
-    const { url } = await getAllSettings();
-    result = await normalizePost(post, (url && urlParse(url)) || undefined);
-  } catch (error) {
-    if (error.response?.status !== 404) throw new Error(error);
-    return null;
-  }
+  const { url } = await getAllSettings();
+  result = await normalizePost(post, (url && urlParse(url)) || undefined);
   return result;
 }
 
@@ -265,21 +161,16 @@ export async function getPageBySlug(
   slug: string
 ): Promise<GhostPostOrPage | null> {
   let result: GhostPostOrPage;
-  try {
-    const page = await api.pages.read({
-      ...postAndPageFetchOptions,
-      slug,
-    });
+  const page = await api.pages.read({
+    ...postAndPageFetchOptions,
+    slug,
+  });
 
-    // older Ghost versions do not throw error on 404
-    if (!page) return null;
+  // older Ghost versions do not throw error on 404
+  if (!page) return null;
 
-    const { url } = await getAllSettings();
-    result = await normalizePost(page, (url && urlParse(url)) || undefined);
-  } catch (error) {
-    if (error.response?.status !== 404) throw new Error(error);
-    return null;
-  }
+  const { url } = await getAllSettings();
+  result = await normalizePost(page, (url && urlParse(url)) || undefined);
   return result;
 }
 
@@ -291,7 +182,7 @@ export async function getPostsByAuthor(
     ...postAndPageFetchOptions,
     filter: `authors.slug:${slug}`,
   });
-  return await createNextFeatureImages(posts);
+  return posts;
 }
 
 export async function getPostsByTag(
@@ -305,7 +196,7 @@ export async function getPostsByTag(
     ...(limit && { limit: `${limit}` }),
     filter: `tags.slug:${slug}${exclude}`,
   });
-  return await createNextFeatureImages(posts);
+  return posts;
 }
 
 // Collections

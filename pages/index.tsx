@@ -1,23 +1,24 @@
 import clsx from 'clsx';
-import React, { useState, useEffect } from "react";
+import { GetStaticProps } from "next";
 import { Element } from "rc-scroll-anim";
-
-import { getAllPosts } from "../lib/ghost";
-
-import Loading from "../components/Loading";
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
-import Header from "../components/Header";
-import Nav from "../components/Nav";
-import Intro from "../components/Intro";
-
-import Work from "../components/Work";
-import Education from "../components/Education";
-import Skills from "../components/Skills";
+import { useEffect, useState } from "react";
 import Contact from "../components/Contact";
+import Education from "../components/Education";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
+import Intro from "../components/Intro";
+import Layout from "../components/Layout";
+import Nav from "../components/Nav";
+import SEO from "../components/SEO";
+import Skills from "../components/Skills";
+import Work from "../components/Work";
+import { getAllPosts, GhostPostsOrPages } from "../lib/ghost";
 
-const IndexPage = (props) => {
+const IndexPage = (props: {
+  cmsData: {
+    posts: GhostPostsOrPages | [];
+  };
+}) => {
   console.log(props);
   const [isLoading, setLoading] = useState<boolean>(true);
 
@@ -26,7 +27,7 @@ const IndexPage = (props) => {
   }, []);
 
   return (
-    <div className={clsx('body', {'is-loading': isLoading })}>
+    <div className={clsx("body", { "is-loading": isLoading })}>
       <Layout>
         <SEO title="Pankaj Patel: Portfolio" />
         <Header isLoading={isLoading}>
