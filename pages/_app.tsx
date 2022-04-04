@@ -13,7 +13,6 @@ const App = ({ Component, pageProps }: AppProps) => (
       src: "https://analytics.t2h.app/js/plausible.js",
       async: true,
       defer: true,
-      dataDomain: "pankaj.pro",
     }}
   >
     <Component {...pageProps} />
