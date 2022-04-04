@@ -1,4 +1,3 @@
-import React from "react";
 import { Education } from "../types";
 import {
   Articles,

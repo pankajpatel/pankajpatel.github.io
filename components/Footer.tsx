@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import GithubSvg from "../images/svg/github.svg";
 import LinkedinSvg from "../images/svg/linkedin.svg";
