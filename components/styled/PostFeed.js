@@ -11,8 +11,8 @@ export const flexCss = css`
 export const gridCss = css`
   display: grid;
   justify-content: space-between;
-  grid-gap: 30px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+  grid-template-columns: 1fr 1fr;
 
   @media (max-width: 980px) {
     grid-template-columns: 1fr 1fr;

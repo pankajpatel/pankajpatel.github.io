@@ -1,19 +1,20 @@
-import { Link } from "next/link";
+import Link from "next/link";
 import styled from "styled-components";
 import { LabelStyles, Label } from "./Label";
 
 export const NoDecorationLink = styled(Link)`
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
   &:hover {
     text-decoration: none;
   }
 `;
 export const CardTitle = styled.h1`
   font-size: 1.6rem;
-  margin: 0 0 0.5em;
+  margin: 0.25em 0 0.5em;
   line-height: 1.15;
-  font-weight: 700;
+  font-weight: 500;
   text-rendering: optimizeLegibility;
 `;
 export const NoDecorationTags = styled(Link)`
@@ -48,21 +49,20 @@ export const PostCardImageLink = styled(NoDecorationLink)`
 `;
 export const PostCardImage = styled.img`
   width: 100%;
-  height: 200px;
+  max-height: 220px;
   -o-object-fit: cover;
   object-fit: cover;
   background-color: #c5d2d9;
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 5px;
 `;
 export const Article = styled.article`
   flex: 1 1 300px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  margin: 0 20px 40px;
-  min-height: 300px;
+  margin: 0 20px 20px;
   transition: all 0.5s ease;
   ${(props) =>
     props.large &&

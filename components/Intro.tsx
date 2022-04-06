@@ -9,6 +9,11 @@ const InfoContainer = styled.div`
   max-width: 768px;
   margin: 0 auto;
   font-size: 2rem;
+  padding: 0 0.5em;
+
+  @media (max-width: 500px) {
+    font-size: 1.25rem;
+  }
 `;
 
 const Intro = () => (

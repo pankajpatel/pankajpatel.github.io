@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import { GetStaticProps } from "next";
 import { Element } from "rc-scroll-anim";
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 import Contact from "../components/Contact";
 import Education from "../components/Education";
 import Footer from "../components/Footer";
@@ -9,10 +10,19 @@ import Header from "../components/Header";
 import Intro from "../components/Intro";
 import Layout from "../components/Layout";
 import Nav from "../components/Nav";
+import RecentPosts from "../components/RecentPosts";
 import SEO from "../components/SEO";
 import Skills from "../components/Skills";
 import Work from "../components/Work";
 import { getAllPosts, GhostPostsOrPages } from "../lib/ghost";
+
+const ScrollableSection = styled(Element)`
+  padding: 2rem 0;
+
+  @media (max-width: 500px) {
+    padding: 1rem 0;
+  }
+`;
 
 const IndexPage = (props: {
   cmsData: {
@@ -23,7 +33,9 @@ const IndexPage = (props: {
   const [isLoading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 100);
   }, []);
 
   return (
@@ -33,21 +45,24 @@ const IndexPage = (props: {
         <Header isLoading={isLoading}>
           <Nav />
         </Header>
-        <Element id={"/intro"}>
+        <ScrollableSection id={"/intro"}>
           <Intro />
-        </Element>
-        <Element id={"/work"}>
+        </ScrollableSection>
+        <ScrollableSection id={"/work"}>
           <Work />
-        </Element>
-        <Element id={"/education"}>
+        </ScrollableSection>
+        <ScrollableSection id={"/publications"}>
+          <RecentPosts posts={props.cmsData.posts || []} />
+        </ScrollableSection>
+        <ScrollableSection id={"/education"}>
           <Education />
-        </Element>
-        <Element id={"/skills"}>
+        </ScrollableSection>
+        <ScrollableSection id={"/skills"}>
           <Skills />
-        </Element>
-        <Element id={"/contact"}>
+        </ScrollableSection>
+        <ScrollableSection id={"/contact"}>
           <Contact />
-        </Element>
+        </ScrollableSection>
         <Footer />
       </Layout>
     </div>
