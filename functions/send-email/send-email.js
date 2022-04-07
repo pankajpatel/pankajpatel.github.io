@@ -1,9 +1,14 @@
-var api_key = process.env.MAILGUN_KEY;
-var domain = process.env.MAILGUN_DOMAIN || "mg.pankaj.pro";
-var mailgun = require("mailgun-js")({
-  apiKey: api_key,
-  domain: domain,
-  host: "api.eu.mailgun.net",
+const api_key = process.env.MAILGUN_KEY;
+const domain = process.env.MAILGUN_DOMAIN || "mg.pankaj.pro";
+const formData = require('form-data');
+const Mailgun = require('mailgun.js');
+
+const mailgun = new Mailgun(formData);
+
+const mg = mailgun.client({
+  username: 'api',
+  key: api_key,
+  url: 'https://api.eu.mailgun.net'
 });
 
 exports.handler = function (event, context, callback) {
@@ -13,32 +18,24 @@ exports.handler = function (event, context, callback) {
       body: JSON.stringify({ status: "Error", message: "Not allowed" }),
     };
   }
-  /*
-  subject: Form Check
-  bcc: xxxxxx@xxxx.xxx
-  message: some random text
-  */
+
   const reqBody = JSON.parse(event.body);
 
-  var data = {
+  const data = {
     from: reqBody.bcc,
     to: process.env.TO_EMAIL || "hello@pankaj.pro",
     subject: "Contact Form Submission",
     template: "contact-form-template",
     "h:X-Mailgun-Variables": JSON.stringify(reqBody),
   };
-
-  mailgun.messages().send(data, function (error, body) {
-    if (error) {
-      callback(null, {
-        statusCode: 500,
-        body: JSON.stringify(error || { status: "Error" }),
-      });
-      return;
-    }
-    callback(null, {
+  mg.messages
+    .create(domain, data)
+    .then(msg => callback(null, {
       statusCode: 200,
-      body: JSON.stringify(body || { status: "Success" }),
-    });
-  });
+      body: JSON.stringify(msg || { status: "Success" }),
+    }))
+    .catch(err => callback(null, {
+      statusCode: 500,
+      body: JSON.stringify(err || { status: "Error" }),
+    }));
 };
