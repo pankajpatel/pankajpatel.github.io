@@ -165,8 +165,6 @@ const ContactPage = () => {
       });
   };
 
-  console.log(process.env.GATSBY_RECAPTCHA_SITEKEY);
-
   return (
     <PageSection>
       <PageTitle>Contact</PageTitle>
@@ -199,7 +197,7 @@ const ContactPage = () => {
         <ReCaptchaStyledContainer>
           <ReCAPTCHA
             theme="dark"
-            sitekey={String(process.env.GATSBY_RECAPTCHA_SITEKEY)}
+            sitekey={String(process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY)}
             onError={() => {
               setState((prev) => ({ ...prev, error: true }));
             }}
