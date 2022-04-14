@@ -28,9 +28,7 @@ const Intro = () => (
         &amp; sci-fi movies.
       </p>
       <p>
-        I have interest in Information Security which helps me in building
-        secure & efficient applications. I have also published an article on Web
-        Application security on HAKIN9 magazine.
+        I have interests in UX and Information Security which helps me in building secure and magnetic experiences for end-users.
       </p>
     </InfoContainer>
   </Section>
