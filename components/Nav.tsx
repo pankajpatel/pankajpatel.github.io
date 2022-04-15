@@ -71,7 +71,7 @@ const Navigation = () => (
     <NavLinks>
       {menuItems.map((item: Record<string, string>) => (
         <li key={item.article}>
-          <NavLink href={`/${item.article}`}>{item.label}</NavLink>
+          <NavLink href={`#/${item.article}`}>{item.label}</NavLink>
         </li>
       ))}
     </NavLinks>
