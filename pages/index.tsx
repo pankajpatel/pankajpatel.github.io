@@ -29,7 +29,6 @@ const IndexPage = (props: {
     posts: GhostPostsOrPages | [];
   };
 }) => {
-  console.log(props);
   const [isLoading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -75,7 +74,7 @@ export const getStaticProps: GetStaticProps = async () => {
   let posts: GhostPostsOrPages | [];
 
   try {
-    posts = await getAllPosts({ limit: 20 });
+    posts = await getAllPosts({ limit: 6 });
   } catch (error) {
     console.error(error);
     throw new Error("Index creation failed.");
