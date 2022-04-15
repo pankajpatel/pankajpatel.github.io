@@ -1,6 +1,5 @@
 import React, { useEffect, FormEventHandler, useRef, useState } from "react";
 import styled from "styled-components";
-// import { ReCAPTCHA } from "react-google-recaptcha";
 import Recaptcha from "react-recaptcha";
 import { Articles, PageTitle, PageSection, Summary } from "./styled";
 import { objectFromFormData } from "../lib/objectFromFormData";
@@ -111,7 +110,6 @@ declare global {
 
 const ContactPage = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  // const captchaRef = useRef<ReCAPTCHA>(null);
   const captchaRef = useRef<Recaptcha>(null);
   const [captchaResponse, setCaptchaResponse] = useState<string | null>(null);
   const [state, setState] = useState<Record<string, any>>({
@@ -199,21 +197,6 @@ const ContactPage = () => {
             expiredCallback={() => setCaptchaResponse(null)}
             ref={captchaRef}
           />
-          {/* <ReCAPTCHA
-            theme="dark"
-            sitekey={String(process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY)}
-            onError={() => {
-              setState((prev) => ({ ...prev, error: true }));
-            }}
-            onChange={(token: string | null) => {
-              setCaptchaResponse(token);
-              if (state.error) {
-                setState((prev) => ({ ...prev, error: false }));
-              }
-            }}
-            onExpired={() => setCaptchaResponse(null)}
-            ref={captchaRef}
-          /> */}
         </ReCaptchaStyledContainer>
         <Actions>
           <button type="submit" className="special">
