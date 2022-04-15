@@ -4,7 +4,7 @@ import menuItems from "../data/nav.json";
 
 const NavLinks = styled.ul``;
 
-const NavLink = styled(Link)`
+const NavLink = styled.a`
   display: block;
   min-width: 7.5rem;
   height: 2.75rem;
@@ -71,7 +71,7 @@ const Navigation = () => (
     <NavLinks>
       {menuItems.map((item: Record<string, string>) => (
         <li key={item.article}>
-          <NavLink to={`/${item.article}`}>{item.label}</NavLink>
+          <NavLink href={`/${item.article}`}>{item.label}</NavLink>
         </li>
       ))}
     </NavLinks>
