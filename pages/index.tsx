@@ -16,7 +16,7 @@ import Skills from "../components/Skills";
 import Work from "../components/Work";
 import { getAllPosts, GhostPostsOrPages } from "../lib/ghost";
 
-const ScrollableSection = styled(Element)`
+const ScrollableSection = styled.div`
   padding: 2rem 0;
 
   @media (max-width: 500px) {

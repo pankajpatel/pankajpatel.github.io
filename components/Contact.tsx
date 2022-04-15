@@ -1,30 +1,12 @@
 import React, { useEffect, FormEventHandler, useRef, useState } from "react";
 import styled from "styled-components";
-import { ReCAPTCHA } from "react-google-recaptcha";
+import Recaptcha from "react-recaptcha";
 import { Articles, PageTitle, PageSection, Summary } from "./styled";
-
-type Value = string | number | boolean;
-
-const objectFromFormData = (formData: FormData) => {
-  const values: Record<string, Value | Array<Value>> = {};
-  // @ts-ignore
-  for (let [key, value] of formData.entries()) {
-    if (values[key]) {
-      if (!(values[key] instanceof Array)) {
-        const v = values[key];
-        values[key] = [];
-        (values[key] as Array<Value>).push(v as Value);
-      }
-      (values[key] as Array<Value>).push(value);
-    } else {
-      values[key] = value;
-    }
-  }
-  return values;
-};
+import { objectFromFormData } from "../lib/objectFromFormData";
 
 const ReCaptchaStyledContainer = styled.div`
   margin: 5px;
+  & > div > div,
   & > div > div > div {
     margin: 0 auto;
   }
@@ -128,7 +110,7 @@ declare global {
 
 const ContactPage = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const captchaRef = useRef<ReCAPTCHA>(null);
+  const captchaRef = useRef<Recaptcha>(null);
   const [captchaResponse, setCaptchaResponse] = useState<string | null>(null);
   const [state, setState] = useState<Record<string, any>>({
     submitted: false,
@@ -168,6 +150,12 @@ const ContactPage = () => {
   return (
     <PageSection>
       <PageTitle>Contact</PageTitle>
+      <script
+        src="https://www.google.com/recaptcha/api.js"
+        async
+        defer
+      ></script>
+
       <ContactForm
         empty
         as="form"
@@ -195,19 +183,18 @@ const ContactPage = () => {
           <textarea name="message" id="message" rows={4} />
         </Field>
         <ReCaptchaStyledContainer>
-          <ReCAPTCHA
+          <Recaptcha
             theme="dark"
-            sitekey={String(process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY)}
-            onError={() => {
-              setState((prev) => ({ ...prev, error: true }));
-            }}
-            onChange={(token: string | null) => {
-              setCaptchaResponse(token);
-              if (state.error) {
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY || ""}
+            render="explicit"
+            onloadCallback={console.log}
+            verifyCallback={(res: string) => {
+              setCaptchaResponse(res);
+              if (state.error === "Please Verify Captcha!") {
                 setState((prev) => ({ ...prev, error: false }));
               }
             }}
-            onExpired={() => setCaptchaResponse(null)}
+            expiredCallback={() => setCaptchaResponse(null)}
             ref={captchaRef}
           />
         </ReCaptchaStyledContainer>
