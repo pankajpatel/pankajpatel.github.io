@@ -1,10 +1,26 @@
 [
   {
-    "company": "Hotjar",
-    "location": "Remote, France",
+    "company": "AB Tasty",
+    "location": "Lyon, France",
     "duration": {
-      "from": "2020-10-18",
-      "to": "2020-10-18"
+      "from": "2022-06-07",
+      "to": "2022-06-07"
+    },
+    "positions": [
+      {
+        "from": "2022-06-07",
+        "position": "Lead FrontEnd Developer"
+      }
+    ],
+    "description": "Working with the Website Editor to make the AB Testing experiments",
+    "img": "AB-Tasty.png"
+  },
+  {
+    "company": "Hotjar",
+    "location": "Remote, Germany and France",
+    "duration": {
+      "from": "2021-10-18",
+      "to": "2022-04-11"
     },
     "positions": [
       {
@@ -12,7 +28,7 @@
         "position": "FrontEnd Engineer"
       }
     ],
-    "description": "Working with Heatmaps teams to provide the best UX while navigating the Heatmaps",
+    "description": "Worked with Heatmaps teams to provide the best UX while navigating the Heatmaps",
     "img": "hotjar.png"
   },
   {
