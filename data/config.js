@@ -27,6 +27,7 @@ module.exports = {
     twitter: `https://twitter.com/${social.twitter.replace("@", "")}`,
     github: `https://github.com/${social.github}`,
     linkedin: `https://linkedin.com/in/${social.linkedin}`,
+    youtube: `https://www.youtube.com/channel/UCRu_FdU1qAuCbS2HqyZNwZA`,
   },
   themeColor: "#fff",
   backgroundColor: "#333",
