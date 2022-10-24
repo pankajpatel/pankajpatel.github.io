@@ -1,8 +1,10 @@
+import Img from "next/image";
 import styled from "styled-components";
-import GithubSvg from "../images/svg/github.svg";
-import LinkedinSvg from "../images/svg/linkedin.svg";
-import TwitterSvg from "../images/svg/twitter.svg";
-import InstagramSvg from "../images/svg/instagram.svg";
+import github from "../images/github.png";
+import linkedin from "../images/linkedin.png";
+import twitter from "../images/twitter.png";
+import instagram from "../images/instagram.png";
+import youtube from "../images/youtube.png";
 import NetlifySvg from "../images/svg/netlify-for-dark.svg";
 
 import metadata from "../data/config";
@@ -23,6 +25,12 @@ const FooterContainer = styled.footer`
   text-align: center;
   font-size: 0.8rem;
   margin: 2rem 0;
+`;
+
+const Image = styled(Img)`
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 1px;
 `;
 const Icons = styled.ul`
   cursor: default;
@@ -72,22 +80,52 @@ const Footer = () => (
     <Icons>
       <li>
         <a href={metadata.socialLinks.linkedin}>
-          <LinkedinSvg />
+          <Image
+            width={100}
+            height={100}
+            src={linkedin}
+            alt="Find me on Linkedin"
+          />
         </a>
       </li>
       <li>
         <a href={metadata.socialLinks.github}>
-          <GithubSvg />
+          <Image
+            width={100}
+            height={100}
+            src={github}
+            alt="Find me on Github"
+          />
         </a>
       </li>
       <li>
         <a href={metadata.socialLinks.twitter}>
-          <TwitterSvg />
+          <Image
+            width={100}
+            height={100}
+            src={twitter}
+            alt="Find me on Twitter"
+          />
+        </a>
+      </li>
+      <li>
+        <a href={metadata.socialLinks.youtube}>
+          <Image
+            width={100}
+            height={100}
+            src={youtube}
+            alt="Find me on Youtube"
+          />
         </a>
       </li>
       <li>
         <a href={metadata.socialLinks.instagram}>
-          <InstagramSvg />
+          <Image
+            width={100}
+            height={100}
+            src={instagram}
+            alt="Find me on Instagram"
+          />
         </a>
       </li>
     </Icons>
