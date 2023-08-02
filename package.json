@@ -39,7 +39,7 @@
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/lodash": "^4.14.181",
-    "@types/node": "18.16.19",
+    "@types/node": "18.17.1",
     "@types/probe-image-size": "^7.0.1",
     "@types/react": "^18.0.5",
     "@types/react-google-recaptcha": "^2.1.5",
