@@ -3436,10 +3436,10 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-mailgun.js@^8.0.0:
-  version "8.2.2"
-  resolved "https://registry.yarnpkg.com/mailgun.js/-/mailgun.js-8.2.2.tgz#97133d69fd76b77c67eedb394fd85b1875cac600"
-  integrity sha512-po/KtofzrTuKhHLenbmliDsVVOFANwcfDFUGnggwnyZJmZz7JgBlV6nzK9o2Fk+OK2SiBmJTK25RbkAj57Hd+Q==
+mailgun.js@^9.0.0:
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/mailgun.js/-/mailgun.js-9.2.0.tgz#306561474841f05bb525176b1840c272d3c28e25"
+  integrity sha512-XfcHtwdE39g6C0Rh54sp8fKfHYxmP5LNC5Z5zZPdgYte760UXCKlT5ilfoqK2MRY0BSXj4F0qEvYAmtao/y4vw==
   dependencies:
     axios "^1.3.3"
     base-64 "^1.0.0"
