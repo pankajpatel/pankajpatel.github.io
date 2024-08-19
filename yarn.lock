@@ -3542,9 +3542,9 @@ needle@^2.5.2:
     sax "^1.2.4"
 
 next-plausible@^3.1.8:
-  version "3.10.1"
-  resolved "https://registry.yarnpkg.com/next-plausible/-/next-plausible-3.10.1.tgz#aaf30e8aaa7c7b437a790856c3ceb8ab8a7a44ab"
-  integrity sha512-3GyBQH+sUfovemgwvodx84djMlF/o+FoSPtCS2QVFNiJtwGFuhs6CQckMIv+VWdz9zERwZB2nJLJLmgV6aT/aA==
+  version "3.12.2"
+  resolved "https://registry.yarnpkg.com/next-plausible/-/next-plausible-3.12.2.tgz#7d8fe30d76b8cc43141da96f190d5eb9b3194a55"
+  integrity sha512-jyOYLAdwaZZR6nrzFhN9xfVjzYOG6mIQ/LLDCfdAS99ELy759cKfNxluGo+pI2Xh9cYxTFYYZGlnkyR3IPy4yg==
 
 next@13:
   version "13.4.12"
