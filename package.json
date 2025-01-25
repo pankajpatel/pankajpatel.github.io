@@ -23,7 +23,6 @@
     "lodash": "^4.17.21",
     "mailgun.js": "^9.0.0",
     "next": "13.5.6",
-    "next-plausible": "^3.1.8",
     "posthog-js": "^1.210.2",
     "probe-image-size": "^7.2.3",
     "rc-scroll-anim": "^2.7.6",
@@ -54,5 +53,9 @@
     "husky": "^8.0.0",
     "raw-loader": "^4.0.2",
     "typescript": "^5.0.0"
-  }
+  },
+  "engines": {
+    "node": ">18"
+  },
+  "packageManager": "yarn@4.5.3"
 }
