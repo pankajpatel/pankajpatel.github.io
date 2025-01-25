@@ -39,3 +39,7 @@ yarn-error.log*
 # Local Netlify folder
 .netlify
 .cache
+
+.env*
+!.env.example
+.yarn/install-state.gz

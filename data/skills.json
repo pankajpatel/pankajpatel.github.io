@@ -6,24 +6,19 @@
       "CSS3",
       "JavaScript/ES6+",
       "ReactJS",
-      "WebComponents",
       "Flux/Redux",
       "jQuery",
-      "Angular(JS)",
-      "Bootstrap"
+      "Angular(JS)"
     ]
   ],
   ["Backend", ["Node.js", "Express", "HapiJS", "PHP"]],
-  [
-    "API Communication",
-    ["fetch", "axios", "react-query", "WebSocket", "GraphQL"]
-  ],
-  ["CI/CD", ["TravisCI", "Github Actions", "Gitlab CI", "Bitbucket Pipelines"]],
-  ["Testing", ["Jest", "TestingLibrary", "Cypress"]],
+  ["API Communication", ["fetch", "axios", "tanstack-query", "WebSocket"]],
+  ["CI/CD", ["Github Actions", "Gitlab CI"]],
+  ["Testing", ["Vitest", "Jest", "TestingLibrary", "Cypress"]],
   ["All rounders", ["TypeScript", "Git", "JSON"]],
-  ["Bundlers", ["Webpack", "Grunt", "Gulp"]],
-  ["DB & related", ["Firebase", "MySQL", "MongoDB"]],
-  ["Servers & Cloud", ["DigitalOcean"]],
+  ["Bundlers", ["Webpack", "Vite", "Grunt", "Gulp"]],
+  ["DB & related", ["Firebase", "MySQL", "DynamoDB", "MongoDB"]],
+  ["Servers & Cloud", ["DigitalOcean", "Hetzner"]],
   ["Blogs", ["Ghost", "Wordpress", "11ty"]],
-  ["Others", ["D3.js"]]
+  ["Others", ["D3.js", "Docker"]]
 ]
