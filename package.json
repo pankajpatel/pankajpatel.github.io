@@ -31,12 +31,11 @@
     "react-svg-inline": "^2.1.1",
     "refractor": "^4.5.0",
     "rehype": "^12.0.1",
-    "styled-components": "^5.3.3",
+    "styled-components": "^6",
     "styled-normalize": "^8.0.7",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@types/axios": "^0.14.0",
     "@types/lodash": "^4.14.181",
     "@types/node": "18.17.3",
     "@types/probe-image-size": "^7.0.1",
@@ -54,4 +53,7 @@
     "typescript": "^5.0.0"
   },
   "packageManager": "yarn@4.9.1"
+  "engines": {
+    "node": ">=18"
+  }
 }

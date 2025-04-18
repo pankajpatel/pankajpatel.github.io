@@ -5,7 +5,7 @@ import linkedin from "../images/linkedin.png";
 import twitter from "../images/twitter.png";
 import instagram from "../images/instagram.png";
 import youtube from "../images/youtube.png";
-import NetlifySvg from "../images/svg/netlify-for-dark.svg";
+import netlifySvg from "../images/svg/netlify-for-dark.svg";
 
 import metadata from "../data/config";
 
@@ -130,7 +130,13 @@ const Footer = () => (
       </li>
     </Icons>
     <NetlifyLogo href="https://netlify.com">
-      <NetlifySvg />
+      <Image
+        width={30}
+        height={30}
+        src={netlifySvg}
+        alt="Netlify"
+        style={{ background: "transparent" }}
+      />
     </NetlifyLogo>
   </FooterContainer>
 );
