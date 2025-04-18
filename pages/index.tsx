@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import { GetStaticProps } from "next";
-import { Element } from "rc-scroll-anim";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Contact from "../components/Contact";

@@ -1,5 +1,7 @@
 {
   "editor.formatOnSaveMode": "modifications",
   "editor.formatOnSave": true,
-  "editor.formatOnPaste": true
+  "editor.formatOnPaste": true,
+  "IDX.aI.enableInlineCompletion": true,
+  "IDX.aI.enableCodebaseIndexing": true
 }
