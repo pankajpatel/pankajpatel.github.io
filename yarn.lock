@@ -2309,10 +2309,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.17.3":
-  version: 18.17.3
-  resolution: "@types/node@npm:18.17.3"
-  checksum: 10/3b63e57d517bfee7d8b3fb7391aedef6d9a14d41ba0f38577d3e6b78eea8948b0ae53eb2ad674bc6de26ad7418b59cdedf7dc17b7892180a5ea9e8624198b56c
+"@types/node@npm:18.19.86":
+  version: 18.19.86
+  resolution: "@types/node@npm:18.19.86"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 10/83e8f07305b102776c1970c2fbe2347eba15f6cca3d50cf8991d5f4e463ee7e204fbb3dec599892d25e613ed3b93f7fb5794b0de874ea6ba884affbe99670cc2
   languageName: node
   linkType: hard
 
@@ -6202,7 +6204,7 @@ __metadata:
     "@svgr/webpack": "npm:^8.0.0"
     "@tryghost/content-api": "npm:^1.7.1"
     "@types/lodash": "npm:^4.14.181"
-    "@types/node": "npm:18.17.3"
+    "@types/node": "npm:18.19.86"
     "@types/probe-image-size": "npm:^7.0.1"
     "@types/react": "npm:^19.1.0"
     "@types/react-google-recaptcha": "npm:^2.1.5"
@@ -7680,6 +7682,13 @@ __metadata:
     has-symbols: "npm:^1.1.0"
     which-boxed-primitive: "npm:^1.1.1"
   checksum: 10/fadb347020f66b2c8aeacf8b9a79826fa34cc5e5457af4eb0bbc4e79bd87fed0fa795949825df534320f7c13f199259516ad30abc55a6e7b91d8d996ca069e50
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~5.26.4":
+  version: 5.26.5
+  resolution: "undici-types@npm:5.26.5"
+  checksum: 10/0097779d94bc0fd26f0418b3a05472410408877279141ded2bd449167be1aed7ea5b76f756562cb3586a07f251b90799bab22d9019ceba49c037c76445f7cddd
   languageName: node
   linkType: hard
 
