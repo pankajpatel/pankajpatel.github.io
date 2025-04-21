@@ -2359,11 +2359,11 @@ __metadata:
   linkType: hard
 
 "@types/react-svg-inline@npm:^2.1.3":
-  version: 2.1.3
-  resolution: "@types/react-svg-inline@npm:2.1.3"
+  version: 2.1.6
+  resolution: "@types/react-svg-inline@npm:2.1.6"
   dependencies:
     "@types/react": "npm:*"
-  checksum: 10/b29a6f91a576378a88e3997f27db0474ef4e7b343e39d60bfc6df9cdbe428324dcca1d681c629d7394cd0e20cca97817f52afa96700970121f55e69c43b21958
+  checksum: 10/578c759c11cd6ba32ace05a8fa94c67e06a901ff7e3b316ebc7c454e8c968d9857330e2f12d8c06546d3a27134cdac1b4bcc558cddfa2ce55c758776f826dcad
   languageName: node
   linkType: hard
 
