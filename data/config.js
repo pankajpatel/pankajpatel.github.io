@@ -1,16 +1,16 @@
-const social = {
+export const social = {
   instagram: "pankaj_patel",
   twitter: "@heypankaj_",
   github: "pankajpatel",
   linkedin: "pankajpatel1",
 };
 
-module.exports = {
+export default {
   // Name of your site. Can be the name of a brand, or your personal name.
   title: "Pankaj Patel",
   subTitle: "Frontend Engineer",
   // What's the purpose of this website? What can we expect from it?
-  description: `Pankaj Patel is Front End Developer. View Pankaj&#39;s Resume, Biography and more. Get in touch today.`,
+  description: 'Pankaj Patel is Front End Developer. View Pankaj&#39;s Resume, Biography and more. Get in touch today.',
   // Your legal name.
   legalName: "Pankaj Patel",
   // URL to this website. If you bought `www.domain.com`, then it will be `www.domain.com`.
@@ -27,7 +27,7 @@ module.exports = {
     twitter: `https://twitter.com/${social.twitter.replace("@", "")}`,
     github: `https://github.com/${social.github}`,
     linkedin: `https://linkedin.com/in/${social.linkedin}`,
-    youtube: `https://www.youtube.com/channel/UCRu_FdU1qAuCbS2HqyZNwZA`,
+    youtube: 'https://www.youtube.com/channel/UCRu_FdU1qAuCbS2HqyZNwZA',
   },
   themeColor: "#fff",
   backgroundColor: "#333",

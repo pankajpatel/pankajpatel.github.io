@@ -1,19 +1,20 @@
 import Image from "next/image";
 import styled from "styled-components";
-import React, { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import profileImg from "../images/pankaj.png";
 import bgImg from "../images/homepage-bg.jpg";
 import metadata from "../data/config";
+import { css } from "styled-components";
 
 type LoadingProp = {
   isLoading?: boolean;
 };
 
-const transitionDelay = "transition-delay: 250ms;";
+const transitionDelay = css`transition-delay: 250ms;`;
 
-const Logo = styled.div<LoadingProp>`
-  ${({ isLoading }) => `
-    --logoSize: ${isLoading ? "0rem" : "5.5rem"};
+const Logo = styled.div<{ $isLoading?: boolean }>`
+  ${({ $isLoading }) => css`
+    --logoSize: ${$isLoading ? "0rem" : "5.5rem"};
     transition: all 525ms ease !important;
     ${transitionDelay}
     width: var(--logoSize);
@@ -52,8 +53,8 @@ const Role = styled.p`
   }
 `;
 
-const Inner = styled.div<LoadingProp>`
-  ${({ isLoading }) => `
+const Inner = styled.div<{ $isLoading?: boolean }>`
+  ${({ $isLoading }) => `
     max-height: 40rem;
     overflow: hidden;
     text-transform: uppercase;
@@ -70,15 +71,14 @@ const Inner = styled.div<LoadingProp>`
       padding: 2.5rem 0;
     }
 
-    ${
-      isLoading
-        ? `
+    ${$isLoading
+      ? `
       opacity: 0;
       padding: 1rem;
       ${Name} { letter-spacing: -5px; }
       ${Role} { letter-spacing: 0; }
       `
-        : `
+      : `
       opacity: 1;
       padding: 3rem 2rem;;
       ${Name} { letter-spacing: 8px; }
@@ -95,9 +95,9 @@ const Content = styled.div`
   max-width: 100%;
 `;
 
-const Header = styled.header<{ bg?: string; isLoading?: boolean }>`
-  ${({ isLoading, bg }) => `
-    --logoSize: ${isLoading ? "0rem" : "5.5rem"};
+const Header = styled.header<{ bg?: string; $isLoading?: boolean }>`
+  ${({ $isLoading, bg }) => css`
+    --logoSize: ${$isLoading ? "0rem" : "5.5rem"};
     justify-content: center;
     min-height: 100vh;
     display: flex;
@@ -106,7 +106,7 @@ const Header = styled.header<{ bg?: string; isLoading?: boolean }>`
     max-width: 100%;
     text-align: center;
     transition: all 0.325s ease-in-out;
-    opacity: ${isLoading ? 0 : 1};
+    opacity: ${$isLoading ? 0 : 1};
     position: relative;
     &:after,
     &:before {
@@ -125,9 +125,8 @@ const Header = styled.header<{ bg?: string; isLoading?: boolean }>`
       background-position: center;
       background-size: cover;
       }
-    ${
-      bg &&
-      `&:after {
+    ${bg &&
+    css`&:after {
         z-index: -1;
         width: 100%;
         transform: translateX(-50%);
@@ -176,12 +175,12 @@ const SiteHeader = ({
   isLoading = true,
   children,
 }: PropsWithChildren<LoadingProp>) => (
-  <Header id="header" isLoading={isLoading} bg={bgImg.src}>
-    <Logo isLoading={isLoading}>
+  <Header id="header" $isLoading={isLoading} bg={bgImg.src}>
+    <Logo $isLoading={isLoading}>
       <Image width={100} height={100} src={profileImg} alt={metadata.title} />
     </Logo>
     <Content className="content">
-      <Inner isLoading={isLoading}>
+      <Inner $isLoading={isLoading}>
         <Name>{metadata.title}</Name>
         <Role>{metadata.subTitle}</Role>
       </Inner>
