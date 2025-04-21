@@ -2404,9 +2404,9 @@ __metadata:
   linkType: hard
 
 "@types/tryghost__content-api@npm:^1.3.10":
-  version: 1.3.11
-  resolution: "@types/tryghost__content-api@npm:1.3.11"
-  checksum: 10/42340e2d68426bfeb716b052e7c4dd29a6e11892daac558bd41800bb5bd4a9e8d498a92a623a507e3562b2349c0e29270f5cd31d73d5649789ff67fede2214c7
+  version: 1.3.17
+  resolution: "@types/tryghost__content-api@npm:1.3.17"
+  checksum: 10/3aca07d38dc27632d7ee559e9b6ed5df6897befc01bb1c6cec10d18919f983964d1da1aef26edc2cc2b28da440ce838502540d5686a4ca501d5444c0f1140780
   languageName: node
   linkType: hard
 
