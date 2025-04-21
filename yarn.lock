@@ -2386,13 +2386,13 @@ __metadata:
   linkType: hard
 
 "@types/styled-components@npm:^5.1.22":
-  version: 5.1.26
-  resolution: "@types/styled-components@npm:5.1.26"
+  version: 5.1.34
+  resolution: "@types/styled-components@npm:5.1.34"
   dependencies:
     "@types/hoist-non-react-statics": "npm:*"
     "@types/react": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10/e40c942c97f4467310c658608e7d02d6b9571d390d0fa519bdbd37e48ed2c605a6c9e464812c36d0a1339402bff65cb473b9e785288a29419d7af994595bba33
+  checksum: 10/3da291b46f03d378a0176c9d034deee7ee0684c5d62e1c5ce82f3be0972918eaa806f45c62e9a4f1c8d24c5ba6571c260caba2493fc7e82b528ac7d15903e2c1
   languageName: node
   linkType: hard
 
