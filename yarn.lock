@@ -2350,11 +2350,11 @@ __metadata:
   linkType: hard
 
 "@types/react-recaptcha@npm:^2.3.4":
-  version: 2.3.4
-  resolution: "@types/react-recaptcha@npm:2.3.4"
+  version: 2.3.7
+  resolution: "@types/react-recaptcha@npm:2.3.7"
   dependencies:
     "@types/react": "npm:*"
-  checksum: 10/7290a5c0ee191bbcdeac3eb1a95008271c965b0ac96324863c08e7cef19a37cb1af6970a769e9d658e69ebc7af4a9bf33848e2def2a3e4721e48d034977d1c30
+  checksum: 10/d8652651c5dd3a9687abc6921dd17ba3035e684254e9f0f410510ec7117f27444aebab00ea6f7956b5e0998b71723f4a03e8586d6645c4f07a61054f2ccea412
   languageName: node
   linkType: hard
 
