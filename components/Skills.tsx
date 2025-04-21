@@ -28,7 +28,7 @@ const SkillsPage = () => (
   <PageSection>
     <PageTitle>Skills</PageTitle>
     <SkillsBox empty>
-      {(skills as Array<SkillCategory>).map<JSX.Element>(
+      {(skills as Array<SkillCategory>).map<React.ReactNode>(
         (skill: SkillCategory, index: number) => (
           <SkillsCategory key={index} category={skill} />
         )
