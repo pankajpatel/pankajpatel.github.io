@@ -2743,18 +2743,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.0.0":
-  version: 1.4.0
-  resolution: "axios@npm:1.4.0"
-  dependencies:
-    follow-redirects: "npm:^1.15.0"
-    form-data: "npm:^4.0.0"
-    proxy-from-env: "npm:^1.1.0"
-  checksum: 10/b987e4259e5cfc93e95ee306c267a44380bbc045789a91b716e8434a75e22987344605eb4e133482fe285dd3a2e0b7e791ba26999965f04a5ecdde25f56930cb
-  languageName: node
-  linkType: hard
-
-"axios@npm:^1.6.0":
+"axios@npm:^1.0.0, axios@npm:^1.6.0":
   version: 1.8.4
   resolution: "axios@npm:1.8.4"
   dependencies:
@@ -4362,16 +4351,6 @@ __metadata:
   version: 3.2.5
   resolution: "flatted@npm:3.2.5"
   checksum: 10/eed01f72ad0317561e4d6187f7408dc391f7849d9cd6700520ce06155d1859539b6899afdfefc815ce51ec48f97d1015350287c541b5302a49581cf25cec1cd2
-  languageName: node
-  linkType: hard
-
-"follow-redirects@npm:^1.15.0":
-  version: 1.15.2
-  resolution: "follow-redirects@npm:1.15.2"
-  peerDependenciesMeta:
-    debug:
-      optional: true
-  checksum: 10/8be0d39919770054812537d376850ccde0b4762b0501c440bd08724971a078123b55f57704f2984e0664fecc0c86adea85add63295804d9dce401cd9604c91d3
   languageName: node
   linkType: hard
 
