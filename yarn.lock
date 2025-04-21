@@ -2331,12 +2331,12 @@ __metadata:
   linkType: hard
 
 "@types/probe-image-size@npm:^7.0.1":
-  version: 7.2.0
-  resolution: "@types/probe-image-size@npm:7.2.0"
+  version: 7.2.5
+  resolution: "@types/probe-image-size@npm:7.2.5"
   dependencies:
     "@types/needle": "npm:*"
     "@types/node": "npm:*"
-  checksum: 10/dea93064cac74db2297efbdb14d6749bceae6891fa7cc3674b504ce1752d6ae6fa7ad1ed62d44c77615518147465ab53863679dbe8b0f4fb67757a9babb5ce29
+  checksum: 10/515c12e25b70e9d5be741888f5c01a37cf23fa5bea4a2fec8efef8a06ba49108dfd3d8d6bfa7b63ee0bf5b3859d81733a80d2b093be08459b1d1ec51404993bf
   languageName: node
   linkType: hard
 
