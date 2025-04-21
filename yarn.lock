@@ -2341,11 +2341,11 @@ __metadata:
   linkType: hard
 
 "@types/react-google-recaptcha@npm:^2.1.5":
-  version: 2.1.5
-  resolution: "@types/react-google-recaptcha@npm:2.1.5"
+  version: 2.1.9
+  resolution: "@types/react-google-recaptcha@npm:2.1.9"
   dependencies:
     "@types/react": "npm:*"
-  checksum: 10/8d0fa9e2ad8b3f135c423a196f7007650dc06bceeab3edf73176699189527f1befeefcf9c4289d9e3f1feb427d0034ca218331afa7e874d9e92ff81105a0a4ca
+  checksum: 10/5a90bb50fe0a49f2e2ceb7950859cfdbe019aa0a75261451fb50ad83dcd4aa360a1941ab6c9b3c627f2b7a0dab2c6c09d6297469d3d4d02ebaf36b3fc34429b6
   languageName: node
   linkType: hard
 
