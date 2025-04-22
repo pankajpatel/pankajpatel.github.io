@@ -7420,11 +7420,11 @@ __metadata:
   linkType: hard
 
 "styled-normalize@npm:^8.0.7":
-  version: 8.0.7
-  resolution: "styled-normalize@npm:8.0.7"
+  version: 8.1.1
+  resolution: "styled-normalize@npm:8.1.1"
   peerDependencies:
-    styled-components: ^4.0.0 || ^5.0.0
-  checksum: 10/e30e09910e20a73a649b33b670c252ff43fe3dcb971078cf27eab2003e461970b54836958a0cee414278cde85741f68ed32a625178680e36edd2a14a60888586
+    styled-components: ^4.0.0 || ^5.0.0 || ^6.0.0
+  checksum: 10/f7183f14baabb16e79d9adc88a8d82c6578cbae7653fc224a82a17a99eb85fc4f92c1f0db4cf1e8e3038f389b527a1719df15a262d886c287cff2fe3ed64309c
   languageName: node
   linkType: hard
 
