@@ -17,7 +17,7 @@
     "@tryghost/content-api": "^1.7.1",
     "babel-plugin-styled-components": "^2.0.2",
     "clsx": "^2.0.0",
-    "crypto-hash": "^2.0.1",
+    "crypto-hash": "^3.0.0",
     "dayjs": "^1.10.7",
     "form-data": "^4.0.0",
     "hast-util-to-string": "^2.0.0",
