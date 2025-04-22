@@ -2337,6 +2337,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hast@npm:^3.0.0":
+  version: 3.0.4
+  resolution: "@types/hast@npm:3.0.4"
+  dependencies:
+    "@types/unist": "npm:*"
+  checksum: 10/732920d81bb7605895776841b7658b4d8cc74a43a8fa176017cc0fb0ecc1a4c82a2b75a4fe6b71aa262b649d3fb62858c6789efa3793ea1d40269953af96ecb5
+  languageName: node
+  linkType: hard
+
 "@types/hoist-non-react-statics@npm:*":
   version: 3.3.1
   resolution: "@types/hoist-non-react-statics@npm:3.3.1"
@@ -2491,6 +2500,13 @@ __metadata:
   version: 1.3.17
   resolution: "@types/tryghost__content-api@npm:1.3.17"
   checksum: 10/3aca07d38dc27632d7ee559e9b6ed5df6897befc01bb1c6cec10d18919f983964d1da1aef26edc2cc2b28da440ce838502540d5686a4ca501d5444c0f1140780
+  languageName: node
+  linkType: hard
+
+"@types/unist@npm:*":
+  version: 3.0.3
+  resolution: "@types/unist@npm:3.0.3"
+  checksum: 10/96e6453da9e075aaef1dc22482463898198acdc1eeb99b465e65e34303e2ec1e3b1ed4469a9118275ec284dc98019f63c3f5d49422f0e4ac707e5ab90fb3b71a
   languageName: node
   linkType: hard
 
@@ -4921,12 +4937,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hast-util-to-string@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "hast-util-to-string@npm:2.0.0"
+"hast-util-to-string@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "hast-util-to-string@npm:3.0.1"
   dependencies:
-    "@types/hast": "npm:^2.0.0"
-  checksum: 10/93f34355b9679a626a2903371a267139bbe30c4d1d5252be6aa9b6d77524d293b8cb9be1f269edab353b678088fe01003affebce39d08a83aa96db208d38fea5
+    "@types/hast": "npm:^3.0.0"
+  checksum: 10/a569518313a648bc86e712858bc907d1f65137ebba87bc71180dbc2f24f194f6035019ffa8e38b1f7897672d45a337046a4c9964ce6d2593953b5069e10d31c2
   languageName: node
   linkType: hard
 
@@ -6307,7 +6323,7 @@ __metadata:
     eslint: "npm:9.25.1"
     eslint-config-next: "npm:15.3.1"
     form-data: "npm:^4.0.0"
-    hast-util-to-string: "npm:^2.0.0"
+    hast-util-to-string: "npm:^3.0.0"
     husky: "npm:^9.0.0"
     lodash: "npm:^4.17.21"
     mailgun.js: "npm:^9.0.0"
