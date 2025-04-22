@@ -6566,14 +6566,14 @@ __metadata:
   linkType: hard
 
 "refractor@npm:^4.5.0":
-  version: 4.8.1
-  resolution: "refractor@npm:4.8.1"
+  version: 4.9.0
+  resolution: "refractor@npm:4.9.0"
   dependencies:
     "@types/hast": "npm:^2.0.0"
     "@types/prismjs": "npm:^1.0.0"
     hastscript: "npm:^7.0.0"
     parse-entities: "npm:^4.0.0"
-  checksum: 10/d41cdd3b7e2ee4dbe33cd06f5860fbd1219c4b60cb80ac606337ec9ff2f06b0fdd1b712a5f0e9dbf840193f37870546b5c145ca4772e961a5a117d5137ae8cc4
+  checksum: 10/408d86fde2e3ba272582a8c61d8b63d0a911bfb496cc7cd959bb88a7a4114bc6182b45ca6b174c1de78813537f938647bbf847c9f39631ec8857ec847041887b
   languageName: node
   linkType: hard
 
