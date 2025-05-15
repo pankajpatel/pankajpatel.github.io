@@ -2,7 +2,7 @@ import { rehype as Rehype } from "rehype";
 import { Node, Parent } from "unist";
 import { visit } from "unist-util-visit";
 import { cloneDeep } from "lodash";
-import { refractor } from "refractor";
+import { refractor } from "refractor/core";
 import { toString as nodeToString } from "hast-util-to-string";
 import { PostOrPage } from "@tryghost/content-api";
 import { generateTableOfContents } from "./toc";
