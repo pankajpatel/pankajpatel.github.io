@@ -95,8 +95,8 @@ const Content = styled.div`
   max-width: 100%;
 `;
 
-const Header = styled.header<{ bg?: string; $isLoading?: boolean }>`
-  ${({ $isLoading, bg }) => css`
+const Header = styled.header<{ $bg?: string; $isLoading?: boolean }>`
+  ${({ $isLoading, $bg }) => css`
     --logoSize: ${$isLoading ? "0rem" : "5.5rem"};
     justify-content: center;
     min-height: 100vh;
@@ -125,12 +125,12 @@ const Header = styled.header<{ bg?: string; $isLoading?: boolean }>`
       background-position: center;
       background-size: cover;
       }
-    ${bg &&
+    ${$bg &&
     css`&:after {
         z-index: -1;
         width: 100%;
         transform: translateX(-50%);
-        background-image: url(${bg});
+        background-image: url(${$bg});
     }`
     }
 
@@ -175,7 +175,7 @@ const SiteHeader = ({
   isLoading = true,
   children,
 }: PropsWithChildren<LoadingProp>) => (
-  <Header id="header" $isLoading={isLoading} bg={bgImg.src}>
+  <Header id="header" $isLoading={isLoading} $bg={bgImg.src}>
     <Logo $isLoading={isLoading}>
       <Image width={100} height={100} src={profileImg} alt={metadata.title} />
     </Logo>

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const Articles = styled.div<{ empty?: boolean }>`
+export const Articles = styled.div<{ $empty?: boolean }>`
   position: relative;
   max-width: 480px;
   margin: 0 auto;
-  ${({ empty = false }) =>
-    !empty &&
+  ${({ $empty = false }) =>
+    !$empty &&
     `
     &:before {
       position: absolute;

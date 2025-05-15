@@ -27,7 +27,7 @@ const SkillsBox = styled(Articles)`
 const SkillsPage = () => (
   <PageSection>
     <PageTitle>Skills</PageTitle>
-    <SkillsBox empty>
+    <SkillsBox $empty={true}>
       {(skills as Array<SkillCategory>).map<React.ReactNode>(
         (skill: SkillCategory, index: number) => (
           <SkillsCategory key={index} category={skill} />

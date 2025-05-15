@@ -157,7 +157,7 @@ const ContactPage = () => {
       ></script>
 
       <ContactForm
-        empty
+        $empty={true}
         as="form"
         method="POST"
         ref={formRef}
