@@ -1,3 +1,5 @@
+"use client";
+
 import Img from "next/image";
 import styled from "styled-components";
 import github from "../images/github.png";
@@ -31,6 +33,7 @@ const Image = styled(Img)`
   background-color: #fff;
   border-radius: 50%;
   padding: 1px;
+  filter: opacity(0.7);
 `;
 const Icons = styled.ul`
   cursor: default;
@@ -47,7 +50,7 @@ const Icons = styled.ul`
   }
 
   & li a {
-    --dimension: 3rem;
+    --dimension: 70px;
     display: inline-block;
     height: var(--dimension);
     line-height: var(--dimension);
@@ -58,7 +61,7 @@ const Icons = styled.ul`
   }
 
   & li a:hover {
-    transform: scale(1.3);
+    transform: scale(1.2);
   }
 
   & li a:active {
@@ -81,8 +84,8 @@ const Footer = () => (
       <li>
         <a href={metadata.socialLinks.linkedin}>
           <Image
-            width={100}
-            height={100}
+            width={50}
+            height={50}
             src={linkedin}
             alt="Find me on Linkedin"
           />
@@ -90,19 +93,14 @@ const Footer = () => (
       </li>
       <li>
         <a href={metadata.socialLinks.github}>
-          <Image
-            width={100}
-            height={100}
-            src={github}
-            alt="Find me on Github"
-          />
+          <Image width={50} height={50} src={github} alt="Find me on Github" />
         </a>
       </li>
       <li>
         <a href={metadata.socialLinks.twitter}>
           <Image
-            width={100}
-            height={100}
+            width={50}
+            height={50}
             src={twitter}
             alt="Find me on Twitter"
           />
@@ -111,8 +109,8 @@ const Footer = () => (
       <li>
         <a href={metadata.socialLinks.youtube}>
           <Image
-            width={100}
-            height={100}
+            width={50}
+            height={50}
             src={youtube}
             alt="Find me on Youtube"
           />
@@ -121,8 +119,8 @@ const Footer = () => (
       <li>
         <a href={metadata.socialLinks.instagram}>
           <Image
-            width={100}
-            height={100}
+            width={50}
+            height={50}
             src={instagram}
             alt="Find me on Instagram"
           />

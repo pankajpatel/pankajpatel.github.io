@@ -4,9 +4,9 @@
     "@stylexjs"
   ],
   "rules": {
-    "@stylexjs/valid-styles": "2",
-    "@stylexjs/no-unused": "2",
-    "@stylexjs/valid-shorthands": "1",
-    "@stylexjs/sort-keys": "1"
+    "@stylexjs/valid-styles": 2,
+    "@stylexjs/no-unused": 2,
+    "@stylexjs/valid-shorthands": 1,
+    "@stylexjs/sort-keys": 1
   }
 }

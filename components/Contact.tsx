@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, FormEventHandler, useRef, useState } from "react";
 import styled from "styled-components";
 import Recaptcha from "react-recaptcha";
@@ -129,7 +131,7 @@ const ContactPage = () => {
 
     const headers = new Headers();
     headers.append("Content-Type", "application/json");
-    const request = new Request("/.netlify/functions/send-email", {
+    const request = new Request("/api/send-email", {
       method: "POST",
       headers: headers,
       body: JSON.stringify(objectFromFormData(new FormData(formRef.current))),
@@ -157,7 +159,7 @@ const ContactPage = () => {
       ></script>
 
       <ContactForm
-        empty
+        $empty={true}
         as="form"
         method="POST"
         ref={formRef}
