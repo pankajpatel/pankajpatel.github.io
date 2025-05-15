@@ -32,7 +32,7 @@
     "react-recaptcha": "^2.3.10",
     "react-svg-inline": "^2.1.1",
     "refractor": "^4.5.0",
-    "rehype": "^12.0.1",
+    "rehype": "^13.0.0",
     "styled-components": "^6",
     "styled-normalize": "^8.0.7",
     "unist-util-visit": "^5.0.0"
