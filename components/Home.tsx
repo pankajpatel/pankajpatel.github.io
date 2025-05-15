@@ -1,8 +1,3 @@
-'use client';
-
-import clsx from 'clsx';
-import { useEffect, useState } from "react";
-import styled from "styled-components";
 import Contact from "../components/Contact";
 import Education from "../components/Education";
 import Footer from "../components/Footer";
@@ -14,58 +9,39 @@ import RecentPosts from "../components/RecentPosts";
 import Skills from "../components/Skills";
 import Work from "../components/Work";
 import type { GhostPostsOrPages } from "../lib/ghost";
-import { Providers } from './providers';
-
-const ScrollableSection = styled.div`
-  padding: 2rem 0;
-
-  @media (max-width: 500px) {
-    padding: 1rem 0;
-  }
-`;
+import { Providers } from "./providers";
 
 export const Home = (props: {
   cmsData: {
     posts: GhostPostsOrPages | [];
   };
-}) => {
-  const [isLoading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 100);
-  }, []);
-
-  return (
-    <Providers>
-
-      <div className={clsx("body", { "is-loading": isLoading })}>
-        <Layout>
-          <Header isLoading={isLoading}>
-            <Nav />
-          </Header>
-          <ScrollableSection id={"/intro"}>
-            <Intro />
-          </ScrollableSection>
-          <ScrollableSection id={"/work"}>
-            <Work />
-          </ScrollableSection>
-          <ScrollableSection id={"/publications"}>
-            <RecentPosts posts={props.cmsData.posts || []} />
-          </ScrollableSection>
-          <ScrollableSection id={"/education"}>
-            <Education />
-          </ScrollableSection>
-          <ScrollableSection id={"/skills"}>
-            <Skills />
-          </ScrollableSection>
-          <ScrollableSection id={"/contact"}>
-            <Contact />
-          </ScrollableSection>
-          <Footer />
-        </Layout>
-      </div>
-    </Providers>
-  );
-};
+}) => (
+  <Providers>
+    <div className="body">
+      <Layout>
+        <Header>
+          <Nav />
+        </Header>
+        <div className="scrollable-container" id={"/intro"}>
+          <Intro />
+        </div>
+        <div className="scrollable-container" id={"/work"}>
+          <Work />
+        </div>
+        <div className="scrollable-container" id={"/publications"}>
+          <RecentPosts posts={props.cmsData.posts || []} />
+        </div>
+        <div className="scrollable-container" id={"/education"}>
+          <Education />
+        </div>
+        <div className="scrollable-container" id={"/skills"}>
+          <Skills />
+        </div>
+        <div className="scrollable-container" id={"/contact"}>
+          <Contact />
+        </div>
+        <Footer />
+      </Layout>
+    </div>
+  </Providers>
+);

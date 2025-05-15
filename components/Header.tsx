@@ -1,6 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import styled from "styled-components";
-import type { PropsWithChildren } from "react";
+import { useEffect, useState, type PropsWithChildren } from "react";
 import profileImg from "../images/pankaj.png";
 import bgImg from "../images/homepage-bg.jpg";
 import metadata from "../data/config";
@@ -10,7 +12,9 @@ type LoadingProp = {
   isLoading?: boolean;
 };
 
-const transitionDelay = css`transition-delay: 250ms;`;
+const transitionDelay = css`
+  transition-delay: 250ms;
+`;
 
 const Logo = styled.div<{ $isLoading?: boolean }>`
   ${({ $isLoading }) => css`
@@ -71,14 +75,15 @@ const Inner = styled.div<{ $isLoading?: boolean }>`
       padding: 2.5rem 0;
     }
 
-    ${$isLoading
-      ? `
+    ${
+      $isLoading
+        ? `
       opacity: 0;
       padding: 1rem;
       ${Name} { letter-spacing: -5px; }
       ${Role} { letter-spacing: 0; }
       `
-      : `
+        : `
       opacity: 1;
       padding: 3rem 2rem;;
       ${Name} { letter-spacing: 8px; }
@@ -110,29 +115,37 @@ const Header = styled.header<{ $bg?: string; $isLoading?: boolean }>`
     position: relative;
     &:after,
     &:before {
-      content: ' ';
+      content: " ";
       position: absolute;
       top: 0;
       left: 50%;
       height: 100%;
       width: 100%;
       transform: translateX(-50%);
-      background-image:
-        radial-gradient(rgba(0,0,0,0), rgba(34, 34, 34, 0.15)),
-        radial-gradient(rgba(0,0,0,0.65) 26%, rgba(0,0,0,0) 100% ),
-        radial-gradient(ellipse at center, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 75%,rgba(0,0,0,0.7) 100%);
+      background-image: radial-gradient(
+          rgba(0, 0, 0, 0),
+          rgba(34, 34, 34, 0.15)
+        ),
+        radial-gradient(rgba(0, 0, 0, 0.65) 26%, rgba(0, 0, 0, 0) 100%),
+        radial-gradient(
+          ellipse at center,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0) 75%,
+          rgba(0, 0, 0, 0.7) 100%
+        );
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
-      }
+    }
     ${$bg &&
-    css`&:after {
+    css`
+      &:after {
         z-index: -1;
         width: 100%;
         transform: translateX(-50%);
         background-image: url(${$bg});
-    }`
-    }
+      }
+    `}
 
     & > * {
       transition: opacity 0.325s ease-in-out;
@@ -171,22 +184,28 @@ const Header = styled.header<{ $bg?: string; $isLoading?: boolean }>`
   `}
 `;
 
-const SiteHeader = ({
-  isLoading = true,
-  children,
-}: PropsWithChildren<LoadingProp>) => (
-  <Header id="header" $isLoading={isLoading} $bg={bgImg.src}>
-    <Logo $isLoading={isLoading}>
-      <Image width={100} height={100} src={profileImg} alt={metadata.title} />
-    </Logo>
-    <Content className="content">
-      <Inner $isLoading={isLoading}>
-        <Name>{metadata.title}</Name>
-        <Role>{metadata.subTitle}</Role>
-      </Inner>
-    </Content>
-    {children}
-  </Header>
-);
+const SiteHeader = ({ children }: PropsWithChildren<LoadingProp>) => {
+  const [isLoading, setLoading] = useState<boolean>(true);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 100);
+  }, []);
+
+  return (
+    <Header id="header" $isLoading={isLoading} $bg={bgImg.src}>
+      <Logo $isLoading={isLoading}>
+        <Image width={100} height={100} src={profileImg} alt={metadata.title} />
+      </Logo>
+      <Content className="content">
+        <Inner $isLoading={isLoading}>
+          <Name>{metadata.title}</Name>
+          <Role>{metadata.subTitle}</Role>
+        </Inner>
+      </Content>
+      {children}
+    </Header>
+  );
+};
 export default SiteHeader;

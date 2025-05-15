@@ -1,3 +1,5 @@
+"use client";
+
 import { Link } from "rc-scroll-anim";
 import styled from "styled-components";
 import menuItems from "../data/nav.json";

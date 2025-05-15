@@ -5,8 +5,8 @@ module.exports = {
     styledComponents: true,
   },
   reactStrictMode: true,
-  webpack(config) {
-    return config;
+  turbopack: {
+
   },
   experimental: {},
 };

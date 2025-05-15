@@ -1,3 +1,5 @@
+"use client";
+
 import Img from "next/image";
 import styled from "styled-components";
 import github from "../images/github.png";
@@ -91,12 +93,7 @@ const Footer = () => (
       </li>
       <li>
         <a href={metadata.socialLinks.github}>
-          <Image
-            width={50}
-            height={50}
-            src={github}
-            alt="Find me on Github"
-          />
+          <Image width={50} height={50} src={github} alt="Find me on Github" />
         </a>
       </li>
       <li>

@@ -1,3 +1,5 @@
+"use client";
+
 import styled from "styled-components";
 
 const Section = styled.section`
@@ -28,7 +30,8 @@ const Intro = () => (
         &amp; sci-fi movies.
       </p>
       <p>
-        I have interests in UX and Information Security which helps me in building secure and magnetic experiences for end-users.
+        I have interests in UX and Information Security which helps me in
+        building secure and magnetic experiences for end-users.
       </p>
     </InfoContainer>
   </Section>

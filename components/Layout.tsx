@@ -1,3 +1,5 @@
+"use client";
+
 import React, { PropsWithChildren } from "react";
 import { Normalize } from "styled-normalize";
 import styled from "styled-components";
