@@ -2945,7 +2945,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.0.0, axios@npm:^1.6.0":
+"axios@npm:^1.0.0, axios@npm:^1.7.4":
   version: 1.8.4
   resolution: "axios@npm:1.8.4"
   dependencies:
@@ -6099,14 +6099,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mailgun.js@npm:^9.0.0":
-  version: 9.4.1
-  resolution: "mailgun.js@npm:9.4.1"
+"mailgun.js@npm:^12.0.0":
+  version: 12.0.1
+  resolution: "mailgun.js@npm:12.0.1"
   dependencies:
-    axios: "npm:^1.6.0"
+    axios: "npm:^1.7.4"
     base-64: "npm:^1.0.0"
     url-join: "npm:^4.0.1"
-  checksum: 10/5b38ba2d5c1ace2c520db3ab871f528b401abc925d5b76bb77c03afa2c2964bebe79821dc8ab3741263b62a5592ae8ae0124159afa9c1945c76f3a26aba323f6
+  checksum: 10/dd41befe52be26c103e560721354de9ee52dc39347536d924bbe16ce8d9dbcd261db752b04aa3994364e21cf048e89613a831c8d84c6fec03251ec672df74064
   languageName: node
   linkType: hard
 
@@ -6801,7 +6801,7 @@ __metadata:
     hast-util-to-string: "npm:^3.0.0"
     husky: "npm:^9.0.0"
     lodash: "npm:^4.17.21"
-    mailgun.js: "npm:^9.0.0"
+    mailgun.js: "npm:^12.0.0"
     next: "npm:^15"
     posthog-js: "npm:^1.210.2"
     probe-image-size: "npm:^7.2.3"
