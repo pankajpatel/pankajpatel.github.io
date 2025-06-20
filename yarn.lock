@@ -2945,7 +2945,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.0.0, axios@npm:^1.7.4":
+"axios@npm:^1.0.0":
   version: 1.8.4
   resolution: "axios@npm:1.8.4"
   dependencies:
@@ -2953,6 +2953,17 @@ __metadata:
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
   checksum: 10/a10f0dd836613924e48cf03dc2eff3fd21b14f764807aedaee4880a70c0f142aaebdb21da7ce27104d4c16ca00d0e452a20a20851f60e385a8d5bad1ae909d46
+  languageName: node
+  linkType: hard
+
+"axios@npm:^1.10.0":
+  version: 1.10.0
+  resolution: "axios@npm:1.10.0"
+  dependencies:
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10/d43c80316a45611fd395743e15d16ea69a95f2b7f7095f2bb12cb78f9ca0a905194a02e52a3bf4e0db9f85fd1186d6c690410644c10ecd8bb0a468e57c2040e4
   languageName: node
   linkType: hard
 
@@ -6100,13 +6111,13 @@ __metadata:
   linkType: hard
 
 "mailgun.js@npm:^12.0.0":
-  version: 12.0.1
-  resolution: "mailgun.js@npm:12.0.1"
+  version: 12.0.3
+  resolution: "mailgun.js@npm:12.0.3"
   dependencies:
-    axios: "npm:^1.7.4"
+    axios: "npm:^1.10.0"
     base-64: "npm:^1.0.0"
     url-join: "npm:^4.0.1"
-  checksum: 10/dd41befe52be26c103e560721354de9ee52dc39347536d924bbe16ce8d9dbcd261db752b04aa3994364e21cf048e89613a831c8d84c6fec03251ec672df74064
+  checksum: 10/dfde266a4d06d5d591dbd2a5081bdd791c4eb4626fdb1f307375725fff064e2c1ca470d76417d20f98a657be06004184514e94012f865c17911d9bc696f373a0
   languageName: node
   linkType: hard
 
