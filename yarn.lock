@@ -2375,11 +2375,11 @@ __metadata:
   linkType: hard
 
 "@tryghost/content-api@npm:^1.7.1":
-  version: 1.11.24
-  resolution: "@tryghost/content-api@npm:1.11.24"
+  version: 1.11.28
+  resolution: "@tryghost/content-api@npm:1.11.28"
   dependencies:
     axios: "npm:^1.0.0"
-  checksum: 10/0a926a19e387be232b25558b11dfb8d909d6258ad562172ce54916c5e71f852272e6c426917c1deaefa0f44f5784c9bc36ea3eac7a743a6b5127b72cf0fb02eb
+  checksum: 10/2ffba0091b853939cb21d9c4a07a71ff5d32ab69e83a0b557b681660fa492f34f546f1f838462cdca3b7b5d407283f071d74aa663046d3bd9a7e9dedc6aa71d5
   languageName: node
   linkType: hard
 
