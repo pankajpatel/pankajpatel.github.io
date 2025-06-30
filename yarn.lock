@@ -2172,13 +2172,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stylexjs/eslint-plugin@npm:^0.12.0":
-  version: 0.12.0
-  resolution: "@stylexjs/eslint-plugin@npm:0.12.0"
+"@stylexjs/eslint-plugin@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "@stylexjs/eslint-plugin@npm:0.14.0"
   dependencies:
     css-shorthand-expand: "npm:^1.2.0"
     micromatch: "npm:^4.0.5"
-  checksum: 10/dec4f8428792cc578378423f21ad9ff6834bf65eaa0332b041dab02c29c97cde3e94133771f6623a788e5376aa2d54d2b779f2974bbfdddef8220b5359826658
+  checksum: 10/2f40014ef26f9e12b5a9b7a6cc9d9935210a9c77809a8dfb5c028dec234752f7d02f09339adfa2dbedad09ff44d6aa7008ada62fcc8c3a2a1fda2bcc264e9c50
   languageName: node
   linkType: hard
 
@@ -6776,7 +6776,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "portfolio@workspace:."
   dependencies:
-    "@stylexjs/eslint-plugin": "npm:^0.12.0"
+    "@stylexjs/eslint-plugin": "npm:^0.14.0"
     "@stylexjs/shared": "npm:^0.12.0"
     "@stylexjs/stylex": "npm:^0.12.0"
     "@svgr/webpack": "npm:^8.0.0"
