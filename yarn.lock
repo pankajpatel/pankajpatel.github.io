@@ -2469,12 +2469,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.15.18":
-  version: 22.15.18
-  resolution: "@types/node@npm:22.15.18"
+"@types/node@npm:22.16.4":
+  version: 22.16.4
+  resolution: "@types/node@npm:22.16.4"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10/89c8c638beade806753b6fb2f25ed45b0e06f9f7375422137da5752be5c29fa9c75932b942fd55ae7de2b4288e8496912af3e029df45cc93735ac5eb49ece01e
+  checksum: 10/6d2c133bf1ac498b78f15f8a13b2d5a5853e62606feaec1c9d2c93088f038d4ef94dc869a9a1155554e77643e2f4630afb3697daca5471843e08684ee9a1cc8a
   languageName: node
   linkType: hard
 
@@ -6782,7 +6782,7 @@ __metadata:
     "@svgr/webpack": "npm:^8.0.0"
     "@tryghost/content-api": "npm:^1.7.1"
     "@types/lodash": "npm:^4.14.181"
-    "@types/node": "npm:22.15.18"
+    "@types/node": "npm:22.16.4"
     "@types/probe-image-size": "npm:^7.0.1"
     "@types/react": "npm:^19.1.0"
     "@types/react-google-recaptcha": "npm:^2.1.5"
