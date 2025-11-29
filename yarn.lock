@@ -2173,13 +2173,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stylexjs/eslint-plugin@npm:^0.12.0":
-  version: 0.12.0
-  resolution: "@stylexjs/eslint-plugin@npm:0.12.0"
+"@stylexjs/eslint-plugin@npm:^0.17.0":
+  version: 0.17.1
+  resolution: "@stylexjs/eslint-plugin@npm:0.17.1"
   dependencies:
+    "@stylexjs/shared": "npm:0.17.1"
     css-shorthand-expand: "npm:^1.2.0"
     micromatch: "npm:^4.0.5"
-  checksum: 10/dec4f8428792cc578378423f21ad9ff6834bf65eaa0332b041dab02c29c97cde3e94133771f6623a788e5376aa2d54d2b779f2974bbfdddef8220b5359826658
+    postcss-value-parser: "npm:^4.2.0"
+  checksum: 10/eb62770d101ec55d9b9d1ace403145e1570e6a074d39e907857c3ad441674e5f9dac315927ed4a9f355284a4f9b5abddf5ed1ab1b6233878d5c93e3651d41b67
+  languageName: node
+  linkType: hard
+
+"@stylexjs/shared@npm:0.17.1":
+  version: 0.17.1
+  resolution: "@stylexjs/shared@npm:0.17.1"
+  checksum: 10/6687b62cd2dfb5af721932cd8862c04415464c407417ba66e44ec33b01ce63c11b8f3626d5b748a1ea9d7693396384f04a0386fbd38cf164c28fe880397b6ea0
   languageName: node
   linkType: hard
 
@@ -6457,7 +6466,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "portfolio@workspace:."
   dependencies:
-    "@stylexjs/eslint-plugin": "npm:^0.12.0"
+    "@stylexjs/eslint-plugin": "npm:^0.17.0"
     "@stylexjs/shared": "npm:^0.12.0"
     "@stylexjs/stylex": "npm:^0.12.0"
     "@svgr/webpack": "npm:^8.0.0"
@@ -6508,7 +6517,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-value-parser@npm:^4.0.2, postcss-value-parser@npm:^4.1.0":
+"postcss-value-parser@npm:^4.0.2, postcss-value-parser@npm:^4.1.0, postcss-value-parser@npm:^4.2.0":
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
   checksum: 10/e4e4486f33b3163a606a6ed94f9c196ab49a37a7a7163abfcd469e5f113210120d70b8dd5e33d64636f41ad52316a3725655421eb9a1094f1bcab1db2f555c62
