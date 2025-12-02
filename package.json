@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@stylexjs/shared": "^0.12.0",
-    "@stylexjs/stylex": "^0.12.0",
+    "@stylexjs/stylex": "^0.17.0",
     "@svgr/webpack": "^8.0.0",
     "@tryghost/content-api": "^1.7.1",
     "babel-plugin-styled-components": "^2.0.2",

@@ -2192,14 +2192,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stylexjs/stylex@npm:^0.12.0":
-  version: 0.12.0
-  resolution: "@stylexjs/stylex@npm:0.12.0"
+"@stylexjs/stylex@npm:^0.17.0":
+  version: 0.17.2
+  resolution: "@stylexjs/stylex@npm:0.17.2"
   dependencies:
     css-mediaquery: "npm:^0.1.2"
     invariant: "npm:^2.2.4"
     styleq: "npm:0.2.1"
-  checksum: 10/65477794bf46fc0774e21180bae3b4ee8c16bfa063581b6783a674f3039895018f655b5360130f97488c8bda0fe18cd557fc9fd98192d22cf1349c611b522aac
+  checksum: 10/927f7f0e443fe4257ad989068cf35faded670ca8140740fa0a3ed469a50a5a02035f5b9882810bcd9226480a01da64df6e422aa1e73c3aab5e643c02a39044f4
   languageName: node
   linkType: hard
 
@@ -6459,7 +6459,7 @@ __metadata:
   dependencies:
     "@stylexjs/eslint-plugin": "npm:^0.12.0"
     "@stylexjs/shared": "npm:^0.12.0"
-    "@stylexjs/stylex": "npm:^0.12.0"
+    "@stylexjs/stylex": "npm:^0.17.0"
     "@svgr/webpack": "npm:^8.0.0"
     "@tryghost/content-api": "npm:^1.7.1"
     "@types/lodash": "npm:^4.14.181"
