@@ -2183,12 +2183,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stylexjs/shared@npm:^0.12.0":
-  version: 0.12.0
-  resolution: "@stylexjs/shared@npm:0.12.0"
-  dependencies:
-    postcss-value-parser: "npm:^4.1.0"
-  checksum: 10/6798c7fbbce91f21b6204eed19b1b80530604b7761a2ade9935c33203024cd270c7905c0fda4bae3de43a465d6340cbc89fcf6ad6bbbcd3a5d84d76950eb3478
+"@stylexjs/shared@npm:^0.17.0":
+  version: 0.17.2
+  resolution: "@stylexjs/shared@npm:0.17.2"
+  checksum: 10/67fc46d770c7dc9a017d598de01da8c116b7f6e11ad33d0bd2b09c5c5d3bc08fb82791fd2a882c50d7c6c952ffaf8bc471d74b576ab9c83ab3cd93903e89ada2
   languageName: node
   linkType: hard
 
@@ -6458,7 +6456,7 @@ __metadata:
   resolution: "portfolio@workspace:."
   dependencies:
     "@stylexjs/eslint-plugin": "npm:^0.12.0"
-    "@stylexjs/shared": "npm:^0.12.0"
+    "@stylexjs/shared": "npm:^0.17.0"
     "@stylexjs/stylex": "npm:^0.12.0"
     "@svgr/webpack": "npm:^8.0.0"
     "@tryghost/content-api": "npm:^1.7.1"
@@ -6508,7 +6506,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-value-parser@npm:^4.0.2, postcss-value-parser@npm:^4.1.0":
+"postcss-value-parser@npm:^4.0.2":
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
   checksum: 10/e4e4486f33b3163a606a6ed94f9c196ab49a37a7a7163abfcd469e5f113210120d70b8dd5e33d64636f41ad52316a3725655421eb9a1094f1bcab1db2f555c62
