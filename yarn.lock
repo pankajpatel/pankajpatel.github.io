@@ -3447,10 +3447,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"crypto-hash@npm:^3.0.0":
-  version: 3.1.0
-  resolution: "crypto-hash@npm:3.1.0"
-  checksum: 10/c71518a20470b78a584f0cb568ba87241802627812da0e3c20236070a90dbb1272b8c9db0476d45996c2f4c793ccfccdeb399e31a3cd3310eb4b6e2363a91306
+"crypto-hash@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "crypto-hash@npm:4.0.1"
+  checksum: 10/b81439e7c6969384044dac15dd0e55ee005ca87d5a4f6e1dae852ed64f5011822da2aa2b2fbf4564d8d68303569805f97024a57865e53a6501c87c31f9b33718
   languageName: node
   linkType: hard
 
@@ -6488,7 +6488,7 @@ __metadata:
     babel-plugin-inline-react-svg: "npm:^2.0.1"
     babel-plugin-styled-components: "npm:^2.0.2"
     clsx: "npm:^2.0.0"
-    crypto-hash: "npm:^3.0.0"
+    crypto-hash: "npm:^4.0.0"
     dayjs: "npm:^1.10.7"
     eslint: "npm:9.39.2"
     eslint-config-next: "npm:15.5.9"
