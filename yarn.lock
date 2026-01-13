@@ -1629,6 +1629,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@csstools/css-tokenizer@npm:^3.0.3":
+  version: 3.0.4
+  resolution: "@csstools/css-tokenizer@npm:3.0.4"
+  checksum: 10/eb6c84c086312f6bb8758dfe2c85addd7475b0927333c5e39a4d59fb210b9810f8c346972046f95e60a721329cffe98895abe451e51de753ad1ca7a8c24ec65f
+  languageName: node
+  linkType: hard
+
 "@emnapi/runtime@npm:^1.4.4":
   version: 1.4.4
   resolution: "@emnapi/runtime@npm:1.4.4"
@@ -2191,13 +2198,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stylexjs/eslint-plugin@npm:^0.12.0":
-  version: 0.12.0
-  resolution: "@stylexjs/eslint-plugin@npm:0.12.0"
+"@stylexjs/eslint-plugin@npm:^0.17.0":
+  version: 0.17.5
+  resolution: "@stylexjs/eslint-plugin@npm:0.17.5"
   dependencies:
-    css-shorthand-expand: "npm:^1.2.0"
+    "@csstools/css-tokenizer": "npm:^3.0.3"
+    "@stylexjs/shared": "npm:0.17.5"
     micromatch: "npm:^4.0.5"
-  checksum: 10/dec4f8428792cc578378423f21ad9ff6834bf65eaa0332b041dab02c29c97cde3e94133771f6623a788e5376aa2d54d2b779f2974bbfdddef8220b5359826658
+    postcss-value-parser: "npm:^4.2.0"
+  checksum: 10/aadd1ae05b7563025473c1c77825311bcd1fbd4ecda0e6509c1ed6d9cb5ec94b5cf74a2bac8393a46453bd0e687baa5d1578151a191727d2a203d79d663d9fde
+  languageName: node
+  linkType: hard
+
+"@stylexjs/shared@npm:0.17.5":
+  version: 0.17.5
+  resolution: "@stylexjs/shared@npm:0.17.5"
+  checksum: 10/b01a4ee2940a2dbf057c82cb3bf31ff88262565606213609222df3f61210eea22b7532ad8fd8945857becdb878e615160043e145d5182d49c9fd744b0285b603
   languageName: node
   linkType: hard
 
@@ -3461,13 +3477,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-color-names@npm:0.0.1":
-  version: 0.0.1
-  resolution: "css-color-names@npm:0.0.1"
-  checksum: 10/8f3bd0004f17f7b2ae7045b9243b7b50d4dc94a2fc4f3f6998b33a447d80a741c30b0cb7488b9a528f707057e82edd20a191914586f6bc3bc625b4d1e8f1bc57
-  languageName: node
-  linkType: hard
-
 "css-mediaquery@npm:^0.1.2":
   version: 0.1.2
   resolution: "css-mediaquery@npm:0.1.2"
@@ -3498,24 +3507,6 @@ __metadata:
     domutils: "npm:^3.0.1"
     nth-check: "npm:^2.0.1"
   checksum: 10/d486b1e7eb140468218a5ab5af53257e01f937d2173ac46981f6b7de9c5283d55427a36715dc8decfc0c079cf89259ac5b41ef58f6e1a422eee44ab8bfdc78da
-  languageName: node
-  linkType: hard
-
-"css-shorthand-expand@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "css-shorthand-expand@npm:1.2.0"
-  dependencies:
-    css-color-names: "npm:0.0.1"
-    css-url-regex: "npm:0.0.1"
-    hex-color-regex: "npm:^1.0.1"
-    hsl-regex: "npm:^1.0.0"
-    hsla-regex: "npm:^1.0.0"
-    map-obj: "npm:^1.0.0"
-    repeat-element: "npm:^1.1.0"
-    rgb-regex: "npm:^1.0.1"
-    rgba-regex: "npm:^1.0.0"
-    xtend: "npm:^4.0.0"
-  checksum: 10/d67d63b806f4d81b3cd7cd1e197827175f3c5c51fb4cef8ee37eca1d92dec3b312387063f83392279b379ca2216b4de8a2e243e8ee9c77d0008661ebe0ee9ee2
   languageName: node
   linkType: hard
 
@@ -3557,13 +3548,6 @@ __metadata:
     mdn-data: "npm:2.0.28"
     source-map-js: "npm:^1.0.1"
   checksum: 10/1959c4b0e268bf8db1b3a1776a5ba9ae3a464ccd1226bfa62799cb0a3d0039006e21fb95cec4dec9d687a9a9b90f692dff2d230b631527ece700f4bfb419aaf3
-  languageName: node
-  linkType: hard
-
-"css-url-regex@npm:0.0.1":
-  version: 0.0.1
-  resolution: "css-url-regex@npm:0.0.1"
-  checksum: 10/afefe8b3a2ddbc0741a9e37abe60d02883e3f078b4dc59e71edd3a1abb98cf541c32b56dbb8d36893f94c5e91c8759c8563770e97eef8826fe4a1c4ec7ced5de
   languageName: node
   linkType: hard
 
@@ -5083,33 +5067,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hex-color-regex@npm:^1.0.1":
-  version: 1.1.0
-  resolution: "hex-color-regex@npm:1.1.0"
-  checksum: 10/2102799f1ff2865ca712d5fc40de841ca056dc85acb6e910abfb38ac5113d4040d01908421829cd68d9829597ae963f498705bb370f60d8b8beabc363b75483a
-  languageName: node
-  linkType: hard
-
 "hoist-non-react-statics@npm:^3.3.0":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
     react-is: "npm:^16.7.0"
   checksum: 10/1acbe85f33e5a39f90c822ad4d28b24daeb60f71c545279431dc98c312cd28a54f8d64788e477fe21dc502b0e3cf58589ebe5c1ad22af27245370391c2d24ea6
-  languageName: node
-  linkType: hard
-
-"hsl-regex@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "hsl-regex@npm:1.0.0"
-  checksum: 10/7109bf05e1b46647639dc7687e73d220dd7168073f905fc619f192cfd3daf774339a37ca262ae24a10e490a83fcd9dbfbd81e395a5074cb7d5b47b12c7b2bccd
-  languageName: node
-  linkType: hard
-
-"hsla-regex@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "hsla-regex@npm:1.0.0"
-  checksum: 10/be268cd8ea8d84ee274bd487b5efcda9ec265e18c8dc7dcd90ff3f1b3d71ee7e9abd3b4e3a74b59278274bd420fd7e8c47471a9c6671e50774409ef47530d29c
   languageName: node
   linkType: hard
 
@@ -5883,13 +5846,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"map-obj@npm:^1.0.0":
-  version: 1.0.1
-  resolution: "map-obj@npm:1.0.1"
-  checksum: 10/f8e6fc7f6137329c376c4524f6d25b3c243c17019bc8f621d15a2dcb855919e482a9298a78ae58b00dbd0e76b640bf6533aa343a9e993cfc16e0346a2507e7f8
-  languageName: node
-  linkType: hard
-
 "math-intrinsics@npm:^1.1.0":
   version: 1.1.0
   resolution: "math-intrinsics@npm:1.1.0"
@@ -6471,7 +6427,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "portfolio@workspace:."
   dependencies:
-    "@stylexjs/eslint-plugin": "npm:^0.12.0"
+    "@stylexjs/eslint-plugin": "npm:^0.17.0"
     "@stylexjs/shared": "npm:^0.12.0"
     "@stylexjs/stylex": "npm:^0.12.0"
     "@svgr/webpack": "npm:^8.0.0"
@@ -6522,7 +6478,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-value-parser@npm:^4.0.2, postcss-value-parser@npm:^4.1.0":
+"postcss-value-parser@npm:^4.0.2, postcss-value-parser@npm:^4.1.0, postcss-value-parser@npm:^4.2.0":
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
   checksum: 10/e4e4486f33b3163a606a6ed94f9c196ab49a37a7a7163abfcd469e5f113210120d70b8dd5e33d64636f41ad52316a3725655421eb9a1094f1bcab1db2f555c62
@@ -6880,13 +6836,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"repeat-element@npm:^1.1.0":
-  version: 1.1.4
-  resolution: "repeat-element@npm:1.1.4"
-  checksum: 10/1edd0301b7edad71808baad226f0890ba709443f03a698224c9ee4f2494c317892dc5211b2ba8cbea7194a9ddbcac01e283bd66de0467ab24ee1fc1a3711d8a9
-  languageName: node
-  linkType: hard
-
 "resolve-from@npm:^4.0.0":
   version: 4.0.0
   resolution: "resolve-from@npm:4.0.0"
@@ -7028,20 +6977,6 @@ __metadata:
   version: 1.0.4
   resolution: "reusify@npm:1.0.4"
   checksum: 10/14222c9e1d3f9ae01480c50d96057228a8524706db79cdeb5a2ce5bb7070dd9f409a6f84a02cbef8cdc80d39aef86f2dd03d155188a1300c599b05437dcd2ffb
-  languageName: node
-  linkType: hard
-
-"rgb-regex@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "rgb-regex@npm:1.0.1"
-  checksum: 10/40b5d4c8ac5d6985270ea9c85701a7d9194acc90f0ca6fd7537ad5bf8eb8fa069a2a73e949510b97c581bb5ac35456bc56c0bed6136164940806b6f427da9773
-  languageName: node
-  linkType: hard
-
-"rgba-regex@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "rgba-regex@npm:1.0.0"
-  checksum: 10/f059788e74d25b8acedb2fe0b748b7a0bdc4f71060747e44e806d15b7a02c0e74098077d093b216330f0a2fc64e666c79208f631530fce98f93ce915b78ff0ce
   languageName: node
   linkType: hard
 
@@ -8190,13 +8125,6 @@ __metadata:
   bin:
     node-which: ./bin/node-which
   checksum: 10/4782f8a1d6b8fc12c65e968fea49f59752bf6302dc43036c3bf87da718a80710f61a062516e9764c70008b487929a73546125570acea95c5b5dcc8ac3052c70f
-  languageName: node
-  linkType: hard
-
-"xtend@npm:^4.0.0":
-  version: 4.0.2
-  resolution: "xtend@npm:4.0.2"
-  checksum: 10/ac5dfa738b21f6e7f0dd6e65e1b3155036d68104e67e5d5d1bde74892e327d7e5636a076f625599dc394330a731861e87343ff184b0047fef1360a7ec0a5a36a
   languageName: node
   linkType: hard
 
