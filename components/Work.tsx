@@ -11,16 +11,16 @@ import {
 import workData from "../data/work.json";
 import { Duration } from "./Duration";
 
-const WorkPage = () => (
+const WorkPage = async () => (
   <PageSection>
     <PageTitle>Work</PageTitle>
     <Articles>
-      {workData.map((work: Work) => {
-        const img = require(`../images/${work.img}`);
+      {workData.map(async (work: Work) => {
+        const img = await import(`../images/${work.img}`);
         return (
           <Article key={work.company}>
             <ImageContainer>
-              <Image src={img} alt={work.company} />
+              <Image src={img.default} alt={work.company} />
             </ImageContainer>
             <header>
               <h2>{work.positions[0].position}</h2>
