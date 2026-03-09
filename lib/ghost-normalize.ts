@@ -1,16 +1,14 @@
 import { rehype as Rehype } from "rehype";
 import { Node, Parent } from "unist";
 import { visit } from "unist-util-visit";
-import { cloneDeep } from "lodash";
-import { refractor } from "refractor/core";
-import { toString as nodeToString } from "hast-util-to-string";
+import cloneDeep from "clone-deep";
 import { PostOrPage } from "@tryghost/content-api";
 import { generateTableOfContents } from "./toc";
 import { GhostPostOrPage } from "./ghost";
 import { parse as urlParse, UrlWithStringQuery } from "url";
 
 import { processEnv } from "./processEnv";
-const { prism, toc, nextImages } = processEnv;
+const { toc, nextImages } = processEnv;
 
 const rehype = Rehype().use({
   settings: {
@@ -24,20 +22,10 @@ const rehype = Rehype().use({
 export const normalizePost = async (
   post: PostOrPage,
   cmsUrl: UrlWithStringQuery | undefined,
-  basePath?: string
 ): Promise<GhostPostOrPage> => {
   if (!cmsUrl) throw Error("ghost-normalize.ts: cmsUrl expected.");
-  const rewriteGhostLinks = withRewriteGhostLinks(cmsUrl, basePath);
 
-  let htmlAst = rehype.parse(post.html || "");
-  // for (const process of processors) {
-  //   htmlAst = await process(htmlAst);
-  // }
-
-  // const toc = tableOfContents(htmlAst);
-
-  // image meta
-  const url = post.feature_image;
+  const htmlAst = rehype.parse(post.html || "");
 
   // author images
   const authors = post.authors;
@@ -60,7 +48,7 @@ interface LinkElement extends Node {
   children?: Node[];
 }
 
-const withRewriteGhostLinks =
+export const withRewriteGhostLinks =
   (cmsUrl: UrlWithStringQuery, basePath = "/") =>
   (htmlAst: Node) => {
     visit(htmlAst, { tagName: `a` }, (node: LinkElement) => {
@@ -78,7 +66,7 @@ const withRewriteGhostLinks =
  * Rewrite relative links to be used with next/link
  */
 
-const rewriteRelativeLinks = (htmlAst: Node) => {
+export const rewriteRelativeLinks = (htmlAst: Node) => {
   visit(htmlAst, { tagName: `a` }, (node: LinkElement) => {
     const href = node.properties?.href;
     if (href && !href.startsWith(`http`)) {
@@ -103,17 +91,17 @@ interface NodeProperties {
   style?: string | string[];
 }
 
-interface PropertiesElement extends Node {
+export interface PropertiesElement extends Node {
   tagName: string;
   properties?: NodeProperties;
   children?: Node[];
 }
 
-interface PropertiesParent extends Parent {
+export interface PropertiesParent extends Parent {
   tagName?: string;
 }
 
-const tableOfContents = (htmlAst: Node) => {
+export const tableOfContents = (htmlAst: Node) => {
   if (!toc.enable) return null;
   return generateTableOfContents(htmlAst);
 };
@@ -132,7 +120,7 @@ interface ImageParent extends Parent {
   properties?: NodeProperties;
 }
 
-const rewriteInlineImages = async (htmlAst: Node) => {
+export const rewriteInlineImages = async (htmlAst: Node) => {
   let nodes: { node: ImageElement; parent: ImageParent | undefined }[] = [];
 
   visit(
@@ -143,7 +131,6 @@ const rewriteInlineImages = async (htmlAst: Node) => {
         node.tagName = `Image`;
       }
 
-      const { src } = node.properties;
       nodes.push({ node, parent });
     }
   );

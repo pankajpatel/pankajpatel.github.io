@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex } from "theme-ui";
+import { Flex } from "theme-ui";
 import Img from "gatsby-image";
 import HeartIcon from "./HeartIcon";
 import CommentIcon from "./CommentIcon";

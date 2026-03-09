@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, FormEventHandler, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import Recaptcha from "react-recaptcha";
 import { Articles, PageTitle, PageSection, Summary } from "./styled";
@@ -140,7 +140,7 @@ const ContactPage = () => {
     fetch(request)
       .then((r) => r.json())
       .then((data) => {
-        const error = !Boolean(data.id);
+        const error = !data.id;
         setState({ submitted: true, error });
         if (!error) {
           formRef.current?.reset?.();
