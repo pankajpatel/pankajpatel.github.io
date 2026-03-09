@@ -104,15 +104,3 @@ export const Article = styled.article`
     }
   `}
 `;
-
-const css = `
-@media (min-width: 795px) {
-  .post-card-large .post-card-content-link {
-    padding: 30px 40px 0;
-  }
-
-  .post-card-large .post-card-meta {
-    padding: 0 40px 30px;
-  }
-}
-`;

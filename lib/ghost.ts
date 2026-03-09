@@ -5,7 +5,6 @@ import GhostContentAPI, {
   PostOrPage,
   SettingsResponse,
   Pagination,
-  PostsOrPages,
   Tag,
   Author,
 } from "@tryghost/content-api";
@@ -21,7 +20,6 @@ import {
 } from "./processEnv";
 import { IToC } from "./toc";
 
-import { locale } from "dayjs";
 export interface NavItem {
   url: string;
   label: string;

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import metadata from "../data/config";
 
-const SEO = ({ description, lang, meta, title }: SEOProps) => {
+const SEO = ({ description, meta, title }: SEOProps) => {
   const metaDescription = description || metadata.description;
 
   return (

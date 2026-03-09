@@ -1,9 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import styled from "styled-components";
-import { Url } from "url";
-import { GhostPostsOrPages, GhostPostOrPage } from "../lib/ghost";
+import { GhostPostOrPage, GhostPostsOrPages } from "../lib/ghost";
 import { PageSection, PageTitle } from "./styled";
 import { Article, CardTitle, PostCardImage } from "./styled/PostCard";
 import { PostFeed } from "./styled/PostFeed";
