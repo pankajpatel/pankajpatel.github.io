@@ -24,7 +24,7 @@
     "form-data": "^4.0.0",
     "hast-util-to-string": "^3.0.0",
     "mailgun.js": "^12.7.1",
-    "next": "^16.1.6",
+    "next": "^16.1.7",
     "posthog-js": "^1.359.1",
     "probe-image-size": "^7.2.3",
     "rc-scroll-anim": "^2.7.6",
