@@ -2658,11 +2658,11 @@ __metadata:
   linkType: hard
 
 "@tryghost/content-api@npm:^1.12.5":
-  version: 1.12.5
-  resolution: "@tryghost/content-api@npm:1.12.5"
+  version: 1.12.6
+  resolution: "@tryghost/content-api@npm:1.12.6"
   dependencies:
-    axios: "npm:1.13.5"
-  checksum: 10/d2f406c72afed8a1dc2df30b0fa2dfe84ec037d083763533f91939c136de1ba5692f5bfa56458a91fb9e11f99c554905036a520087bc2f8d9826db7b849a8c6b
+    axios: "npm:1.13.6"
+  checksum: 10/c406bb261d89c23121dc86cf856e6e7eb1b1413df09ccdb109718ca834b5000371aa002c06c3c70e9af8beb3691876305974d660d8763b194dccf0350e9d55a0
   languageName: node
   linkType: hard
 
@@ -2917,18 +2917,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.13.5":
-  version: 1.13.5
-  resolution: "axios@npm:1.13.5"
-  dependencies:
-    follow-redirects: "npm:^1.15.11"
-    form-data: "npm:^4.0.5"
-    proxy-from-env: "npm:^1.1.0"
-  checksum: 10/db726d09902565ef9a0632893530028310e2ec2b95b727114eca1b101450b00014133dfc3871cffc87983fb922bca7e4874d7e2826d1550a377a157cdf3f05b6
-  languageName: node
-  linkType: hard
-
-"axios@npm:^1.12.1":
+"axios@npm:1.13.6, axios@npm:^1.12.1":
   version: 1.13.6
   resolution: "axios@npm:1.13.6"
   dependencies:
