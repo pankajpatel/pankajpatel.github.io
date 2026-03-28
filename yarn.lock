@@ -2482,13 +2482,13 @@ __metadata:
   linkType: hard
 
 "@stylexjs/stylex@npm:^0.18.0":
-  version: 0.18.1
-  resolution: "@stylexjs/stylex@npm:0.18.1"
+  version: 0.18.2
+  resolution: "@stylexjs/stylex@npm:0.18.2"
   dependencies:
     css-mediaquery: "npm:^0.1.2"
     invariant: "npm:^2.2.4"
     styleq: "npm:0.2.1"
-  checksum: 10/8d871083e9a5873b6bcfdf3f66031d274e228f1cd53b805212e376c5542d11604554c52404c9248e950e6d5e65ed5a266ce9d2713a11f18005b23900324b4848
+  checksum: 10/6471d42a58987e83ac3a997ca1e8432e5a66b6b4f2f5dc87941e04cd840fcde98a1b5417950522f088ba8d2e1b104192a7eddc49f58949172344e414818cccf0
   languageName: node
   linkType: hard
 
