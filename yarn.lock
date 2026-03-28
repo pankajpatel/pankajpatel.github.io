@@ -2475,9 +2475,9 @@ __metadata:
   linkType: hard
 
 "@stylexjs/shared@npm:^0.18.0":
-  version: 0.18.1
-  resolution: "@stylexjs/shared@npm:0.18.1"
-  checksum: 10/4d36408e198d8000a15b7f14b0187a0a2032380143f387361237479806417b0759c1810d448c03bc9fa5033132a1027eef572ef41f3ea5e535dc5afef3f97231
+  version: 0.18.2
+  resolution: "@stylexjs/shared@npm:0.18.2"
+  checksum: 10/5c61a139eaf42096c829484960149223573b9eea35ba0e6d4e4bac901b55f76ea2636bffcd41a7cf89fd3cf399e16c56592db4d7a86e2b7ac23fc3f15281da97
   languageName: node
   linkType: hard
 
