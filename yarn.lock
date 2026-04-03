@@ -2474,24 +2474,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stylexjs/shared@npm:^0.18.0":
-  version: 0.18.1
-  resolution: "@stylexjs/shared@npm:0.18.1"
-  checksum: 10/4d36408e198d8000a15b7f14b0187a0a2032380143f387361237479806417b0759c1810d448c03bc9fa5033132a1027eef572ef41f3ea5e535dc5afef3f97231
-  languageName: node
-  linkType: hard
-
-"@stylexjs/stylex@npm:^0.18.0":
-  version: 0.18.1
-  resolution: "@stylexjs/stylex@npm:0.18.1"
-  dependencies:
-    css-mediaquery: "npm:^0.1.2"
-    invariant: "npm:^2.2.4"
-    styleq: "npm:0.2.1"
-  checksum: 10/8d871083e9a5873b6bcfdf3f66031d274e228f1cd53b805212e376c5542d11604554c52404c9248e950e6d5e65ed5a266ce9d2713a11f18005b23900324b4848
-  languageName: node
-  linkType: hard
-
 "@svgr/babel-plugin-add-jsx-attribute@npm:8.0.0":
   version: 8.0.0
   resolution: "@svgr/babel-plugin-add-jsx-attribute@npm:8.0.0"
@@ -3281,24 +3263,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"crypto-hash@npm:^4":
-  version: 4.0.1
-  resolution: "crypto-hash@npm:4.0.1"
-  checksum: 10/b81439e7c6969384044dac15dd0e55ee005ca87d5a4f6e1dae852ed64f5011822da2aa2b2fbf4564d8d68303569805f97024a57865e53a6501c87c31f9b33718
-  languageName: node
-  linkType: hard
-
 "css-color-keywords@npm:^1.0.0":
   version: 1.0.0
   resolution: "css-color-keywords@npm:1.0.0"
   checksum: 10/8f125e3ad477bd03c77b533044bd9e8a6f7c0da52d49bbc0bbe38327b3829d6ba04d368ca49dd9ff3b667d2fc8f1698d891c198bbf8feade1a5501bf5a296408
-  languageName: node
-  linkType: hard
-
-"css-mediaquery@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "css-mediaquery@npm:0.1.2"
-  checksum: 10/f2f7512daa015f98b82bd65bbdd7c2100b16dddf22784bde2a8085f10f11e8775da57108016fe767f5e400afe64581c15d4e649c47725af7eac5f4094fa7ae43
   languageName: node
   linkType: hard
 
@@ -3398,13 +3366,6 @@ __metadata:
   version: 3.2.3
   resolution: "csstype@npm:3.2.3"
   checksum: 10/ad41baf7e2ffac65ab544d79107bf7cd1a4bb9bab9ac3302f59ab4ba655d5e30942a8ae46e10ba160c6f4ecea464cc95b975ca2fefbdeeacd6ac63f12f99fe1f
-  languageName: node
-  linkType: hard
-
-"dayjs@npm:^1.10.7":
-  version: 1.11.19
-  resolution: "dayjs@npm:1.11.19"
-  checksum: 10/185b820d68492b83a3ce2b8ddc7543034edc1dfd1423183f6ae4707b29929a3cc56503a81826309279f9084680c15966b99456e74cf41f7d1f6a2f98f9c7196f
   languageName: node
   linkType: hard
 
@@ -3993,15 +3954,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"invariant@npm:^2.2.4":
-  version: 2.2.4
-  resolution: "invariant@npm:2.2.4"
-  dependencies:
-    loose-envify: "npm:^1.0.0"
-  checksum: 10/cc3182d793aad82a8d1f0af697b462939cb46066ec48bbf1707c150ad5fad6406137e91a262022c269702e01621f35ef60269f6c0d7fd178487959809acdfb14
-  languageName: node
-  linkType: hard
-
 "is-alphabetical@npm:^2.0.0":
   version: 2.0.1
   resolution: "is-alphabetical@npm:2.0.1"
@@ -4216,7 +4168,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loose-envify@npm:^1.0.0, loose-envify@npm:^1.4.0":
+"loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
   dependencies:
@@ -4667,8 +4619,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "portfolio@workspace:."
   dependencies:
-    "@stylexjs/shared": "npm:^0.18.0"
-    "@stylexjs/stylex": "npm:^0.18.0"
     "@svgr/webpack": "npm:^8.1.0"
     "@tryghost/content-api": "npm:^1.12.5"
     "@types/clone-deep": "npm:^4"
@@ -4685,8 +4635,6 @@ __metadata:
     babel-plugin-styled-components: "npm:^2.0.2"
     clone-deep: "npm:^4.0.1"
     clsx: "npm:^2.0.0"
-    crypto-hash: "npm:^4"
-    dayjs: "npm:^1.10.7"
     form-data: "npm:^4.0.0"
     hast-util-to-string: "npm:^3.0.0"
     husky: "npm:^9.0.0"
@@ -5395,13 +5343,6 @@ __metadata:
   peerDependencies:
     styled-components: ^4.0.0 || ^5.0.0 || ^6.0.0
   checksum: 10/f7183f14baabb16e79d9adc88a8d82c6578cbae7653fc224a82a17a99eb85fc4f92c1f0db4cf1e8e3038f389b527a1719df15a262d886c287cff2fe3ed64309c
-  languageName: node
-  linkType: hard
-
-"styleq@npm:0.2.1":
-  version: 0.2.1
-  resolution: "styleq@npm:0.2.1"
-  checksum: 10/a3b4ce254dafa334507a9db8380ffca7cbc389d62a0ce12d16e8ac618bd0baafdec091a4602297e29eb2ec7fe10c60b4dcd4d5f4f4635f4acec5b877e8a43e53
   languageName: node
   linkType: hard
 
