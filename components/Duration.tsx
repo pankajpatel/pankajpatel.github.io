@@ -1,5 +1,3 @@
-import dayjs from "dayjs";
-
 export const Duration = ({
   from,
   to,
@@ -9,8 +7,15 @@ export const Duration = ({
   to: string;
   format?: string;
 }) => {
-  const _from = dayjs(from, "YYYY-MM-DD").format(format);
-  const _to = from !== to ? dayjs(to, "YYYY-MM-DD").format(format) : "Today";
+  const formatter = new Intl.DateTimeFormat("en", {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+  const formatDate = (value: string) => formatter.format(new Date(`${value}T00:00:00Z`));
+
+  const _from = format === "MMM YYYY" ? formatDate(from) : from;
+  const _to = from !== to ? (format === "MMM YYYY" ? formatDate(to) : to) : "Today";
 
   return (
     <span>
