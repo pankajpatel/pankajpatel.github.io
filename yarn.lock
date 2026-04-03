@@ -2385,19 +2385,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@posthog/core@npm:1.23.2":
-  version: 1.23.2
-  resolution: "@posthog/core@npm:1.23.2"
-  dependencies:
-    cross-spawn: "npm:^7.0.6"
-  checksum: 10/0a2fabc9bfbea2533e4bd97c6fe9adf1a2f231baeb641b2fd2e094525ef7533dea12809132c37ab10f5df88a4cef4604c8711977b9951f5e03e1800768683efb
+"@posthog/core@npm:1.24.6":
+  version: 1.24.6
+  resolution: "@posthog/core@npm:1.24.6"
+  checksum: 10/abc127f97d6ad043a16c5ea0a22dcb8f771efeaab79fac1b226816f7ff2d666c73958984bc176d02ae3a9d9f30f0bb915bdbe484e4ae779c85e44b75b9fcf25c
   languageName: node
   linkType: hard
 
-"@posthog/types@npm:1.359.1":
-  version: 1.359.1
-  resolution: "@posthog/types@npm:1.359.1"
-  checksum: 10/5f28c5714e0440d5bd979e741de5b178c37e27a38e02b3bf5a276c5733ed57cc0833367962d2a557f92774d8aee23d5c41d6e782267d0bc932e623d455dbdecf
+"@posthog/types@npm:1.364.7":
+  version: 1.364.7
+  resolution: "@posthog/types@npm:1.364.7"
+  checksum: 10/941b4faadc4fa11c43f8d050a3f2d705557d93da7fb28e101127ea3a59fac06527b58ce0e029570dce24b842862f12dada79f826068c9d6136532ae9e2832568
   languageName: node
   linkType: hard
 
@@ -3252,17 +3250,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-spawn@npm:^7.0.6":
-  version: 7.0.6
-  resolution: "cross-spawn@npm:7.0.6"
-  dependencies:
-    path-key: "npm:^3.1.0"
-    shebang-command: "npm:^2.0.0"
-    which: "npm:^2.0.1"
-  checksum: 10/0d52657d7ae36eb130999dffff1168ec348687b48dd38e2ff59992ed916c88d328cf1d07ff4a4a10bc78de5e1c23f04b306d569e42f7a2293915c081e4dfee86
-  languageName: node
-  linkType: hard
-
 "css-color-keywords@npm:^1.0.0":
   version: 1.0.0
   resolution: "css-color-keywords@npm:1.0.0"
@@ -4026,13 +4013,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"isexe@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "isexe@npm:2.0.0"
-  checksum: 10/7c9f715c03aff08f35e98b1fadae1b9267b38f0615d501824f9743f3aab99ef10e303ce7db3f186763a0b70a19de5791ebfc854ff884d5a8c4d92211f642ec92
-  languageName: node
-  linkType: hard
-
 "isobject@npm:^3.0.1":
   version: 3.0.1
   resolution: "isobject@npm:3.0.1"
@@ -4566,13 +4546,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-key@npm:^3.1.0":
-  version: 3.1.1
-  resolution: "path-key@npm:3.1.1"
-  checksum: 10/55cd7a9dd4b343412a8386a743f9c746ef196e57c823d90ca3ab917f90ab9f13dd0ded27252ba49dbdfcab2b091d998bc446f6220cd3cea65db407502a740020
-  languageName: node
-  linkType: hard
-
 "path-parse@npm:^1.0.7":
   version: 1.0.7
   resolution: "path-parse@npm:1.0.7"
@@ -4688,23 +4661,23 @@ __metadata:
   linkType: hard
 
 "posthog-js@npm:^1.359.1":
-  version: 1.359.1
-  resolution: "posthog-js@npm:1.359.1"
+  version: 1.364.7
+  resolution: "posthog-js@npm:1.364.7"
   dependencies:
     "@opentelemetry/api": "npm:^1.9.0"
     "@opentelemetry/api-logs": "npm:^0.208.0"
     "@opentelemetry/exporter-logs-otlp-http": "npm:^0.208.0"
     "@opentelemetry/resources": "npm:^2.2.0"
     "@opentelemetry/sdk-logs": "npm:^0.208.0"
-    "@posthog/core": "npm:1.23.2"
-    "@posthog/types": "npm:1.359.1"
+    "@posthog/core": "npm:1.24.6"
+    "@posthog/types": "npm:1.364.7"
     core-js: "npm:^3.38.1"
     dompurify: "npm:^3.3.2"
     fflate: "npm:^0.4.8"
     preact: "npm:^10.28.2"
     query-selector-shadow-dom: "npm:^1.0.1"
     web-vitals: "npm:^5.1.0"
-  checksum: 10/860594f961ff7c3424fc14647cedfe98eca616d97cd8f37b278fb2afb9736609c30dbc06d2649878da91fa5344ba0becc3b0df4aeeb775727d6da02a20725fd8
+  checksum: 10/86d1df344bdfc72492fd024369429304761f1b3f07ed119291d1415655fb34d37aa6bb6ca631feb26ec32002846eae95f24c97d9a59068002efa819432456627
   languageName: node
   linkType: hard
 
@@ -5211,22 +5184,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shebang-command@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "shebang-command@npm:2.0.0"
-  dependencies:
-    shebang-regex: "npm:^3.0.0"
-  checksum: 10/6b52fe87271c12968f6a054e60f6bde5f0f3d2db483a1e5c3e12d657c488a15474121a1d55cd958f6df026a54374ec38a4a963988c213b7570e1d51575cea7fa
-  languageName: node
-  linkType: hard
-
-"shebang-regex@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "shebang-regex@npm:3.0.0"
-  checksum: 10/1a2bcae50de99034fcd92ad4212d8e01eedf52c7ec7830eedcf886622804fe36884278f2be8be0ea5fde3fd1c23911643a4e0f726c8685b61871c8908af01222
-  languageName: node
-  linkType: hard
-
 "snake-case@npm:^3.0.4":
   version: 3.0.4
   resolution: "snake-case@npm:3.0.4"
@@ -5662,17 +5619,6 @@ __metadata:
   version: 5.1.0
   resolution: "web-vitals@npm:5.1.0"
   checksum: 10/3b99e3e5e031257387f59f5e71f84d873b259bc09d560993fff1d0c84e0196a509712bc974666c47f51561f8bb8297ff1c1fdf18d4ebde2345a1cd06dba36021
-  languageName: node
-  linkType: hard
-
-"which@npm:^2.0.1":
-  version: 2.0.2
-  resolution: "which@npm:2.0.2"
-  dependencies:
-    isexe: "npm:^2.0.0"
-  bin:
-    node-which: ./bin/node-which
-  checksum: 10/4782f8a1d6b8fc12c65e968fea49f59752bf6302dc43036c3bf87da718a80710f61a062516e9764c70008b487929a73546125570acea95c5b5dcc8ac3052c70f
   languageName: node
   linkType: hard
 
