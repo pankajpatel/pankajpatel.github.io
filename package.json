@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@types/clone-deep": "^4",
-    "@types/node": "24.12.0",
+    "@types/node": "24.12.2",
     "@types/probe-image-size": "^7.0.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
