@@ -1,10 +1,26 @@
 [
   {
+    "company": "ModaResa",
+    "location": "Paris, France",
+    "duration": {
+      "from": "2026-09-01",
+      "to": "2026-09-01"
+    },
+    "positions": [
+      {
+        "from": "2026-09-01",
+        "position": "Technical Lead"
+      }
+    ],
+    "description": "Building sustainable scheduling and reporting tools for wholesale brands and retailers.",
+    "img": "modaresa.png"
+  },
+  {
     "company": "AB Tasty",
     "location": "Lyon, France",
     "duration": {
       "from": "2022-06-07",
-      "to": "2022-06-07"
+      "to": "2026-07-31"
     },
     "positions": [
       {
