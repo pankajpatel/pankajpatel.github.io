@@ -471,29 +471,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@posthog/browser-common@npm:^0.7.1":
-  version: 0.7.1
-  resolution: "@posthog/browser-common@npm:0.7.1"
+"@posthog/browser-common@npm:^0.7.2":
+  version: 0.7.2
+  resolution: "@posthog/browser-common@npm:0.7.2"
   dependencies:
-    "@posthog/core": "npm:^1.50.0"
-    "@posthog/types": "npm:^1.407.1"
-  checksum: 10/2088024687f466e4f9b9db168a1f1050770c1c2867458c0d65fe563fea75c0372467cf00c52a793f6535e7c9538f4de6e34b193d994d2a3138d897785a5675f7
+    "@posthog/core": "npm:^1.50.4"
+    "@posthog/types": "npm:^1.408.1"
+  checksum: 10/a794902bc47c6fb83f936be9bef1d51f44afe210a0ccb42ca0adc1859c583df49153fcbeb16d243617f45dff8497043e12890e4f642de6ae494579788097b98f
   languageName: node
   linkType: hard
 
-"@posthog/core@npm:^1.50.0, @posthog/core@npm:^1.50.2":
-  version: 1.50.2
-  resolution: "@posthog/core@npm:1.50.2"
+"@posthog/core@npm:^1.50.4, @posthog/core@npm:^1.50.5":
+  version: 1.50.5
+  resolution: "@posthog/core@npm:1.50.5"
   dependencies:
-    "@posthog/types": "npm:^1.407.1"
-  checksum: 10/b1c0365ed0d2680cb57f2b8df9f8e03339d78521c0432c2fe596fa69a47c9a631cd7a295ad8f2e8fbbeae5e6f53901c0873b51fa5e52be34dd8f0681ab54f44d
+    "@posthog/types": "npm:^1.409.0"
+  checksum: 10/0c82e1c97db1d66ad1d4cc221d73afee0bb416fcd13ed241ecbb43c602cc2e7917865cb33bf6d14849e2486b1a4b28016006ecd79fa8eda5008ca4d4a58b63a9
   languageName: node
   linkType: hard
 
-"@posthog/types@npm:^1.407.1, @posthog/types@npm:^1.408.0":
-  version: 1.408.0
-  resolution: "@posthog/types@npm:1.408.0"
-  checksum: 10/30467aa16fb09972690cd8585e201e7b014a34f8b5c83e38cbde98515599b6ad8bfae86f4a7b0d629f8014e43a24c2ecf66c792dcee3820ef65c9c268a6475eb
+"@posthog/types@npm:^1.408.1, @posthog/types@npm:^1.409.0":
+  version: 1.409.0
+  resolution: "@posthog/types@npm:1.409.0"
+  checksum: 10/81fa3e1c19c33c1d0bb7ec3d041d88520854c502ab2248c7797b30c0eb10235b1e1341a9172b89d2bd1fa0d75feec66186fa3b14e86820d2d6b596fd136f207a
   languageName: node
   linkType: hard
 
@@ -1724,12 +1724,12 @@ __metadata:
   linkType: hard
 
 "posthog-js@npm:^1.425.0":
-  version: 1.425.0
-  resolution: "posthog-js@npm:1.425.0"
+  version: 1.427.2
+  resolution: "posthog-js@npm:1.427.2"
   dependencies:
-    "@posthog/browser-common": "npm:^0.7.1"
-    "@posthog/core": "npm:^1.50.2"
-    "@posthog/types": "npm:^1.408.0"
+    "@posthog/browser-common": "npm:^0.7.2"
+    "@posthog/core": "npm:^1.50.5"
+    "@posthog/types": "npm:^1.409.0"
     core-js: "npm:^3.49.0"
     dompurify: "npm:^3.4.13"
     fflate: "npm:^0.4.8"
@@ -1745,7 +1745,7 @@ __metadata:
       optional: true
     react:
       optional: true
-  checksum: 10/214720450a29b35d37ebfa523ae6045849694f1cf1257b1386a6b9eb385dfe77a97499eae12d276e340bb2da3a004ea61d8ce8ba9ee7660808b92e893a4cacbc
+  checksum: 10/34f3dd1b87b7b377e0d55f1d9dd5c4697598efe30deb4a9310e2b272b1d6206fdc0cfb3cc2d9805d72b9bee6086e9d069e6789f83868b0ed19481bf898926115
   languageName: node
   linkType: hard
 
