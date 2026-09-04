@@ -1359,13 +1359,13 @@ __metadata:
   linkType: hard
 
 "mailgun.js@npm:^14.0.0":
-  version: 14.0.0
-  resolution: "mailgun.js@npm:14.0.0"
+  version: 14.0.1
+  resolution: "mailgun.js@npm:14.0.1"
   dependencies:
     axios: "npm:^1.15.0"
     base-64: "npm:^1.0.0"
     url-join: "npm:^4.0.1"
-  checksum: 10/042bcbd8c558c51b83ba4e84f6d211a66acc74acc79abea498244cccbed47f32d6bb6620f3a2f2b890adbdc46af1c7713eda33855c09cf8d02e94692d4326ec9
+  checksum: 10/a6d10682070bcc43472f84b9063a62514e7c36c106d68a5173929123913dd8ea59bc43bd4de4a863244c08effc915165c76faba4fea5271904563a8a3caa534a
   languageName: node
   linkType: hard
 
