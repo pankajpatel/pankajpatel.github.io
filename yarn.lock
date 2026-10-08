@@ -507,11 +507,11 @@ __metadata:
   linkType: hard
 
 "@tryghost/content-api@npm:^1.12.10":
-  version: 1.12.10
-  resolution: "@tryghost/content-api@npm:1.12.10"
+  version: 1.12.12
+  resolution: "@tryghost/content-api@npm:1.12.12"
   dependencies:
-    axios: "npm:1.18.1"
-  checksum: 10/dfc0564335b50a05040085ee7786575252ca4fe715fb31835c4697d7a54991b47d869cc8a27b846ae358c6aed29bfa3da9f6981f1bd4004e654e4504340b2a52
+    axios: "npm:1.20.0"
+  checksum: 10/d2afd4b37473d6cf3c6917f483f69b3a7080fd126c2b1035936a4c2011f5565b7390223d4f25c3a38c13eea6eb4b4e96e90f59e86d28c16187434a0e1dfc6ec1
   languageName: node
   linkType: hard
 
@@ -685,19 +685,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.18.1":
-  version: 1.18.1
-  resolution: "axios@npm:1.18.1"
-  dependencies:
-    follow-redirects: "npm:^1.16.0"
-    form-data: "npm:^4.0.5"
-    https-proxy-agent: "npm:^5.0.1"
-    proxy-from-env: "npm:^2.1.0"
-  checksum: 10/c4cdced3ee0a9bf7dcae189fbc74a124aa079d4f04dbd995e602d39c1419476e8d021f87ee39ac8d8398e5a55e6d0b986238b3645f0d9177ac80de87c2a73f18
-  languageName: node
-  linkType: hard
-
-"axios@npm:^1.15.0":
+"axios@npm:1.20.0, axios@npm:^1.15.0":
   version: 1.20.0
   resolution: "axios@npm:1.20.0"
   dependencies:
@@ -1036,19 +1024,6 @@ __metadata:
     debug:
       optional: true
   checksum: 10/3fbe3d80b3b544c22705d837aa5d4a0d07a740d913534a2620b0a004c610af4148e3b58723536dd099aaa1c9d3a155964bde9665d6e5cb331460809a1fc572fd
-  languageName: node
-  linkType: hard
-
-"form-data@npm:^4.0.5":
-  version: 4.0.5
-  resolution: "form-data@npm:4.0.5"
-  dependencies:
-    asynckit: "npm:^0.4.0"
-    combined-stream: "npm:^1.0.8"
-    es-set-tostringtag: "npm:^2.1.0"
-    hasown: "npm:^2.0.2"
-    mime-types: "npm:^2.1.12"
-  checksum: 10/52ecd6e927c8c4e215e68a7ad5e0f7c1031397439672fd9741654b4a94722c4182e74cc815b225dcb5be3f4180f36428f67c6dd39eaa98af0dcfdd26c00c19cd
   languageName: node
   linkType: hard
 
@@ -1442,7 +1417,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mime-types@npm:^2.1.12, mime-types@npm:^2.1.35":
+"mime-types@npm:^2.1.35":
   version: 2.1.35
   resolution: "mime-types@npm:2.1.35"
   dependencies:
