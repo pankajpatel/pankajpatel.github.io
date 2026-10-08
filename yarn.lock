@@ -697,7 +697,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.15.0":
+"axios@npm:^1.20.0":
   version: 1.20.0
   resolution: "axios@npm:1.20.0"
   dependencies:
@@ -1359,13 +1359,13 @@ __metadata:
   linkType: hard
 
 "mailgun.js@npm:^14.0.0":
-  version: 14.0.0
-  resolution: "mailgun.js@npm:14.0.0"
+  version: 14.1.0
+  resolution: "mailgun.js@npm:14.1.0"
   dependencies:
-    axios: "npm:^1.15.0"
+    axios: "npm:^1.20.0"
     base-64: "npm:^1.0.0"
     url-join: "npm:^4.0.1"
-  checksum: 10/042bcbd8c558c51b83ba4e84f6d211a66acc74acc79abea498244cccbed47f32d6bb6620f3a2f2b890adbdc46af1c7713eda33855c09cf8d02e94692d4326ec9
+  checksum: 10/c98fc9592e6b34b5887089885de4250414cb741e5e2a60030c2385f74243a613443ee28b17e843dc44ff41dd65a08a809d0cf317d3b8a498c5260a9c5530dff3
   languageName: node
   linkType: hard
 
